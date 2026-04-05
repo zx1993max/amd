@@ -1,0 +1,1502 @@
+======================================== 目标用户完整上下文（前后各5条）========================================
+
+第1条消息
+用户：thuang 
+时间：<a href=#chatlog__message-container-1419932564432490627>9/23/2025 6:25 AM
+内容：so how to access rocshmem from python ? thank
+------------------------------------------------------------
+
+第2条消息
+用户：Stas Polonsky 
+时间：<a href=#chatlog__message-container-1419950253481787494>9/23/2025 7:35 AM
+内容：Hi, what can I assume about how the GPUs are connected? PCIe?  Infinity Fabric?
+------------------------------------------------------------
+
+第3条消息
+用户：Stas Polonsky 
+时间：<a href=#chatlog__message-container-1419959921520410694>9/23/2025 8:13 AM
+内容：Also, I'd very much appreciate an advice where can I rent Infinity Fabric interconnected MI300X GPUs
+------------------------------------------------------------
+
+第4条消息
+用户：Stas Polonsky 
+时间：<a href=#chatlog__message-container-1419998964266041488>9/23/2025 10:48 AM
+内容：One more thing, could you please define the environment you'll use for test: versions of rocm, hip, torch, etc.
+------------------------------------------------------------
+
+第5条消息
+用户：Snektron 
+时间：<a href=#chatlog__message-container-1419999578845085710>9/23/2025 10:51 AM
+内容：Any place that supports 8x mi300x should be good. Amd devcloud or hotaisle are cheapest i think
+------------------------------------------------------------
+
+第6条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420037111125512273>9/23/2025 1:20 PM
+内容：The #1 issue besides access to hardware is also to replicate the environment being tested. Without that we cannot do &quot;&quot;&quot;1:1&quot;&quot;&quot; testing. There are constraints from python, torch version and other dependencies so this is critical.
+------------------------------------------------------------
+
+第7条消息
+用户：Snektron 
+时间：<a href=#chatlog__message-container-1420039527157727312>9/23/2025 1:30 PM
+内容：You can fetch the exact docker image used for benchmarks I think
+------------------------------------------------------------
+
+第8条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420043893239447624>9/23/2025 1:47 PM
+内容：Thank you <span class="chatlog__markdown-mention" title="snektron">@Snektron
+------------------------------------------------------------
+
+第9条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1420048068279013496>9/23/2025 2:04 PM
+内容：yes the image is published somewhere, no idea where though xd
+------------------------------------------------------------
+
+第10条消息
+用户：zlu86 
+时间：<a href=#chatlog__message-container-1420049193606709329>9/23/2025 2:08 PM
+内容：Runpod too, I tried it recently
+------------------------------------------------------------
+
+第11条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420049698181484635>9/23/2025 2:10 PM
+内容：<img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg"> Renting per hour a 8xMI300X cluster is a decent investment though..  20-30$ or so per hour <img     loading="lazy"     class="chatlog__emoji "     alt="🙂"     title="slight_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f642.svg">
+------------------------------------------------------------
+
+第12条消息
+用户：zlu86 
+时间：<a href=#chatlog__message-container-1420051063716843682>9/23/2025 2:15 PM
+内容：You devel on one runs you down a dollar and a few cents per hr, and only when you need something 8 node specific you run on the 8 node asap get your numbers then close
+------------------------------------------------------------
+
+第13条消息
+用户：Guruprasad-mp 
+时间：<a href=#chatlog__message-container-1420069323887607981>9/23/2025 3:28 PM
+内容：No, AMD employees are not eligible.
+------------------------------------------------------------
+
+第14条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420082401698386201>9/23/2025 4:20 PM
+内容：That is good strategy until distributed <img     loading="lazy"     class="chatlog__emoji "     alt="🐛"     title="bug"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f41b.svg"> bugz come into play <img     loading="lazy"     class="chatlog__emoji "     alt="🙂"     title="slight_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f642.svg">
+------------------------------------------------------------
+
+第15条消息
+用户：zlu86 
+时间：<a href=#chatlog__message-container-1420086004483887145>9/23/2025 4:34 PM
+内容：it is the same (kinda), just change the submission code to allow multiprocess per same gpu,  only thing that will be off is your performance numbers
+------------------------------------------------------------
+
+第16条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1420090962415321101>9/23/2025 4:54 PM
+内容：folks have submit recently, shouldn't be an issue?
+------------------------------------------------------------
+
+第17条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420092956706344991>9/23/2025 5:02 PM
+内容：Good points. Thanks!
+------------------------------------------------------------
+
+第18条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420093417693642863>9/23/2025 5:04 PM
+内容：Yeah, exactly. I tested the reference kernel and timed out. Will try again later
+------------------------------------------------------------
+
+第19条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1420093928555679774>9/23/2025 5:06 PM
+内容：idk if some dependencies randomly changed or what happened.... or the kernel is wrong, i have no idea honestly
+------------------------------------------------------------
+
+第20条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420094395851477044>9/23/2025 5:08 PM
+内容：Well, everything was working until earlier today. Including the reference kernel.
+------------------------------------------------------------
+
+第21条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1420094951861256262>9/23/2025 5:10 PM
+内容：wtf
+------------------------------------------------------------
+
+第22条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420097362017255565>9/23/2025 5:19 PM
+内容：Well, could be the case of deadlock in the driver if the backend isn't monitoring the processes spawned explicitly.
+------------------------------------------------------------
+
+第23条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1420099095523229716>9/23/2025 5:26 PM
+内容：I &quot;think&quot; it's a runner health issue
+------------------------------------------------------------
+
+第24条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1420102382620250144>9/23/2025 5:39 PM
+内容：Thanks a lot <img     loading="lazy"     class="chatlog__emoji "     alt="❤️"     title="heart"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/2764.svg"> We're sorry for that, it seems like a cluster health issue rn that we're waiting on AMD to help us fix.
+------------------------------------------------------------
+
+第25条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420119460337160234>9/23/2025 6:47 PM
+内容：You are welcome and no worries, all fellow engineers here understand well the situation <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg">
+------------------------------------------------------------
+
+第26条消息
+用户：trialnerror 
+时间：<a href=#chatlog__message-container-1420167257790615662>9/23/2025 9:57 PM
+内容：Hi, I am trying to understand how much information the custom_kernel() in all2all have or can access about the whole inference cluster. As mentioned earlier in this thread by <span class="chatlog__markdown-mention" title="danielhuang_12953">@daniel huang
+------------------------------------------------------------
+
+第27条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1420228463251554355>9/24/2025 2:00 AM
+内容：all_rank_data is just the collection of ranktestdata at reference.py, I am not sure where you see all_rank_data, but its already deprecated, just forget it. At dispatch phase, global view is what the indices in ranktestdata are saying , at combine phase, its what the meta saying
+------------------------------------------------------------
+
+第28条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1420243350652719226>9/24/2025 3:00 AM
+内容：IMPORTANT!   I checked many submissions, and I encourage you guys don't limit to the python code I use at reference.py but use hip ipc or rocshmem to build symm memory for intra-node communication, which will get high communication performance.
+------------------------------------------------------------
+
+第29条消息
+用户：gau.nernst 
+时间：<a href=#chatlog__message-container-1420245424522002452>9/24/2025 3:08 AM
+内容：i faced a lot of problems with setting up symmetric memory because GPU rank changes across test cases. I guess it's too late to change the eval code now, but just a feedback <img     loading="lazy"     class="chatlog__emoji "     alt="😅"     title="sweat_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f605.svg">
+------------------------------------------------------------
+
+第30条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1420245743742222366>9/24/2025 3:09 AM
+内容：Could you further clarify &quot;GPU rank changes across test cases&quot;
+------------------------------------------------------------
+
+第31条消息
+用户：zlu86 
+时间：<a href=#chatlog__message-container-1420347191955951718>9/24/2025 9:52 AM
+内容：thanks a lot!
+------------------------------------------------------------
+
+第32条消息
+用户：Augment 
+时间：<a href=#chatlog__message-container-1420376426502426686>9/24/2025 11:48 AM
+内容：<span class="chatlog__markdown-mention" title="zlu86">@zlu86
+------------------------------------------------------------
+
+第33条消息
+用户：zlu86 
+时间：<a href=#chatlog__message-container-1420425793972076564>9/24/2025 3:04 PM
+内容：Ah ok I must have using it wrong, I give it a try again, you initialize the iris shmem inside the class right? I was strictly using it as an allocator and passing the heap bases and pointers throught to c++ functions
+------------------------------------------------------------
+
+第34条消息
+用户：rt11 
+时间：<a href=#chatlog__message-container-1420460011422875798>9/24/2025 5:20 PM
+内容：I have tried few optimizations when bias is None for the gemm-rs problem, but they had similar runtimes to the default submission. So, I tried these 3 basic variations.  v0.py (default reference version): Runs fine as expected.  v1.py (no bias addition): Times out; ideally should raise an error for configurations with bias.  v2.py (always adds bias): Runs fine without an error, but should raise TypeError: unsupported operand type(s) for +: 'Tensor' and 'NoneType' when bias is None.
+------------------------------------------------------------
+
+第35条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1420502621378318356>9/24/2025 8:10 PM
+内容：PR is merged just need to make a release and have an example. Almost there!
+------------------------------------------------------------
+
+第36条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420774102297219164>9/25/2025 2:09 PM
+内容：If we have a question that shouldn’t be public, which of the organizers’ devs can we DM?
+------------------------------------------------------------
+
+第37条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1420781366127231141>9/25/2025 2:37 PM
+内容：you can dm either me, Mark or Daniel, for technical questions (eligibility of submissions), Daniel is the best, for platform related stuff, me or mark
+------------------------------------------------------------
+
+第38条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1420787142514446418>9/25/2025 3:00 PM
+内容：Thanks <img     loading="lazy"     class="chatlog__emoji "     alt="🙂"     title="slight_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f642.svg">
+------------------------------------------------------------
+
+第39条消息
+用户：Muhammad Awad 
+时间：<a href=#chatlog__message-container-1420802439447318792>9/25/2025 4:01 PM
+内容：That’s an interesting use case. I suggest hoisting the Iris class construction and allocating tensors upfront for the maximum expected size, then slicing them as needed based on the actual input/output size. The fact that ranks change between runs is an issue though for this solution and in general too.
+------------------------------------------------------------
+
+第40条消息
+用户：Muhammad Awad 
+时间：<a href=#chatlog__message-container-1420805807314043002>9/25/2025 4:15 PM
+内容：Do you need an atomic load/store API (e.g. equivalent to HIP's <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">__hip_atomic_load/store</code>) or are you referring to atomic adds?
+------------------------------------------------------------
+
+第41条消息
+用户：Augment 
+时间：<a href=#chatlog__message-container-1420810150628823181>9/25/2025 4:32 PM
+内容：I refer to atomic adds, so I dont need that kind of API yet. I think I just need to get a bit better with thinking about smart ways to do heap pointers between ranks for less contention <img     loading="lazy"     class="chatlog__emoji "     alt="🥲"     title="smiling_face_with_tear"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f972.svg">
+------------------------------------------------------------
+
+第42条消息
+用户：Muhammad Awad 
+时间：<a href=#chatlog__message-container-1420811471389986871>9/25/2025 4:37 PM
+内容：Yes, and avoid atomics as much as possible <img     loading="lazy"     class="chatlog__emoji "     alt="🙂"     title="slight_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f642.svg">
+------------------------------------------------------------
+
+第43条消息
+用户：syzyzygy 
+时间：<a href=#chatlog__message-container-1420837386878980308>9/25/2025 6:20 PM
+内容：and recommended providers to rent our own GPUs to debug
+------------------------------------------------------------
+
+第44条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1423834525573840927>10/4/2025 12:50 AM
+内容：py version is not recommended though I didn't hear py version rocshmem
+------------------------------------------------------------
+
+第45条消息
+用户：jracevedob 
+时间：<a href=#chatlog__message-container-1424033585257513061>10/4/2025 2:01 PM
+内容：I am getting this error when trying to run the baseline all2all kernel. How could this be solved?   '''Program stderr (1/1): multiprocessing.pool.RemoteTraceback:  &quot;&quot;&quot; Traceback (most recent call last):   File &quot;/usr/lib/python3.10/multiprocessing/pool.py&quot;, line 125, in worker     result = (True, func(*args, **kwds))   File &quot;/home/runner/_work/discord-cluster-manager/discord-cluster-manager/eval.py&quot;, line 171, in _run_distributed_test     from submission import custom_kernel ImportError: cannot import name 'custom_kernel' from 'submission' (/home/runner/_work/discord-cluster-manager/discord-cluster-manager/submission.py) &quot;&quot;&quot;  The above exception was the direct cause of the following exception:  Traceback (most recent call last):   File &quot;/home/runner/_work/discord-cluster-manager/discord-cluster-manager/eval.py&quot;, line 578, in &lt;module&gt;     sys.exit(main())   File &quot;/home/runner/_work/discord-cluster-manager/discord-cluster-manager/eval.py&quot;, line 548, in main     return run_testing(logger, pool, tests)   File &quot;/home/runner/_work/discord-cluster-manager/discord-cluster-manager/eval.py&quot;, line 231, in run_testing     good, message = run_single_test(pool, test)   File &quot;/home/runner/_work/discord-cluster-manager/discord-cluster-manager/eval.py&quot;, line 216, in run_single_test     return run_multi_gpu_test(pool, test, world_size)   File &quot;/home/runner/_work/discord-cluster-manager/discord-cluster-manager/eval.py&quot;, line 201, in run_multi_gpu_test     rets = [el.get(60) for el in rets]   File &quot;/home/runner/_work/discord-cluster-manager/discord-cluster-manager/eval.py&quot;, line 201, in &lt;listcomp&gt;     rets = [el.get(60) for el in rets]   File &quot;/usr/lib/python3.10/multiprocessing/pool.py&quot;, line 774, in get     raise self._value ImportError: cannot import name 'custom_kernel' from 'submission' (/home/runner/_work/discord-cluster-manager/discord-cluster-manager/submission.py)
+------------------------------------------------------------
+
+第46条消息
+用户：Stas Polonsky 
+时间：<a href=#chatlog__message-container-1424055066519928982>10/4/2025 3:26 PM
+内容：Hi guys, I try to benchmark you reference amd_gemm_rs, but I timeout. Is everything OK with your setup?
+------------------------------------------------------------
+
+第47条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1424058189116346490>10/4/2025 3:38 PM
+内容：checking right now: edit, tried 3 runs, all succeeded
+------------------------------------------------------------
+
+第48条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1424058501352656937>10/4/2025 3:40 PM
+内容：youre testing it locally?
+------------------------------------------------------------
+
+第49条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1424079279297396877>10/4/2025 5:02 PM
+内容：&quot;custom_kernel&quot; function is missing. This is the entry point you should implement.
+------------------------------------------------------------
+
+第50条消息
+用户：jracevedob 
+时间：<a href=#chatlog__message-container-1424363626969698375>10/5/2025 11:52 AM
+内容：Thanks <span class="chatlog__markdown-mention" title="div22.">@div22
+------------------------------------------------------------
+
+第51条消息
+用户：Adrian 
+时间：<a href=#chatlog__message-container-1424456226644951092>10/5/2025 6:00 PM
+内容：not a lot of improvement on the ag-gemm and gemm-rs kernels; any ideas why?
+------------------------------------------------------------
+
+第52条消息
+用户：netvope 
+时间：<a href=#chatlog__message-container-1424467434609577986>10/5/2025 6:45 PM
+内容：wait a few more days <img     loading="lazy"     class="chatlog__emoji "     alt="🙂"     title="slight_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f642.svg">
+------------------------------------------------------------
+
+第53条消息
+用户：wangxun1010 
+时间：<a href=#chatlog__message-container-1424608644624027740>10/6/2025 4:06 AM
+内容：If the computation and communication can be well overlapped, the improvement will be noticeable.  IMO, the optimizable spaces of gemm-rs and ag-gemm are different, and the space of gemm-rs is a bit larger.
+------------------------------------------------------------
+
+第54条消息
+用户：Idanfr 
+时间：<a href=#chatlog__message-container-1424637782751707207>10/6/2025 6:01 AM
+内容：Hey I am also experiencing the timeout problem (sumbission id 45697) <span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第55条消息
+用户：Stas Polonsky 
+时间：<a href=#chatlog__message-container-1425388394157965332>10/8/2025 7:44 AM
+内容：Hi, what version of rocm is used for submissions?
+------------------------------------------------------------
+
+第56条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1425543815313359059>10/8/2025 6:02 PM
+内容：Hi folks a reminder that all submissions are due in a few days on October 13, 11:59 PM PST
+------------------------------------------------------------
+
+第57条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1425707792223961180>10/9/2025 4:53 AM
+内容：I'm getting timeouts for a2a, just me? My code runs fine without timeouts locally on a Runpod MI300 VM.
+------------------------------------------------------------
+
+第58条消息
+用户：AnuragJ 
+时间：<a href=#chatlog__message-container-1425868334431338546>10/9/2025 3:31 PM
+内容：Hitting below error  Submission error: Server processing error: An unexpected error occurred: RuntimeError | Raw Error: Failed to trigger GitHub Action. Please check the configuration  Not sure if it's just me or a general error happening for everyone.
+------------------------------------------------------------
+
+第59条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1425872740749152348>10/9/2025 3:49 PM
+内容：<span class="chatlog__markdown-mention" title="marksaroufim">@Mark Saroufim
+------------------------------------------------------------
+
+第60条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1425875511346860163>10/9/2025 4:00 PM
+内容：Same here :D. Both cli/web.
+------------------------------------------------------------
+
+第61条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1425880750594723840>10/9/2025 4:21 PM
+内容：<a href="https://downdetector.com/status/github/">https://downdetector.com/status/github/</a> seems like github actions are down lol
+------------------------------------------------------------
+
+第62条消息
+用户：Adityaljo 
+时间：<a href=#chatlog__message-container-1426232820342194320>10/10/2025 3:40 PM
+内容：Server seems down again
+------------------------------------------------------------
+
+第63条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1426258459023769660>10/10/2025 5:21 PM
+内容：im seeing jobs get queued just fine, backlog is just long. what specific error were you. getting?
+------------------------------------------------------------
+
+第64条消息
+用户：zhubenzhu 
+时间：<a href=#chatlog__message-container-1426259038102098051>10/10/2025 5:24 PM
+内容：Jot runner seems have a 5min count of  (queue_time + running_time),  can it not counting the queue_time?
+------------------------------------------------------------
+
+第65条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1426291886280409252>10/10/2025 7:34 PM
+内容：it's pretty hard for us to do that, I can try to extend for the last 2 days!
+------------------------------------------------------------
+
+第66条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1426343562945233017>10/10/2025 11:00 PM
+内容：let me know, if you have updates <span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第67条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1426344190979215360>10/10/2025 11:02 PM
+内容：will do, we had this issue once already and it had to be resolved by amd (we don’t have ssh access to the clusters), so might take a while <img     loading="lazy"     class="chatlog__emoji "     alt="😭"     title="sob"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f62d.svg">
+------------------------------------------------------------
+
+第68条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1426416784847929445>10/11/2025 3:51 AM
+内容：<span class="chatlog__markdown-mention" title="marksaroufim">@Mark Saroufim
+------------------------------------------------------------
+
+第69条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1426440970073018368>10/11/2025 5:27 AM
+内容：unnecessary, we allow you use some hack to avoid that, if you not sure your hack is legal or not, you can ping me to take a look
+------------------------------------------------------------
+
+第70条消息
+用户：Abhilash 
+时间：<a href=#chatlog__message-container-1426548236658933832>10/11/2025 12:33 PM
+内容：<span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第71条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1426596098423656523>10/11/2025 3:43 PM
+内容：I don't think its possible to submit right now. Everything times out, even the reference kernel <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg">
+------------------------------------------------------------
+
+第72条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1426623225877499974>10/11/2025 5:31 PM
+内容：Just attempted and my submission times out too.
+------------------------------------------------------------
+
+第73条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1426631317419720787>10/11/2025 6:03 PM
+内容：just submitted and it worked
+------------------------------------------------------------
+
+第74条消息
+用户：Suyash Singh 
+时间：<a href=#chatlog__message-container-1426632010910400582>10/11/2025 6:06 PM
+内容：Where to submit the code could you please tell me ?
+------------------------------------------------------------
+
+第75条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1426632166049316956>10/11/2025 6:06 PM
+内容：<a href="https://www.gpumode.com/v2/leaderboard/563?tab=rankings">https://www.gpumode.com/v2/leaderboard/563?tab=rankings</a>
+------------------------------------------------------------
+
+第76条消息
+用户：Suyash Singh 
+时间：<a href=#chatlog__message-container-1426632259510997113>10/11/2025 6:07 PM
+内容：Thanks bro
+------------------------------------------------------------
+
+第77条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1426637763352072396>10/11/2025 6:29 PM
+内容：<span class="chatlog__markdown-mention" title="marksaroufim">@Mark Saroufim
+------------------------------------------------------------
+
+第78条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1426639022649905303>10/11/2025 6:34 PM
+内容：Good point. Also for next time I think it's best to restrict submission per user to 1, as now it's possible for people to spam submissions and stall/timeout running benchmarks.
+------------------------------------------------------------
+
+第79条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1426640977447092415>10/11/2025 6:41 PM
+内容：<span class="chatlog__markdown-mention" title="div22.">@div22
+------------------------------------------------------------
+
+第80条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1426641062826475691>10/11/2025 6:42 PM
+内容：we haven’t had these issues before, but there’s insanely many people submitting right now. Didn’t expect that
+------------------------------------------------------------
+
+第81条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1426642098118987806>10/11/2025 6:46 PM
+内容：good point, we haven’t seen any variability in cpu overhead, but it for sure would be safer
+------------------------------------------------------------
+
+第82条消息
+用户：osayamen 
+时间：<a href=#chatlog__message-container-1426645930635034654>10/11/2025 7:01 PM
+内容：Agreed, I'm using Nsight systems to profile my code and the CPU overhead contributes 59% of the runtime reported on the leaderboard. CPU overhead here includes that of the post-hoc barrier.
+------------------------------------------------------------
+
+第83条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1426646745483575521>10/11/2025 7:04 PM
+内容：you can run /leaderboard submit {ranked/benchmark/test} in the <span class="chatlog__markdown-mention">#submissions
+------------------------------------------------------------
+
+第84条消息
+用户：Swift 
+时间：<a href=#chatlog__message-container-1426862081352925246>10/12/2025 9:20 AM
+内容：I put a submission in with nothing but sys.exit(3) (Sorry about this, I am at my wits end about why my actual submission isn't working), and it still shows a timeout error.  <code class="chatlog__markdown-pre chatlog__markdown-pre--multiline nohighlight">File \&quot;/home/runner/_work/discord-cluster-manager/discord-cluster-manager/eval.py\&quot;, line 201, in &lt;listcomp&gt;\n    rets = [el.get(60) for el in rets]\n  File \&quot;/usr/lib/python3.10/multiprocessing/pool.py\&quot;, line 770, in get\n    raise TimeoutError\nmultiprocessing.context.TimeoutError\n&quot;,   &quot;success&quot;: false,   &quot;exit_code&quot;: 1,   &quot;exit_code_info&quot;: &quot;non-running exit code found: 1&quot;,   &quot;duration&quot;: 66.80537733000529 }</code>  Is it just the cluster being overloaded when I'm submitting? I see the leaderboards changing, so people are running it successfully, but I'm not able to figure out why my team's' aren't. <span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第85条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1426883939662041089>10/12/2025 10:47 AM
+内容：It's really difficult to get a slot in the Q as many people submitting multiple-times (no restriction per user) and there are probably(?) limited amount of single node x8 cluster(s) to process all these requests in time <em>(= I assume there are N available and round-robin reqs)</em>.  Not even the ref kernel will pass :).
+------------------------------------------------------------
+
+第86条消息
+用户：Swift 
+时间：<a href=#chatlog__message-container-1426888337595174942>10/12/2025 11:04 AM
+内容：I haven't gotten a single submission to work, they have all been timing out (Tried intermittently over the past 36 or so hours) <img     loading="lazy"     class="chatlog__emoji "     alt="🙁"     title="slight_frown"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f641.svg">
+------------------------------------------------------------
+
+第87条消息
+用户：Swift 
+时间：<a href=#chatlog__message-container-1426897372159414333>10/12/2025 11:40 AM
+内容：Is my best option to also spam the submission queue and hope it gets picked up once somehow? That doesn't seem like the right thing to do at all.
+------------------------------------------------------------
+
+第88条消息
+用户：zhubenzhu 
+时间：<a href=#chatlog__message-container-1426898986513731624>10/12/2025 11:47 AM
+内容：one runner seems down now. My sub timeout before the first kernel run.
+------------------------------------------------------------
+
+第89条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1426900814202667069>10/12/2025 11:54 AM
+内容：Yeah, unfortunately. This also besides being inefficient it may affect benchmark time calculation as diff is based on system time. Some discrepancy is noticeable as same code may have +- 50-70us diff some times. Perhaps some feedback for next comp may be to limit concurrent submissions per user(1-2). Hosting a tech competition is really difficult <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg">
+------------------------------------------------------------
+
+第90条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1426902133076136026>10/12/2025 11:59 AM
+内容：Thank you for the feedback everyone, <a href="https://github.com/gpu-mode/discord-cluster-manager/actions">https://github.com/gpu-mode/discord-cluster-manager/actions</a> you can see that there is just way too many submissions happening for the runners to pick it up. I'm trying to get us more runners, to relieve the pressure until the competition end. We're very grateful for all of you submitting and very sorry for the delays, we haven't expected such interest <img     loading="lazy"     class="chatlog__emoji "     alt="salute"     title="salute"     src="https://cdn.discordapp.com/emojis/1099818367130542161.png">
+------------------------------------------------------------
+
+第91条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1426902449054027866>10/12/2025 12:00 PM
+内容：We thank you as fellow devs, we understand the difficulties plus big respect that you guys are around during weekends <img     loading="lazy"     class="chatlog__emoji "     alt="🙂"     title="slight_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f642.svg">
+------------------------------------------------------------
+
+第92条消息
+用户：Swift 
+时间：<a href=#chatlog__message-container-1426906117820383489>10/12/2025 12:15 PM
+内容：<span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第93条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1426906597158031400>10/12/2025 12:17 PM
+内容：I sadly believe it is <img     loading="lazy"     class="chatlog__emoji "     alt="Tragika"     title="Tragika"     src="https://cdn.discordapp.com/emojis/1197335368807219283.png"> If you are timing out in code <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">el.get(60)</code> line, that is your code being wrong most likely. You can possibly monitor the actions page and submit when not too many are running, but that isn’t very feasible
+------------------------------------------------------------
+
+第94条消息
+用户：Swift 
+时间：<a href=#chatlog__message-container-1426907049278570696>10/12/2025 12:19 PM
+内容：<span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第95条消息
+用户：zhubenzhu 
+时间：<a href=#chatlog__message-container-1426907057071587512>10/12/2025 12:19 PM
+内容：<span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第96条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1426907099266289704>10/12/2025 12:19 PM
+内容：as said, trying to get more runners, but everyone in amd is in a different time zone
+------------------------------------------------------------
+
+第97条消息
+用户：zhubenzhu 
+时间：<a href=#chatlog__message-container-1426924737275363328>10/12/2025 1:29 PM
+内容：Yeah, helps a lot. My submission haven't being cancled since then.
+------------------------------------------------------------
+
+第98条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1426924933006495774>10/12/2025 1:30 PM
+内容：glad to see that, asked for few more nodes until the competition end and to restart the faulty one, hopefully will help more
+------------------------------------------------------------
+
+第99条消息
+用户：meem 
+时间：<a href=#chatlog__message-container-1427032544850874428>10/12/2025 8:37 PM
+内容：all timeouts <img     loading="lazy"     class="chatlog__emoji "     alt="😋"     title="yum"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f60b.svg">
+------------------------------------------------------------
+
+第100条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1427044519395725437>10/12/2025 9:25 PM
+内容：<span class="chatlog__markdown-mention" title="nakedguacamole">@meem
+------------------------------------------------------------
+
+第101条消息
+用户：netvope 
+时间：<a href=#chatlog__message-container-1427059641245896784>10/12/2025 10:25 PM
+内容：got an &quot;unexpected error&quot;. going to retry
+------------------------------------------------------------
+
+第102条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427207082054127728>10/13/2025 8:11 AM
+内容：Well, submitting is hit-or-miss (stack up as many submissions till you get one, which of course affects the service and everybody else <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg"> ). Would there be a consideration to extend the deadline by 2 days or so when more instances are added?  <em>(My stuff are also tested elsewhere with same setup used for submission, so correctness is not an issue)</em>
+------------------------------------------------------------
+
+第103条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1427208979762905128>10/13/2025 8:18 AM
+内容：I’ll coordinate with AMD, but we can hopefully extend by a day or so
+------------------------------------------------------------
+
+第104条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427209593158635572>10/13/2025 8:21 AM
+内容：Great, thanks! It's surprising that there are so many submissions. It's cool though, but has higher demand for infra <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg"> <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg">
+------------------------------------------------------------
+
+第105条消息
+用户：Abhilash 
+时间：<a href=#chatlog__message-container-1427226715826032691>10/13/2025 9:29 AM
+内容：We tested everything on MI325x8 locally and seeing these timeout errors on your MI300X cluster.  Do you really see a scenario where the code is not compatible from 325 -&gt; 300 ?   In our experience, we never faced this compatibility issue locally when we had 300X before. <span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第106条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1427227690192211988>10/13/2025 9:33 AM
+内容：if the print doesn’t show for you, it’s infra side, if it does it probably is related to your code. I’m in no way AMD expert so I can’t tell you with certainty though
+------------------------------------------------------------
+
+第107条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427235193910988900>10/13/2025 10:03 AM
+内容：MI325x has same llvm target as MI300X. Only diff is vram (256 vs 192). Architecture is also same, so same ISA. <a href="https://rocm.docs.amd.com/en/latest/reference/gpu-arch-specs.html">https://rocm.docs.amd.com/en/latest/reference/gpu-arch-specs.html</a>
+------------------------------------------------------------
+
+第108条消息
+用户：Abhilash 
+时间：<a href=#chatlog__message-container-1427252069122838622>10/13/2025 11:10 AM
+内容：Thank you for the help and guidance. It worked finally. The issue was with bulky python imports (which we didn't cleanup after dev).
+------------------------------------------------------------
+
+第109条消息
+用户：Suyash Singh 
+时间：<a href=#chatlog__message-container-1427265325996703744>10/13/2025 12:02 PM
+内容：I have to just submit amd-gemm-rs kernal, not all the differnt kernals showing on the website <a href="https://www.gpumode.com/v2/home">https://www.gpumode.com/v2/home</a>   Please confirm anyone
+------------------------------------------------------------
+
+第110条消息
+用户：netvope 
+时间：<a href=#chatlog__message-container-1427269537245560832>10/13/2025 12:19 PM
+内容：is submission down?
+------------------------------------------------------------
+
+第111条消息
+用户：Swift 
+时间：<a href=#chatlog__message-container-1427270158208204830>10/13/2025 12:22 PM
+内容：Looks like it's back up now?
+------------------------------------------------------------
+
+第112条消息
+用户：netvope 
+时间：<a href=#chatlog__message-container-1427270358469185537>10/13/2025 12:22 PM
+内容：ok will retry
+------------------------------------------------------------
+
+第113条消息
+用户：netvope 
+时间：<a href=#chatlog__message-container-1427270570835443762>10/13/2025 12:23 PM
+内容：would be great if we do manage to extend the deadline
+------------------------------------------------------------
+
+第114条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427277370678841364>10/13/2025 12:50 PM
+内容：<code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Submission error: Server processing error: An unexpected error occurred: RuntimeError | Raw Error: Failed to trigger GitHub Action. Please check the configuration.</code>       Yeah.
+------------------------------------------------------------
+
+第115条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1427280297237414040>10/13/2025 1:02 PM
+内容：are you using discord submission or cli?
+------------------------------------------------------------
+
+第116条消息
+用户：netvope 
+时间：<a href=#chatlog__message-container-1427281300003492010>10/13/2025 1:06 PM
+内容：Discord
+------------------------------------------------------------
+
+第117条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427281315602108457>10/13/2025 1:06 PM
+内容：Both + web. cli: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Submission error: Server returned status 503 Service Unavailable: Service Unavailable </code> web: <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">Expecting value: line 1 column 1 (char 0)</code>
+------------------------------------------------------------
+
+第118条消息
+用户：gaoren002 
+时间：<a href=#chatlog__message-container-1427282252043128954>10/13/2025 1:10 PM
+内容：503
+------------------------------------------------------------
+
+第119条消息
+用户：netvope 
+时间：<a href=#chatlog__message-container-1427283821618921563>10/13/2025 1:16 PM
+内容：I have a all2all solution with overlapped IO that takes &lt;200us geomean on 2 GPUs, but haven’t managed to disentangle between code bug and infra issue on 8 GPUs, since I don’t have access to 8 GPUs. I have to go to work now, but if we have a few more days, I’ll try to get a 8 GPUs box to make sure my code is right. In any case, thanks for making this competition possible, I understand it can be hard to get things work reliably when demand exceeds expectations <img     loading="lazy"     class="chatlog__emoji "     alt="🙂"     title="slight_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f642.svg">
+------------------------------------------------------------
+
+第120条消息
+用户：Suyash Singh 
+时间：<a href=#chatlog__message-container-1427283866825261127>10/13/2025 1:16 PM
+内容：same error getting
+------------------------------------------------------------
+
+第121条消息
+用户：Al2H36O30S3 
+时间：<a href=#chatlog__message-container-1427295647488413718>10/13/2025 2:03 PM
+内容：The server has been returning a 503 error for almost an hour now — it’s probably crashed because everyone’s rushing to submit before tomorrow’s deadline.
+------------------------------------------------------------
+
+第122条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427302673153265677>10/13/2025 2:31 PM
+内容：I can relate to how you feel (like most of us :D).  Running on 8x MI300X compared to 2x or 4x MI300X, aside from output equivalence, presents a different challenge. Increasing the number of ranks raises communication complexity, which in turn makes contention mitigation more difficult and affects the benchmarks.  It would be great if some 8x MI300X instances were available next time for debugging our solutions. They are not only expensive to rent per hour but also very hard to find from service providers that offer reasonable pricing.
+------------------------------------------------------------
+
+第123条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1427311446534127707>10/13/2025 3:06 PM
+内容：where are you seeing 503 errors? I see a lot of actions running (way too many for our runners to handle lol)
+------------------------------------------------------------
+
+第124条消息
+用户：Al2H36O30S3 
+时间：<a href=#chatlog__message-container-1427311953319034951>10/13/2025 3:08 PM
+内容：via cli
+------------------------------------------------------------
+
+第125条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427312069123903619>10/13/2025 3:08 PM
+内容：cli: Submission error: Server returned status 503 Service Unavailable: Service Unavailable  <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg"> <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg"> <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg"> <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg">
+------------------------------------------------------------
+
+第126条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1427312191991709837>10/13/2025 3:09 PM
+内容：so cli or web
+------------------------------------------------------------
+
+第127条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427312262250500298>10/13/2025 3:09 PM
+内容：Thanks <img     loading="lazy"     class="chatlog__emoji "     alt="🙂"     title="slight_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f642.svg">
+------------------------------------------------------------
+
+第128条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1427312750060765276>10/13/2025 3:11 PM
+内容：tryng to restart the service, min of patience
+------------------------------------------------------------
+
+第129条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1427315105074380891>10/13/2025 3:20 PM
+内容：should be running (somewhat), there's just not enough runners to handle all this <img     loading="lazy"     class="chatlog__emoji "     alt="💀"     title="skull"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f480.svg">
+------------------------------------------------------------
+
+第130条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427323069508091984>10/13/2025 3:52 PM
+内容：Yeah, submission passes just never gets finished <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg">
+------------------------------------------------------------
+
+第131条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1427325108636225656>10/13/2025 4:00 PM
+内容：yeahhh we cant do anything w this for the following 2 days, we cant add more runners and implementing some limiting per user takes time which neither of us has <img     loading="lazy"     class="chatlog__emoji "     alt="SadCat"     title="SadCat"     src="https://cdn.discordapp.com/emojis/805468625322377236.png">
+------------------------------------------------------------
+
+第132条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427374081447297075>10/13/2025 7:15 PM
+内容：Still no luck :D. In case some of us don't make it into the Q, can we email our final solutions that we want to try to you or Daniel so that you can run them for our end?
+------------------------------------------------------------
+
+第133条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1427459996496560171>10/14/2025 12:56 AM
+内容：that's tough..if so every people will email to me..
+------------------------------------------------------------
+
+第134条消息
+用户：gaoren002 
+时间：<a href=#chatlog__message-container-1427462190486655127>10/14/2025 1:05 AM
+内容：oh my god, really a important point, that's the reason I tried 4days but all failed
+------------------------------------------------------------
+
+第135条消息
+用户：jon @ hotaisle 
+时间：<a href=#chatlog__message-container-1427487400535261224>10/14/2025 2:45 AM
+内容：Hi all, sorry for the spam, but I was invited in because I heard that people don't have enough access to compute. Not sure if it is still an issue, but I wanted to throw it out there that if anyone is looking for 8x MI300x VMs for the competition, we have them. We also have 1, 2, 4x as well.  Many might not know it, but our compute was used for the first competition.  First come / first serve, self-service, credit card or crypto and go... ssh admin.hotaisle.app
+------------------------------------------------------------
+
+第136条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1427545952675299440>10/14/2025 6:37 AM
+内容：Hi <span class="chatlog__markdown-mention" title="ethkey">@jon @ hotaisle
+------------------------------------------------------------
+
+第137条消息
+用户：jon @ hotaisle 
+时间：<a href=#chatlog__message-container-1427548363104063609>10/14/2025 6:47 AM
+内容：Thanks. Let’s chat more. I will reach out tomorrow. Cheers.
+------------------------------------------------------------
+
+第138条消息
+用户：div22 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1427597856742838354>10/14/2025 10:04 AM
+内容：<img     loading="lazy"     class="chatlog__emoji "     alt="😆"     title="laughing"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f606.svg">  That's understandable. At least I gave a go to my code on Hotaisle's 8xMI300x node and the submissions I have pending run fine. So it is what it is, next time if Q gets in the way <img     loading="lazy"     class="chatlog__emoji "     alt="🙂"     title="slight_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f642.svg">
+------------------------------------------------------------
+
+第139条消息
+用户：gaoren002 
+时间：<a href=#chatlog__message-container-1427860821731573833>10/15/2025 3:29 AM
+内容：service  unavailable
+------------------------------------------------------------
+
+第140条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1427900387482013748>10/15/2025 6:06 AM
+内容：the load was crazy and we never got additional capacity
+------------------------------------------------------------
+
+第141条消息
+用户：gau.nernst 
+时间：<a href=#chatlog__message-container-1427914650866946068>10/15/2025 7:03 AM
+内容：Thank you the organizer for the competition. I learned a lot about distributed comms and AMD GPUs &#129761;  Look forward to future challenges!
+------------------------------------------------------------
+
+第142条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1427915110411665560>10/15/2025 7:04 AM
+内容：the game is ended. Thanks for everyone's participation! next I will check the code, if you have some additional explanation for your code, feel free reach me
+------------------------------------------------------------
+
+第143条消息
+用户：zhubenzhu 
+时间：<a href=#chatlog__message-container-1427923806793502762>10/15/2025 7:39 AM
+内容：Thanks so much for organizing such a fun competition, and all answering for the questions along the context.
+------------------------------------------------------------
+
+第144条消息
+用户：AlphaNord 
+时间：<a href=#chatlog__message-container-1482598135661330443>3/15/2026 4:35 AM
+内容：Its valide using github id but anyways if i want discord go here <a href="https://luma.com/cqq4mojz">https://luma.com/cqq4mojz</a> normally u registered there, it would ask you to cancel do it then re register in the Link
+------------------------------------------------------------
+
+第145条消息
+用户：AlphaNord 
+时间：<a href=#chatlog__message-container-1482598179613704303>3/15/2026 4:35 AM
+内容：Sorry what u mean by cant
+------------------------------------------------------------
+
+第146条消息
+用户：SSS 
+时间：<a href=#chatlog__message-container-1482612512414371921>3/15/2026 5:32 AM
+内容：When I click on the event page, there’s no option to re-register, no option to fill out the registration form again, and no option to re-enter my Discord ID.
+------------------------------------------------------------
+
+第147条消息
+用户：AlphaNord 
+时间：<a href=#chatlog__message-container-1482612799065690172>3/15/2026 5:33 AM
+内容：Yes cancel to redo
+------------------------------------------------------------
+
+第148条消息
+用户：gwokhou 
+时间：<a href=#chatlog__message-container-1482651175990984726>3/15/2026 8:06 AM
+内容：What's the meaning of <em>&quot;Your code contains work on another stream.&quot;</em> Can anyone help? I am just iterating the same kernel as usual.<img     loading="lazy"     class="chatlog__emoji "     alt="🥲"     title="smiling_face_with_tear"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f972.svg">
+------------------------------------------------------------
+
+第149条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1482652163879735306>3/15/2026 8:10 AM
+内容：Remove the word &quot;stream&quot; from your code.
+------------------------------------------------------------
+
+第150条消息
+用户：gwokhou 
+时间：<a href=#chatlog__message-container-1482652585755283499>3/15/2026 8:12 AM
+内容：Thank you! It works
+------------------------------------------------------------
+
+第151条消息
+用户：GnSight 
+时间：<a href=#chatlog__message-container-1482722473467183205>3/15/2026 12:49 PM
+内容：Hi! My MoE kernel passes in both test and benchmark modes, but in leaderboard mode, around 1% of values on one test case show a mismatch. Is leaderboard mode expected to have stricter precision requirements? Would it be possible to make the precision thresholds consistent across all modes? Thanks!
+------------------------------------------------------------
+
+第152条消息
+用户：gau.nernst 
+时间：<a href=#chatlog__message-container-1482723074724991158>3/15/2026 12:52 PM
+内容：probably due to difference RNG seed. iirc, the tolerance is the same
+------------------------------------------------------------
+
+第153条消息
+用户：GnSight 
+时间：<a href=#chatlog__message-container-1482723319496048752>3/15/2026 12:53 PM
+内容：Thanks for the quick clarification:)
+------------------------------------------------------------
+
+第154条消息
+用户：asalykov 
+时间：<a href=#chatlog__message-container-1482746085473521684>3/15/2026 2:23 PM
+内容：Some comments on the compiler intrinsics/builtins and where to find docs/examples:  1. In most cases builtin translates into intrinsic. In most cases translation is 1:1. But not always. Many intrinsics directly or nearly directrly map to the ISA manual / shader programming guide insts 2. LLVM user guide <a href="https://llvm.org/docs/AMDGPUUsage.html">https://llvm.org/docs/AMDGPUUsage.html</a> 3. ISA <a href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-cdna4-instruction-set-architecture.pdf">https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-cdna4-instruction-set-architecture.pdf</a> 4. Builtins: <a href="https://github.com/llvm/llvm-project/blob/main/clang/include/clang/Basic/BuiltinsAMDGPU.td">https://github.com/llvm/llvm-project/blob/main/clang/include/clang/Basic/BuiltinsAMDGPU.td</a> 5. Intrinsics descriptions <a href="https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/IR/IntrinsicsAMDGPU.td">https://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/IR/IntrinsicsAMDGPU.td</a> 6. Code examples: <a href="https://github.com/carlushuang/gcnasm/tree/master">https://github.com/carlushuang/gcnasm/tree/master</a> 7. <a href="https://github.com/llvm/llvm-project/tree/main/llvm/test/CodeGen/AMDGPU">https://github.com/llvm/llvm-project/tree/main/llvm/test/CodeGen/AMDGPU</a> 8. <a href="https://github.com/llvm/llvm-project/tree/main/clang/test/CodeGenOpenCL">https://github.com/llvm/llvm-project/tree/main/clang/test/CodeGenOpenCL</a> and <a href="https://github.com/llvm/llvm-project/tree/main/clang/test/SemaOpenCL">https://github.com/llvm/llvm-project/tree/main/clang/test/SemaOpenCL</a> 9. grep llvm repo 10. experiments
+------------------------------------------------------------
+
+第155条消息
+用户：gwokhou 
+时间：<a href=#chatlog__message-container-1482759782967545866>3/15/2026 3:18 PM
+内容：That is a real hardcore competition<img     loading="lazy"     class="chatlog__emoji "     alt="🥲"     title="smiling_face_with_tear"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f972.svg">
+------------------------------------------------------------
+
+第156条消息
+用户：ritwikdas 
+时间：<a href=#chatlog__message-container-1482760384443187261>3/15/2026 3:20 PM
+内容：Can someone explain how the score is calculated?  For the <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">amd-mixed-mla</code> problem, I have all the benchmark measurements under 20us, however when I look at my submissions, the score is &gt; 6000us and in the rankings page it shows 1661us. It is confusing, is there some documentation about how to interpret the different numbers?
+------------------------------------------------------------
+
+第157条消息
+用户：Samuel Xu 
+时间：<a href=#chatlog__message-container-1482761528875683992>3/15/2026 3:24 PM
+内容：<span class="chatlog__markdown-mention" title="devl6">@Sinatras
+------------------------------------------------------------
+
+第158条消息
+用户：Samuel Xu 
+时间：<a href=#chatlog__message-container-1482763824758132842>3/15/2026 3:34 PM
+内容：What are your scores across the various batch sizes? Might be incredibly slow for a few particular configs in the test set
+------------------------------------------------------------
+
+第159条消息
+用户：ritwikdas 
+时间：<a href=#chatlog__message-container-1482764856120705054>3/15/2026 3:38 PM
+内容：All the batches are under 20us, Are we running other batches than what is present in the benchmarks?
+------------------------------------------------------------
+
+第160条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1482768301959675904>3/15/2026 3:51 PM
+内容：these are ms, not us <img     loading="lazy"     class="chatlog__emoji "     alt="😢"     title="cry"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f622.svg">
+------------------------------------------------------------
+
+第161条消息
+用户：ritwikdas 
+时间：<a href=#chatlog__message-container-1482769021165240440>3/15/2026 3:54 PM
+内容：I have been blind this whole time. Never mind, thanks for pointing out. The numbers remained single digit and the units changed <img     loading="lazy"     class="chatlog__emoji "     alt="😄"     title="smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f604.svg">
+------------------------------------------------------------
+
+第162条消息
+用户：DIVIJ 
+时间：<a href=#chatlog__message-container-1482782007535862082>3/15/2026 4:46 PM
+内容：how to see leaderboard position guys ?
+------------------------------------------------------------
+
+第163条消息
+用户：ritwikdas 
+时间：<a href=#chatlog__message-container-1482790917923536966>3/15/2026 5:21 PM
+内容：<a href="https://www.gpumode.com/leaderboard/765?tab=rankings">https://www.gpumode.com/leaderboard/765?tab=rankings</a>
+------------------------------------------------------------
+
+第164条消息
+用户：Sinatras 
+时间：<a href=#chatlog__message-container-1482791857812537365>3/15/2026 5:25 PM
+内容：Sure you can send me via pm
+------------------------------------------------------------
+
+第165条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1482896535694868720>3/16/2026 12:21 AM
+内容：<a href="https://www.gpumode.com/live?ids=765%2C764%2C763">https://www.gpumode.com/live?ids=765%2C764%2C763</a>
+------------------------------------------------------------
+
+第166条消息
+用户：gwokhou 
+时间：<a href=#chatlog__message-container-1483392213202243585>3/17/2026 9:11 AM
+内容：off topic, the designers of popcron-cli must have considered how to make the agent easy to integrate, which is why they provided the --no-tui option.
+------------------------------------------------------------
+
+第167条消息
+用户：vyom 
+时间：<a href=#chatlog__message-container-1483421231859503268>3/17/2026 11:06 AM
+内容：hey so use of cross-call B-side caches keyed by tensor identity, including data_ptr() is also considered as illegal? <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">cache key explicitly includes int(tensor.data_ptr())</code> like reuse prior computed intermediates across calls based on pointer/shape/stride identity ??
+------------------------------------------------------------
+
+第168条消息
+用户：vyom 
+时间：<a href=#chatlog__message-container-1483421327275724911>3/17/2026 11:06 AM
+内容：cuz in this we use <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">int(tensor.data_ptr()) </code>
+------------------------------------------------------------
+
+第169条消息
+用户：J 
+时间：<a href=#chatlog__message-container-1483439210169106585>3/17/2026 12:17 PM
+内容：Good look
+------------------------------------------------------------
+
+第170条消息
+用户：J 
+时间：<a href=#chatlog__message-container-1483445700699357194>3/17/2026 12:43 PM
+内容：I never thought about that, good point.
+------------------------------------------------------------
+
+第171条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1483471764804866068>3/17/2026 2:27 PM
+内容：Something wrong with the submission queue?
+------------------------------------------------------------
+
+第172条消息
+用户：Josu 
+时间：<a href=#chatlog__message-container-1483473345747091517>3/17/2026 2:33 PM
+内容：It seems that the server is down. popcorn-cli doesn't work and the front end submission returns this:  <code class="chatlog__markdown-pre chatlog__markdown-pre--inline">[ERROR] Server error: &lt;html&gt; &lt;head&gt; &lt;title&gt;Internal Server Error&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;&lt;p&gt;Internal Server Error&lt;/p&gt;&lt;/h1&gt; &lt;/body&gt; &lt;/html&gt;</code>
+------------------------------------------------------------
+
+第173条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1483478755526840412>3/17/2026 2:54 PM
+内容：Jobs still queuing but the load is crazy
+------------------------------------------------------------
+
+第174条消息
+用户：gwokhou 
+时间：<a href=#chatlog__message-container-1483482418148282522>3/17/2026 3:09 PM
+内容：Hello folks, we could add a <strong>local pre-compile check script for HIP code</strong> before submission (if you are using a coding agent to submit), which would help improve service stability.
+------------------------------------------------------------
+
+第175条消息
+用户：vyom 
+时间：<a href=#chatlog__message-container-1483482829630341262>3/17/2026 3:11 PM
+内容：its coming
+------------------------------------------------------------
+
+第176条消息
+用户：Rikikoo 
+时间：<a href=#chatlog__message-container-1483482886903566520>3/17/2026 3:11 PM
+内容：Could something like rate limiting be implemented? It's getting really frustrating to work on this as a human
+------------------------------------------------------------
+
+第177条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1484799303338823710>3/21/2026 6:22 AM
+内容：We need a way to figure out who to reach out to. You can always cancel your registration and reregister. Ideally just mention the discord username we can reach out to for the team lead
+------------------------------------------------------------
+
+第178条消息
+用户：anandasai_a 
+时间：<a href=#chatlog__message-container-1484804070651986090>3/21/2026 6:41 AM
+内容：the 4&#181;s values particularly could warrant a second look considering how close those values are for the top 3. In my case, the reward hacking that passed without issue was: it replaced the evaluation harness's input generation function so that the full GEMM result is pre-computed outside the timing window and stashed  separately. Then during the timed benchmark, a custom kernel just does a dictionary lookup and returns the cached answer — it did not actually compute anything.
+------------------------------------------------------------
+
+第179条消息
+用户：jdbartlett96 
+时间：<a href=#chatlog__message-container-1484805583793160276>3/21/2026 6:47 AM
+内容：Sure, I'll send an example. This issue though isn't really deliberate rewards hacking (unlike the caching) - I still have real kernels which do the real computation on the inputs, when custom_kernel is called. There's really no reason it shouldn't be considered a legitimate submission - it's just that the timing system is such that the reported times should not be considered the actual times. I've got test infrastructure in place to protect me from that, better timing systems that give me my real kernel runtimes, and that is what I'm optimizing. I just wanted to give a warning to anyone else who might unknowningly submit something they made in earnest thinking it was actually running that fast, only to get dq'd. Or, more generally, I'm wondering what will happen with those submissions, will they be DQ'd, or will they be given a corrected time based on the actual kernel times.
+------------------------------------------------------------
+
+第180条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1484806483815432296>3/21/2026 6:50 AM
+内容：I mean it’s against the spirit of the competition. We would obviously disqualify those submissions.
+------------------------------------------------------------
+
+第181条消息
+用户：jdbartlett96 
+时间：<a href=#chatlog__message-container-1484806669799129189>3/21/2026 6:51 AM
+内容：I'll take it to DM with you; running a quick test on example to make sure it shows what I'm talking about
+------------------------------------------------------------
+
+第182条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1484827061179650239>3/21/2026 8:12 AM
+内容：Just asking, are the ~4us submissions legal?
+------------------------------------------------------------
+
+第183条消息
+用户：Phibi 
+时间：<a href=#chatlog__message-container-1484828552364032080>3/21/2026 8:18 AM
+内容：Hey, does anyone know if AMD is providing MI355X access for hackathon participants? I don't have access to gfx950 hardware to test my kernels. Also, has anyone gotten tl.dot_scaled working with the correct scale layout for the mxfp4-mm challenge?
+------------------------------------------------------------
+
+第184条消息
+用户：luyuzhang 
+时间：<a href=#chatlog__message-container-1484842580368953344>3/21/2026 9:14 AM
+内容：Recently, I've been running in --mode profile. Why can't I view the zipped files anymore? Previously, I could view the zipped summary files, but now they're gone. Also, in profile mode, the command line won't exit; it keeps getting stuck
+------------------------------------------------------------
+
+第185条消息
+用户：Phibi 
+时间：<a href=#chatlog__message-container-1484843648196673566>3/21/2026 9:18 AM
+内容：bro you using a mi355x server ?
+------------------------------------------------------------
+
+第186条消息
+用户：luyuzhang 
+时间：<a href=#chatlog__message-container-1484845713127899146>3/21/2026 9:26 AM
+内容：200 is just a name. I just want to run on prfile mode
+------------------------------------------------------------
+
+第187条消息
+用户：Phibi 
+时间：<a href=#chatlog__message-container-1484846698890006668>3/21/2026 9:30 AM
+内容：oh i see<img     loading="lazy"     class="chatlog__emoji "     alt="👍"     title="thumbsup"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f44d.svg"><img     loading="lazy"     class="chatlog__emoji "     alt="👍"     title="thumbsup"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f44d.svg">
+------------------------------------------------------------
+
+第188条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1484927762652467400>3/21/2026 2:52 PM
+内容：So the reason why we have rate limits if because the volume of submissions is so high. The only way we can resolve this is to get significantly more hardware. Cc <span class="chatlog__markdown-mention" title="guruprasadmp_41917">@Guruprasad-mp
+------------------------------------------------------------
+
+第189条消息
+用户：Simon 
+时间：<a href=#chatlog__message-container-1484927874208104499>3/21/2026 2:53 PM
+内容：I would add that if humans would take &lt;5 min time to look at code written by AI it is very obvious if solution is cheating.  It should be clear that without genuine improvements within the kernel there should be no breakthrough result.
+------------------------------------------------------------
+
+第190条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1484935685419958377>3/21/2026 3:24 PM
+内容：So I just went through a round of scrubs again, for context when we do see reward hacks around those 4us timeframes, we don't just see 1 we hundreds/thousands and now i have to manually read every single one and decide whether this is reward hacked. It's quite obvious that the vast majority of those hacks are AI authored it's not fun to read  When phase 1 ends, we'll just pick the fastest submission you made, if it's an egregious reward hack then we'll just skip your name and keep going down the list, if you're not sure whether something you're doing is a reward hack please message the mods or ask <span class="chatlog__markdown-mention" title="devl6">@Sinatras
+------------------------------------------------------------
+
+第191条消息
+用户：minhdung 
+时间：<a href=#chatlog__message-container-1484938037451559133>3/21/2026 3:33 PM
+内容：I found that the current profile mode is not so useful.  I downloaded the zip file but it does not show any specific information about the kernel besides runtime. Can we have like a rocprofv3 thread trace (att) to view the kernel on rocprof compute viewer.
+------------------------------------------------------------
+
+第192条消息
+用户：ooousay 
+时间：<a href=#chatlog__message-container-1484943454181265588>3/21/2026 3:55 PM
+内容：I’ve been losing my mind over this.
+------------------------------------------------------------
+
+第193条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1484958540819992667>3/21/2026 4:55 PM
+内容：For leaderboard submissions to be restricted to 1 hr, there should be consistency between leaderboard and benchmark results.
+------------------------------------------------------------
+
+第194条消息
+用户：Blake (bledden) 
+时间：<a href=#chatlog__message-container-1484958543772913925>3/21/2026 4:55 PM
+内容：I feel seen
+------------------------------------------------------------
+
+第195条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1484964003372597408>3/21/2026 5:16 PM
+内容：this ask is not specific enough, for instance if people are submitting reward hacks that cache everything then ofc benchmark and leaderboard will not be consistent. feel free to browse the eval.py scripts in this folder and if there's anything you don't like just let us know! <a href="https://github.com/gpu-mode/reference-kernels/tree/main/problems/amd_202602">https://github.com/gpu-mode/reference-kernels/tree/main/problems/amd_202602</a>
+------------------------------------------------------------
+
+第196条消息
+用户：DIVIJ 
+时间：<a href=#chatlog__message-container-1484968118408188126>3/21/2026 5:33 PM
+内容：can you guys check my submission &quot;N-45div&quot;
+------------------------------------------------------------
+
+第197条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1484970918869598369>3/21/2026 5:44 PM
+内容：you are reusing a preallocated output/scratch buffer for each benchmark shape, fwiw an AI system could have also told you this as well
+------------------------------------------------------------
+
+第198条消息
+用户：DIVIJ 
+时间：<a href=#chatlog__message-container-1484970991888109678>3/21/2026 5:44 PM
+内容：where can i access the AI system ?
+------------------------------------------------------------
+
+第199条消息
+用户：Gordon 
+时间：<a href=#chatlog__message-container-1487410707019595917>3/28/2026 11:19 AM
+内容：amd-moe-mxfp4 on MI355X keeps finishing with Run Reports: N/A, including test submissions.  │ This reproduces across both experimental and baseline-like files.  │ Could you check whether the runner/reporting pipeline is currently broken?
+------------------------------------------------------------
+
+第200条消息
+用户：Sifer 
+时间：<a href=#chatlog__message-container-1487431386976485376>3/28/2026 12:41 PM
+内容：Hi there! I' m currently working with the mm kernel. I'm wondering  is benchmark-Case-Specific Optimization legal?  Thx !
+------------------------------------------------------------
+
+第201条消息
+用户：Phibi 
+时间：<a href=#chatlog__message-container-1487440666769494097>3/28/2026 1:18 PM
+内容：How are people scoring so high in moe leaderboard like I tried all combinations even different kernels merging from aiter flydsl etc kernels even making mine own still can't make leaderboard score reach below 147 like<img     loading="lazy"     class="chatlog__emoji "     alt="🤡"     title="clown"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f921.svg"><img     loading="lazy"     class="chatlog__emoji "     alt="😅"     title="sweat_smile"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f605.svg">??
+------------------------------------------------------------
+
+第202条消息
+用户：rwtarpit 
+时间：<a href=#chatlog__message-container-1487441806546436149>3/28/2026 1:22 PM
+内容：can somebody explain &#129765;
+------------------------------------------------------------
+
+第203条消息
+用户：. Jońs 
+时间：<a href=#chatlog__message-container-1487466382525468845>3/28/2026 3:00 PM
+内容：:x
+------------------------------------------------------------
+
+第204条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1487470682458820708>3/28/2026 3:17 PM
+内容：Absolutely
+------------------------------------------------------------
+
+第205条消息
+用户：Sifer 
+时间：<a href=#chatlog__message-container-1487474516593606747>3/28/2026 3:32 PM
+内容：<span class="chatlog__markdown-mention" title="marksaroufim">@Mark Saroufim
+------------------------------------------------------------
+
+第206条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1487475967487250526>3/28/2026 3:38 PM
+内容：Could you be more specific? If you’re optimizing for specific shapes that’s indeed totally fine and encouraged
+------------------------------------------------------------
+
+第207条消息
+用户：Sifer 
+时间：<a href=#chatlog__message-container-1487476129169150113>3/28/2026 3:39 PM
+内容：Yes that's exactly what i mean. Thx a lot !
+------------------------------------------------------------
+
+第208条消息
+用户：Josu 
+时间：<a href=#chatlog__message-container-1487488217749127321>3/28/2026 4:27 PM
+内容：All my submissions to MoE for the last couple of hours are timing out. Is anyone else having the same issue?
+------------------------------------------------------------
+
+第209条消息
+用户：lgc 
+时间：<a href=#chatlog__message-container-1487488748567396444>3/28/2026 4:29 PM
+内容：Same issue here, MoE and MM both timing out.
+------------------------------------------------------------
+
+第210条消息
+用户：SSS 
+时间：<a href=#chatlog__message-container-1488505768549417020>3/31/2026 11:50 AM
+内容：When I submit a profile via the CLI and the process gets stuck, no ZIP file is generated locally, but I can see that the profile was successful online. How can I locate the ZIP file I need?
+------------------------------------------------------------
+
+第211条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1488507444588970087>3/31/2026 11:57 AM
+内容：lets see if <span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第212条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1488507554958151680>3/31/2026 11:57 AM
+内容：no, it works well
+------------------------------------------------------------
+
+第213条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1488507813465686207>3/31/2026 11:58 AM
+内容：if the CLI process gets stuck there is no way to get the zip, unless you download the result of the github action manually and parse what you need
+------------------------------------------------------------
+
+第214条消息
+用户：NKV 
+时间：<a href=#chatlog__message-container-1488523303856508999>3/31/2026 1:00 PM
+内容：Anyone getting time_outs in benchmark mode?
+------------------------------------------------------------
+
+第215条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1488523548908720229>3/31/2026 1:01 PM
+内容：All submissions are getting timed out.
+------------------------------------------------------------
+
+第216条消息
+用户：NKV 
+时间：<a href=#chatlog__message-container-1488523736985636985>3/31/2026 1:01 PM
+内容：ok may be i should wait in that case.. i have fairly stale leaderboard submission and not able to get my latest one in!
+------------------------------------------------------------
+
+第217条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1488523864932876288>3/31/2026 1:02 PM
+内容：<span class="chatlog__markdown-mention" title="s1r_o">@siro
+------------------------------------------------------------
+
+第218条消息
+用户：vyom 
+时间：<a href=#chatlog__message-container-1488527223760748616>3/31/2026 1:15 PM
+内容：yess we getting time_outs
+------------------------------------------------------------
+
+第219条消息
+用户：Sifer 
+时间：<a href=#chatlog__message-container-1488533607872991365>3/31/2026 1:41 PM
+内容：Hi, can my teammate submitting to the leaderboard using there own accounts? Or one team can only submit using one account? <span class="chatlog__markdown-mention" title="marksaroufim">@Mark Saroufim
+------------------------------------------------------------
+
+第220条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1488536827202764913>3/31/2026 1:53 PM
+内容：better submit by same, if you have to , pls tell us which ids showed on leaderboard are same team
+------------------------------------------------------------
+
+第221条消息
+用户：Sifer 
+时间：<a href=#chatlog__message-container-1488537893231136910>3/31/2026 1:58 PM
+内容：OK! Thanks!
+------------------------------------------------------------
+
+第222条消息
+用户：vyom 
+时间：<a href=#chatlog__message-container-1488547634674270340>3/31/2026 2:36 PM
+内容：<span class="chatlog__markdown-mention" title="danielhuang_12953">@daniel huang
+------------------------------------------------------------
+
+第223条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1488563167620628632>3/31/2026 3:38 PM
+内容：1s
+------------------------------------------------------------
+
+第224条消息
+用户：NKV 
+时间：<a href=#chatlog__message-container-1488564805634752584>3/31/2026 3:45 PM
+内容：sent over my submission, fingers crossed!
+------------------------------------------------------------
+
+第225条消息
+用户：J 
+时间：<a href=#chatlog__message-container-1488566173607006368>3/31/2026 3:50 PM
+内容：It works Mark, thank you.
+------------------------------------------------------------
+
+第226条消息
+用户：Mark Saroufim 
+时间：<a href=#chatlog__message-container-1488566199301312716>3/31/2026 3:50 PM
+内容：<img     loading="lazy"     class="chatlog__emoji chatlog__emoji--large"     alt="❤️"     title="heart"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/2764.svg">
+------------------------------------------------------------
+
+第227条消息
+用户：ooousay 
+时间：<a href=#chatlog__message-container-1488596299652530247>3/31/2026 5:50 PM
+内容：Hi, are test/BM rate limits now counted together? I got 4 github action server errors trying to submit to test on MM and then got rate limited for both BM and test.
+------------------------------------------------------------
+
+第228条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1488597987453178068>3/31/2026 5:56 PM
+内容：Did the limit reduce to 4 benchmark submissions per hour, this is too less?
+------------------------------------------------------------
+
+第229条消息
+用户：divc13 ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1488602370312114196>3/31/2026 6:14 PM
+内容：Hi, How can I get the ncu report each time I submit my code？
+------------------------------------------------------------
+
+第230条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1488610540036165732>3/31/2026 6:46 PM
+内容：I can probably increase back, had to do it due to the runner issues we had
+------------------------------------------------------------
+
+第231条消息
+用户：ooousay 
+时间：<a href=#chatlog__message-container-1488612249475219626>3/31/2026 6:53 PM
+内容：Thanks, still am getting this though:    Error: Exit code 1      Submitting to leaderboard: amd-mxfp4-mm      GPU: MI355X      Mode: test      File: dist/submission.py       Waiting for results...      {&quot;status&quot;: &quot;processing&quot;, &quot;elapsed_time&quot;: 0.0}      Application error: Server processing error: An unexpected error occurred: RuntimeError | Raw Error: Failed to trigger GitHub Action. Please check the configuration.  MoE and MLA are working fine though
+------------------------------------------------------------
+
+第232条消息
+用户：siro 
+时间：<a href=#chatlog__message-container-1488612729399939363>3/31/2026 6:55 PM
+内容：can't reproduce, can trigger an action just fine <img     loading="lazy"     class="chatlog__emoji "     alt="hmmge"     title="hmmge"     src="https://cdn.discordapp.com/emojis/963146525242974288.png">
+------------------------------------------------------------
+
+第233条消息
+用户：diegocao 
+时间：<a href=#chatlog__message-container-1488665107176099910>3/31/2026 10:23 PM
+内容：Hello Team, could I ask where is the kernel contest detailed? Thanks a lot.  Would we have credits available at modal? Thanks
+------------------------------------------------------------
+
+第234条消息
+用户：iliassxti 
+时间：<a href=#chatlog__message-container-1488688054435713074>3/31/2026 11:54 PM
+内容：The amd-mxfp4-mm reference loads f4gemm<em>bf16_per1x32Fp4_BpreShuffle</em>* kernels (bf16 A &#215; fp4    B), but gemm_a4w4_asm rejects bf16 A with get_cfg Unsupported input_type:BFloat16. How does the reference pass bf16   A to the assembly kernel?
+------------------------------------------------------------
+
+第235条消息
+用户：vyom 
+时间：<a href=#chatlog__message-container-1488775240740769834>4/1/2026 5:41 AM
+内容：Wait so we gottem???
+------------------------------------------------------------
+
+第236条消息
+用户：Blake (bledden) 
+时间：<a href=#chatlog__message-container-1488775292939145218>4/1/2026 5:41 AM
+内容：No, negative as in not there sorry hahaha
+------------------------------------------------------------
+
+第237条消息
+用户：vyom 
+时间：<a href=#chatlog__message-container-1488775427559522416>4/1/2026 5:42 AM
+内容：yess what’s the point of signing up even
+------------------------------------------------------------
+
+第238条消息
+用户：Blake (bledden) 
+时间：<a href=#chatlog__message-container-1488775529669591100>4/1/2026 5:42 AM
+内容：Hey you can do a lot with $100 and an mi300x js
+------------------------------------------------------------
+
+第239条消息
+用户：vyom 
+时间：<a href=#chatlog__message-container-1488775622342873180>4/1/2026 5:42 AM
+内容：but our current problem targets are around mi355x?
+------------------------------------------------------------
+
+第240条消息
+用户：Yeqi Huang ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1488789777690923130>4/1/2026 6:39 AM
+内容：Hi <span class="chatlog__markdown-mention" title="danielhuang_12953">@daniel huang
+------------------------------------------------------------
+
+第241条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1488790086299680859>4/1/2026 6:40 AM
+内容：yes you are understanding right, most of the illegal submissions landed on these items
+------------------------------------------------------------
+
+第242条消息
+用户：Yeqi Huang ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1488790360619483307>4/1/2026 6:41 AM
+内容：We are all weaker than AI somehow, lol.
+------------------------------------------------------------
+
+第243条消息
+用户：daniel huang 
+时间：<a href=#chatlog__message-container-1488790912887947305>4/1/2026 6:43 AM
+内容：I think its not supported on userface, you can DM to tell me what they are
+------------------------------------------------------------
+
+第244条消息
+用户：zhubenzhu 
+时间：<a href=#chatlog__message-container-1488794396362018936>4/1/2026 6:57 AM
+内容：<span class="chatlog__markdown-mention" title="chivier">@Yeqi Huang
+------------------------------------------------------------
+
+第245条消息
+用户：Yeqi Huang ✅ [目标用户]
+时间：<a href=#chatlog__message-container-1488795250032902234>4/1/2026 7:00 AM
+内容：got it
+------------------------------------------------------------
+
+第246条消息
+用户：nap 
+时间：<a href=#chatlog__message-container-1488843904722665492>4/1/2026 10:14 AM
+内容：This is great, thank you! Could you please do the same for the MM and MOE challenges? It probably takes lots of manual effort but it would be really appreciated since it's hard to know where you're standing ranking wise when there might be a number of illegal submissions in the top. Especially so close to the competition deadline
+------------------------------------------------------------
+
+第247条消息
+用户：Sifer 
+时间：<a href=#chatlog__message-container-1488859082243833916>4/1/2026 11:14 AM
+内容：Hi there, is the ~4us submission of fp4 gemm kernel valid &amp; legal? I noticed  that they were not removed as illegal ranks. TBH, I did some micro-benchmarks and it shows that just the launch-kernel overhead itself costs around 4us.<img     loading="lazy"     class="chatlog__emoji "     alt="😨"     title="fearful"     src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f628.svg"> <span class="chatlog__markdown-mention" title="danielhuang_12953">@daniel huang
+------------------------------------------------------------
+
+第248条消息
+用户：Sifer 
+时间：<a href=#chatlog__message-container-1488861391665234094>4/1/2026 11:23 AM
+内容：BTW can I load custom kernel using hipmoduleload but let pytorch launch the kernel? This should be fine and timing should be good.
+------------------------------------------------------------
+
+第249条消息
+用户：SSS 
+时间：<a href=#chatlog__message-container-1488877817323323494>4/1/2026 12:28 PM
+内容：I really can't optimize it any further. What kind of performance level is 14 microseconds for the shortest case in MLA? Finally, if there are any open-source solutions out there, please let me know—I'm really curious about your optimization approaches.
+------------------------------------------------------------
+
+第250条消息
+用户：Augment 
+时间：<a href=#chatlog__message-container-1488921371332579379>4/1/2026 3:21 PM
+内容：Tiny blog on using FlyDSL to make the MXFP4 kernel:  <a href="https://arseniivanov.github.io/blog.html#flydsl">https://arseniivanov.github.io/blog.html#flydsl</a>  Gist with the submission-ready sample flydsl-kernel can be found here for anyone interested following this path:  <a href="https://gist.github.com/arseniivanov/9d59d889db19119eb9bfd7f58c886925">https://gist.github.com/arseniivanov/9d59d889db19119eb9bfd7f58c886925</a>
+------------------------------------------------------------
+

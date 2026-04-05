@@ -1,0 +1,1328 @@
+[4/9/2025 9:33 PM] Snektron: Thanks so much AMD for hosting this! It's been a long road, and im happy to see some investment in the community
+[] Unknown: Just a qq: Im technically a contractor working for AMD. Am I allowed to participate?
+[4/9/2025 9:34 PM] Mark Saroufim: yeah this was a long time coming haha
+[3/6/2026 6:51 PM] houdinied: the prize pool is pretty insane
+[] Unknown: the dropoff from 1st to 2nd is pretty drastic lol
+[3/6/2026 6:53 PM] Mark Saroufim: https://www.reddit.com/r/fastandfurious/comments/1e7z0eh/it_doesnt_matter_if_you_win_by_an_inch_or_a_mile/
+[3/6/2026 7:00 PM] Blake (bledden): Words cannot express my excitement for this
+[] Unknown: Question - I have already been on an AMD developer account and have not only gone through credits from that but credits for another hackathon. Can we get more credits for this and how many hours of credits should compute should we ask for?
+[3/6/2026 7:37 PM] Mark Saroufim: You don’t need gpu credits to participate!
+[3/6/2026 7:52 PM] yikesawjeez: yo, team size limits? and wym by dont need gpu credits, how we speriment w da kernels
+[3/6/2026 10:12 PM] yikesawjeez: how do we get access to this, considering event has technically started, rite?
+[] Unknown: https://amd.digitalocean.com/signed up here but unsure if this account has gpu droplets available, etc
+[3/6/2026 10:19 PM] Mark Saroufim: you should check this outhttps://github.com/gpu-mode/popcorn-cli- it's a queue based system, you just make submissions, you don't need gpus locally. Our last grand prize winner never even rented a gpu for the competition
+[3/6/2026 10:26 PM] tokenprinter: Hi, I'm getting this during submissions:failed to prepare submission request: 500: Your code contains work on another stream. This is not allowed and may result in your disqualification. If you think this is a mistake, please contact us.trying to inject inline HIP
+[3/6/2026 10:46 PM] aikitoria: wtf, it's even more crazy than the nvidia one
+[3/6/2026 11:20 PM] vyom: haha yesss exactly
+[3/6/2026 11:40 PM] siro: you should just remove word "stream" from your code haha, we do a very naive check
+[3/7/2026 12:17 AM] aikitoria: but also significantly more difficult
+[3/7/2026 1:02 AM] finn: is there anywhere I can find actual good info on how and what I can submit? like what limitations there are/enviroment that code will actually be run in etc? just more info about the challenge, limitiations on numerical precision anything at all really(edited)
+[3/7/2026 1:18 AM] Mark Saroufim: Everything you need will behttps://github.com/gpu-mode/reference-kernels/tree/main/problems/amd_202602andhttps://github.com/gpu-mode/popcorn-cli. give them a  skim and let me know if you have any questions
+[3/7/2026 1:30 AM] daniel huang: some AMD kernel official reference:https://github.com/ROCm/aiter/tree/main/aiter/opstemplate of inline cpp:https://github.com/gpu-mode/reference-kernels/blob/main/problems/amd/fp8-mm/template-hip.py, but should be gfx950 herehttps://github.com/gpu-mode/reference-kernels/blob/main/problems/amd/fp8-mm/template-hip.py#L3(edited)
+[3/7/2026 2:23 AM] Prash: is there a 1us diff between benchmark and ranked benchmark?
+[3/7/2026 3:29 AM] RADNA: hey there! does anyone know where to rent/get access to MI355X for the amd kernel comp?
+[3/7/2026 3:32 AM] RADNA: Oh damn
+[3/7/2026 3:32 AM] Mark Saroufim: Yep!
+[3/7/2026 3:32 AM] RADNA: that's cool as hell
+[3/7/2026 3:32 AM] Mark Saroufim: Should be really fast too! If not let us know
+[3/7/2026 3:33 AM] RADNA: okok
+[3/7/2026 4:31 AM] TataneSan: Damn that's a lot of money
+[3/7/2026 4:42 AM] vyom: codex write everything in hip, make no mistakes
+[3/7/2026 5:32 AM] 0xZackary: possible to get accounts merged?
+[3/7/2026 6:26 AM] daniel huang: Hi everybody,
+
+We certainly welcome more and more people to participate in the competition actively. However, honesty is also mandatory. We will continuously check whether your submissions comply with the rules.
+
+If you are unsure whether your solution is compliant, or if you have any questions about the rules or references, please feel free discuss in this group. We are pretty willing to help!
+
+Thank you all for your active participation. Let the competition begin!
+[3/7/2026 7:33 AM] RADNA: @daniel huang@Mark SaroufimI would like to raise a concern, is it fine if I DM to inform you guys on the problem
+[3/7/2026 7:35 AM] Mark Saroufim: Please do! About to head to bed but will check tomorrow morning
+[3/7/2026 7:35 AM] RADNA: okok
+[] Unknown: I Sent you a DM, hope you can check it, I don't think it is intentional at the very least
+[3/7/2026 11:38 AM] ddddrice: Hi, are Chinese nationals eligible to participate in this competition?
+[3/7/2026 1:02 PM] misha: Hi, I am new here, how can we participate as team? How do I add people in my team?
+[3/7/2026 2:59 PM] ooousay: Hi, who can I speak to about verifying the compliance of my submissions? Also is there a posted ruleset? Thanks
+[3/7/2026 3:05 PM] AlphaNord: Hello guys, do ai generated code is allowed for the competition. And how do I compute check if i did good work, is it locally like for neural network training. Thank you for your answer
+[3/7/2026 3:07 PM] vyom: hey how come we don't have mi355x on amd dev program? we get 100$ creds but I only see mi300x
+[] Unknown: @sirois this legit
+[3/7/2026 5:06 PM] Theo: queue is cooked right now lol
+[3/7/2026 5:59 PM] starleo.: that too is unavailable for some reason
+[3/7/2026 6:06 PM] Cluster-Bot: pong
+[3/7/2026 6:06 PM] siro: checking
+[] Unknown: @ooousaybtw we check the solutions, I see the solution is not legit. Can you please avoid doing that in the future? Likewise for@RADNAand the third person. We acknowledged the issues with the benchmarking system written in Python a lot of times and are working on improving that, but until then we're relying on you not trying to hack it. All the top submissions will be checked manually and prizes won't be given to cheating ones, the only thing you add is clutter to the platform and work to us
+[3/7/2026 6:15 PM] Theo: is it roughly expected to have like 10+ minute queue times? not a big deal, was just going to rent a node for more rapid iteration
+[3/7/2026 6:15 PM] siro: is it queue times? I believe it's just the baseline using aiter where compilation takes a while
+[] Unknown: We have roughly 40 runners connected and I see them pickup jobs instantly
+[3/7/2026 6:16 PM] Theo: that makes more sense haha, will just be pipelining submissions then. do you have any policy about like rate limits? dont want to abuse your system
+[3/7/2026 6:17 PM] siro: https://github.com/gpu-mode/kernelbot/actionsyou can see it here. However, what we would appreciate help with, is writing a baseline taht doesn't use AITER (to avoid the compilation), so pure pytorch etc. We will try to implement it this weekend, but if you had time and wanted to do that,https://github.com/gpu-mode/reference-kernelsyou can send a PR here with your kernel having equal-ish numerics to AITER and we can replace it.
+[3/7/2026 6:18 PM] siro: so right now the queue is okay - you can see it's like 8 jobs. We have 40 runners, you can pipeline as much as needed but would take a look at the queue from time to time if it's not "full"
+[3/7/2026 6:19 PM] Theo: ok bless thanks so much, will spend some time on this as well, i have more experience writing pytorch rather than aiter haha, as do most i assume
+[3/7/2026 6:20 PM] siro: good luck, if you or anyone has any questions let me know, happy to help
+[3/7/2026 6:24 PM] blaspheme: Just out of curiosity, what are they doing to break it
+-# just asking in the off chance it is something you can share without ruining the competition(edited)
+[3/7/2026 6:37 PM] Theo: they gamed the benchmarks, lots of ways to do it
+[3/7/2026 6:37 PM] ritwikdas: Is anyone else seeing this when tryingpopcorn submit:
+[3/7/2026 6:38 PM] blaspheme: I think I had that before, try rerunning (later in the day)(edited)
+[3/7/2026 6:43 PM] ritwikdas: I am trying to test the default mixed-mla solution. Does anyone know how long that is supposed to take?
+[3/7/2026 6:43 PM] Theo: testing the reference as well right now, currently 7 minutes in
+[3/7/2026 6:44 PM] finn: most things i submit take like very roughly 400 seconds but thats only like what im seeing through glimpses of claude code windows
+[3/7/2026 6:45 PM] Theo: ye it just finished, ended at 500 seconds
+[3/7/2026 6:45 PM] siro: yeah they are like 7 minutes at most, it’s the aiter compliation time as noted here
+[] Unknown: will be hopefully improved
+[3/7/2026 6:46 PM] finn: is the reason for wanting a reference in torch because every single run is compiling aiter regardless of if your solution uses it because its like being compared against?
+[3/7/2026 6:46 PM] siro: it’s python inspect/globals etc
+[3/7/2026 6:46 PM] siro: yes
+[] Unknown: the baseline (source of truth) is in aiter and that gets compiled and there is no good caching solution for aiter as far as I know
+[3/7/2026 6:52 PM] ooousay: What am I doing that’s cheating? Can I get a specific ruleset please?
+[3/7/2026 6:53 PM] Theo: idk if this is helpful for anyone, but i modified reference.py to be a submittable custom kernel. the aiter reference is sitting at about 200. needed this info since im rewriting it in pure torch now
+[3/7/2026 6:54 PM] siro: im sorry, is this a ragebait?# Patch event timing: CPU perf_counter instead of HIP eventsjust a snippet from one of your submissions
+[3/7/2026 6:55 PM] DIVIJ: where to run this command ? /get-api-url ?
+[] Unknown: it is told in GPU Mode discord
+[3/7/2026 6:55 PM] finn: i think you dont have to do that anymore
+[3/7/2026 6:56 PM] siro: no you shouldn't need to. Right now if you download popcorn cli and just dopopcorn cli registerit should work OOB
+[3/7/2026 6:56 PM] DIVIJ: ohh i get it thanks
+[3/7/2026 6:56 PM] Augment: There was this blog shared on the server a while back with various reward hacks that LLM-based kernels sometimes end up withhttps://deep-reinforce.com/defense_kernel_hack.html. Can be a good primer for the people running agent loops(edited)
+[3/7/2026 6:56 PM] DIVIJ: my first competition so will start working on it and where are the actual rules that make solutions competition compliant(edited)
+[3/7/2026 6:59 PM] siro: Basically we're very much reliant on human judgement for this, but a good rule of thumb is: any kernel that could get merged into VLLM/SGLANG is compliant. That is no tweaking with the harness, caching of things you wouldn't expect to have in a forward pass, etc.
+[3/7/2026 6:59 PM] DIVIJ: Got it
+[] Unknown: and how you guys are using coding agents ?
+[] Unknown: any restrictions around that
+[3/7/2026 6:59 PM] siro: no, not at all
+[3/7/2026 6:59 PM] DIVIJ: got it
+[3/7/2026 7:00 PM] siro: just we ask to not oversubmit to the platform too much
+[3/7/2026 7:00 PM] DIVIJ: got it
+[3/7/2026 7:00 PM] siro: we should actually vibecode a queue viewer so you can use it, as of now the runs can be seen herehttps://github.com/gpu-mode/kernelbot/actions- we have 40 runners to use
+[3/7/2026 7:01 PM] gup: Manually submit when this happens it usually bypasses sometimes popcorn connection to gpu mode is down
+[3/7/2026 7:01 PM] siro: this is a bit annoying, I don’t see any spikes in our connections/usage, we’ll take a look as well
+[3/7/2026 7:02 PM] blaspheme: Do you know of any platform where we can pay for an MI355X to test,
+cause on the developer cloud I don't see an MI355X (only MI300X),
+and I can't even pay (yet?, I did click the request access last night, maybe they check on business days)
+[3/7/2026 7:04 PM] siro: I don’t actually, maybe@daniel huangwould know more, but you can just use the platform to submit until then(edited)
+[3/7/2026 7:04 PM] gup: Yeah I’m not sure what makes this happen but I tried running from cli twice got 503 error then submitted it manually and it passed
+[3/7/2026 7:04 PM] finn: how to ensure proper numerics for a torch impl to replace the reference?
+[3/7/2026 7:05 PM] blaspheme: Wait nvm they did respond rip
+[3/7/2026 7:05 PM] siro: the reference itself is open, this would probably require you to have MI355 access to test mismatch more precisely
+[3/7/2026 7:06 PM] finn: no yeah i know the ref is open just trying to cut down those compilation times
+[] Unknown: i unfortunately do not have that access tho
+[3/7/2026 7:06 PM] gup: just to make this known/get clarity the abnormally low scores are not real targets we should be aiming for?
+[3/7/2026 7:06 PM] finn: correct
+[3/7/2026 7:50 PM] Theo: https://github.com/gpu-mode/reference-kernels/pull/113opened a pr for this for mixed mla. tested it on a MI355x and on the leaderboard. very low error on the numerics. caveat is its about 20 times slower then the aiter implementation, but that shouldn't be a big concern in the context of this comp
+[3/7/2026 8:03 PM] Mark Saroufim: So context for some of the new folks here. If you’re not a kernel hacker and are purely relying on AI please also just ask another AI whether your submission is against the spirit of a benchmarking competition before you submit. We’re building up better automation and more robust tools to help with reward hacks but this is a fundamentally cat and mouse problem and relies on manual work by mods.
+[3/7/2026 8:52 PM] sanjayuzu: I am getting an error like this , what do I have to do fix this? I removed the stream word from my code as mentioned previously(edited)
+[3/7/2026 9:02 PM] Mark Saroufim: can you share your file? Are you sure stream doesnt show up? streamable would also trigger this
+[3/7/2026 9:03 PM] AlphaNord: Good evening, i did not catch up well the process of benchamarking, how do i check if my code run faster (is it locally or by submitting the code is simulated/computed) Thank you for your attention
+[3/7/2026 9:07 PM] Theo: popcorn cli mate
+[] Unknown: or rent ur own ml355x
+[3/7/2026 9:08 PM] AlphaNord: yes i saw that must be through popcorn but actually my mind is still sticked to the local neural network paradigm of training, and i try to understand how should i proceed as it actually something which i ignore completely
+[3/7/2026 9:11 PM] Mark Saroufim: training your model to participate in this competition would be a bold choice haha - you can do pretty well with off the shelf models
+[] Unknown: There isn't much to the current setup, it's kind of like if you used an AI to solve a leetcode question and then submitted that via copy paste. just check out the cli instructions closely(edited)
+[3/7/2026 9:13 PM] AlphaNord: ok thank you very much, so if i understood correcly i need only a github account verified by email aswell for discord to be able to submit and be maybe selected for top 10 right (im already in amd dev program)
+[3/7/2026 9:15 PM] Mark Saroufim: for phase 1 everyone gets free compute, its a queue based system
+for the top 10, you'll get your own machines for phae 2
+[3/7/2026 9:20 PM] finn: ay first place rn!
+[] Unknown: would be fire if you guys could get rid of the 4us times tho :)
+[3/7/2026 9:26 PM] Theo: 4th now! im on your tail bud
+[] Unknown: also yes, please remove the bench hackers
+[3/7/2026 9:27 PM] finn: if u have hella compute $$ you could try to do something like AlphaEvolve with a big local modelhttps://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/
+[3/7/2026 9:27 PM] vyom: yoo, we did get 100$ credits from amd program but there isn't mi355x option on it
+[] Unknown: ?
+[3/7/2026 9:27 PM] finn: i think the free compute is for submitting runs with popcorn-cli
+[] Unknown: which has been great tbh
+[3/7/2026 9:28 PM] vyom: yes yes I'm aware of it, was asking jus for dev(edited)
+[3/7/2026 9:28 PM] cata: cli is free XD?
+[3/7/2026 9:28 PM] vyom: yup
+[3/7/2026 9:28 PM] AlphaNord: i hope but im only 16gb ram and a ryzen 5 igpu
+[3/7/2026 9:28 PM] cata: is anyone payhing here for the popcorn cli =))))))))
+[3/7/2026 9:28 PM] vyom: no
+[3/7/2026 9:28 PM] cata: i was ironic :) hehe
+[3/7/2026 9:29 PM] Theo: i did this a while ago for a nvidia hackathon and won if anyone wants to look at my codehttps://github.com/lolismek/syscall/tree/main/evolution
+[3/7/2026 9:29 PM] finn: nice thats exactly what i was envisioning
+[3/7/2026 9:29 PM] Theo: but it was based on kernelbench, i made a plugin system for custom problems
+[] Unknown: could be tweaked to use popcorn
+[] Unknown: anyway, needless to say im doing something better for this hackathon but dont want to gatekeep
+[3/7/2026 9:30 PM] finn: unfortunately i am unemployed and do not have agent swarm money
+[] Unknown: i do feel like using popcorn-cli for rl would be a crazy bottleneck, you would definitely want to just rent some mi355x's to run the benchmarks
+[] Unknown: atleast for the scale i am envisoning lol
+[3/7/2026 9:31 PM] Theo: yes definitely
+[] Unknown: for the above project i was doing 64 agents at a time lmao
+[] Unknown: used 80 gigs of vram just for eval
+[3/7/2026 9:32 PM] cata: and you had local llm or just api calls
+[3/7/2026 9:32 PM] Theo: api
+[] Unknown: but nvidia gave lots of credits
+[3/7/2026 9:34 PM] cata: thats very nicee
+[3/7/2026 9:35 PM] finn: its hilarious to me how quickly ai coding went from I write the code and claude is my research/documenation guy to claude writes the code and i do the research and spend all day looking through documentation
+[3/7/2026 9:36 PM] cata: well, depends on domains and if you like the output of claude as i find myself sometimes just wasting time iterating on even class designs =)) so i just do myself and put him to do other stuf
+[3/7/2026 9:36 PM] AlphaNord: the goal is to make a program in .py which run faster than precedent right ? and it can be pure c++ and or using lib like triton ... ?
+[3/7/2026 9:36 PM] Theo: @codex explain this in simple terms i dont understand
+[3/7/2026 9:37 PM] cata: @grok is this real ?
+[3/7/2026 9:38 PM] finn: you will want to write either triton or you could write c++ inline with HIP.  you could probably do more in c++ than just like inline in python but you will still need to connect it to the python harness
+[] Unknown: what i said in general a second ago:im finding it hard to justify not using triton rn because FA4 was written in triton and came out earlier this week and what, im gonna think i know better than tri dao?
+[3/7/2026 9:41 PM] Weyland: noob question but are there optimizations you can make in C++ that aren't possible to implement in triton? I guess at that point it's like, are you smarter than whoever wrote the triton compiler?
+[3/7/2026 9:41 PM] Mark Saroufim: this isn't right btw, FA4 was written in cute DSL
+[3/7/2026 9:41 PM] finn: oh really
+[3/7/2026 9:41 PM] Weyland: are there lots of instances of people beating triton implementations with raw C++
+[3/7/2026 9:41 PM] finn: thats embarassing
+[3/7/2026 9:41 PM] cata: fa4 i think there is some implementation for b200 in gluon but i might be wrong
+[3/7/2026 9:41 PM] Mark Saroufim: yes, browse any of the top submissions on gpumode.com for the past amd competitions, the best submissions were almost always hip
+[3/7/2026 9:42 PM] cata: maybe we ll get gluon dialect in 2026 for amd :)) i know they are working on it
+[3/7/2026 9:43 PM] Mark Saroufim: they have something
+[] Unknown: https://github.com/ROCm/FlyDSL
+[] Unknown: I feel like we need@Simon's help to get folks up to speed
+[3/7/2026 9:44 PM] cata: xD true
+[3/7/2026 9:45 PM] Augment: I made a flydsl solution but its as slow as pytorch eager x) It also just looks like straight up MLIR also. Skill issue definitely but I will try to improve it(edited)
+[3/7/2026 9:45 PM] cata: i wonder also... if we people will try IREE
+[] Unknown: how big is the eval node ?
+[3/7/2026 9:49 PM] AlphaNord: guys do you have any github repos/article or anything to start understanding/learning what to search for technological watch or even ytb videos as intro pls
+[3/7/2026 10:02 PM] finn: honestly the amd developer docs havent been bad:https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference-optimization/index.html
+[] Unknown: but theres a lot of poking around through different git repos and talking to claude
+[] Unknown: quick i need someone to offer me a job before theo catches up to me
+[3/7/2026 10:07 PM] Theo: lmaoo
+[] Unknown: bro noticed
+[] Unknown: @finnsorry to say but i have overtaken
+[3/7/2026 10:15 PM] finn: damn
+[] Unknown: happens
+[3/7/2026 10:15 PM] AlphaNord: thank you just saw ur msg
+[3/8/2026 12:00 AM] ritwikdas: Are the test cases used for ranking the same as the ones mentioned in the "benchmarks" section in the "task.yml"?
+[3/8/2026 12:28 AM] houdinied: Do we have to register for the AMD developer program to win prizes?
+[3/8/2026 12:54 AM] Mark Saroufim: No(edited)
+[3/8/2026 6:27 AM] Simon: Unfortunately Baby, Wife, Flashinfer Competition and Day2Day Job  pretty much occupy me right nowmaybe someone else can take over for this comp 🫡 (looking at@Augment)
+[3/8/2026 6:28 AM] Andrew Yates: hi
+[3/8/2026 8:49 AM] RADNA: Is the rank 0-indexed? 1st = rank 0?
+[3/8/2026 9:40 AM] AlphaNord: guys competition is hard, was thinking 1us is hard but theres someone who worked very good
+[3/8/2026 9:47 AM] gau.nernst: Are all the 4us cheating?
+[3/8/2026 9:48 AM] AlphaNord: is it possible to cheat ?
+[] Unknown: honest question cuz i dont know abt gpu prog
+[3/8/2026 9:53 AM] RADNA: Is it an exploit of the benchmark check, and no those are of course invalid
+[] Unknown: I found it by accident
+[3/8/2026 9:54 AM] AlphaNord: So how can i ensure i provided code which work legit and not just give good results ?
+[3/8/2026 10:03 AM] Augment: 1) you can build it by hand understanding what you do, you should think that the kernel runs in a forward pass with new data, it should not replay itself during benchmarking for example
+2) if using llms, to can learn about the exploits that the LLMs can do to reward-hack, for example from here:https://deep-reinforce.com/defense_kernel_hack.html3) Apply common sense to submissions, it's highly unlikely that you will 4x improve aiters performance by some simple code addition, really smart people built those kernels. In general if something looks too good to be true, you should verify so you understand what is going on(edited)
+[3/8/2026 10:05 AM] AlphaNord: thank you very much
+[3/8/2026 11:00 AM] AlphaNord: how do you guys copy paste the error from terminal, i chat using online llm chat not agents (i cant use agents for several reasons) because the ui is not good for copy pasting just to read errors
+[] Unknown: and how do you fix │                                                                │↑Submission error: Server returned status 500 Internal Server Error: Your code │
+[3/8/2026 11:44 AM] Simon: understand benchmarking logic. 
+understand which optimizations make sense in production.
+disregard optimizations that don't make sense in production.
+[3/8/2026 11:45 AM] AlphaNord: thank you
+[3/8/2026 11:46 AM] AlphaNord: are the benchmark results real because in leaderboard online i see results around 4us while i get for the benchmark around 17/20us which depend to the shape, task is amd-mxfp4-mm(edited)
+[3/8/2026 11:47 AM] Simon: benchmarks can be hacked. i didn't look at benchmarking logic here but for example if the same tensor is provide multiple times we can cache it and thus avoid reloading it. this is something that of course doesn't make much sense in production because its unlikely one and the same set of tensors will be encountered multiple times in a row
+[] Unknown: so they can be "real" in the sense that some script archives this performance. but they could be entirely useless for any real world application
+[3/8/2026 11:49 AM] AlphaNord: alright and for this competition selected ppl will be top 10 for production ready or only top 10
+[3/8/2026 12:15 PM] Simon: im pretty sure cheating will be of course disregarded at the end because it would not give amd any value but@Mark Saroufimknows the rules better than me
+[3/8/2026 1:03 PM] RADNA: I would like my results and others at the top to be invalidated, can any moderators rerun the submission on actual benchmark, or just remove those?(edited)
+[3/8/2026 1:24 PM] ooousay: I spoke to Siro and he said they are working on removing my non compliant submissions.
+[3/8/2026 1:26 PM] Mohammad Talaei: Hi everyone, I’m new to the competition! I’m curious about the best workflow for experimentation. Do most people use the submission process itself to profile and test, or is there a preferred way to run experiments locally/in-notebook before submission?
+Also, are there specific GPU resources or dev-nodes provided for testing/profiling, or should we rely on our own hardware/notebook quotas for the 'pre-submission' phase?
+[3/8/2026 1:26 PM] AlphaNord: atleast you know already your not compliant, i am vibe coding while giving him ressources to not cheat but i will never know if he(ai) cheated without intention(edited)
+[3/8/2026 1:28 PM] AlphaNord: u use popcorn cli allowing you to benchmark without submitting, if you can run locally then its fine, im in laptop, and i cant rent my own gpu so i write code then send it through popcorn, and it give u choice if testing errors / benchmarkin / submitting to leaderboard
+[3/8/2026 1:55 PM] daniel huang: to be note again, any cheating will be obviously found, better focus to develop kernels instead, especially this is just elimination round. We hope everyone won't be disturbed your minds especially those who are focused
+[3/8/2026 2:46 PM] Artemis: My guess is that no one is cheating intentionally  ( esp. people with ultra low scores which every one knows at a glance are not real )
+
+Chatgpt 5.4 is ridiculous in this regards, he will go for lowest score no matter what. Thus people with agentic setup got these solutions submitted(edited)
+[3/8/2026 5:30 PM] brian: are there any tools / libraries we aren't allowed to use or anything?
+[] Unknown: im just wondering if there's an expectation that we write things "from scratch"  (like is using the equivalent of CUTLASS/cute allowed to any extent)(edited)
+[3/8/2026 5:40 PM] Mark Saroufim: Regarding cheating the AIs are indeed very good at it. There’s fundamental reasons why it’s hard to fix this problem on our end but we’re working on it. In the meantime if you show a submission to another AI and just ask is this cheating? It’s usually pretty good at confirming. For instance if your code is money patching the eval harness then you yknow its probably cheating
+[] Unknown: Regardless I suspect the leaderboard will be chaotic for a few days so please ignore the rankings and study how AMD hardware works
+[] Unknown: We do kind of expect you to skim the kernel you’re submitting. Claude did it is a frustrating excuse if a mod has to delete your submission every few min
+[3/8/2026 6:08 PM] preetam: @Mark Saroufim: Just wanted to report that minimal "return 0" submissions are timing out for amd-mixed-mla and amd-moe-mxfp4, indicating a potential harness issue. Any advice/pointers would be very appreciated.
+[3/8/2026 6:10 PM] blaspheme: Possibly stupid question but is:A, B, B_q, B_shuffle, B_scale_sh = data
+    A = A.contiguous()
+    B = B.contiguous()
+    m, k = A.shape
+    n, _ = B.shape(edited)
+[] Unknown: Included in the timing?
+[3/8/2026 6:17 PM] preetam: The Issue:  
+Submissions for amd‑mixed‑mla and amd‑moe‑mxfp4 are timing out (Execution > 120 s) regardless of implementation complexity.  
+Evidence of Harness Issue:  
+1. Control: My submissions for amd‑mxfp4‑mm are running successfully and passing tests (e.g., Submission ID: #517732), so my environment/CLI seems to be correctly configured.  
+2. Test case: I submitted a minimal script that simply initializes and returns zeros/empty tensors. This script should run instantly, but it still times out.  
+Failed Submission IDs:MLA (Minimal/No‑Op): #518918, #518904MoE (Minimal/No‑Op): #517768, #517750Minimal Reproduction Code Used:MLA minimal (submission_mla_minimal.py)import torch
+from typing import Tuple, Dict
+inputt = Tuple[torch.Tensor, Dict, torch.Tensor, torch.Tensor, Dict]
+output_t = torch.Tensor
+def custom_kernel(data: input_t) -> output_t:
+    q, kv_data, qo_indptr, kv_indptr, config = data
+    total_q = q.shape[0]
+    num_heads = config["num_heads"]
+    v_head_dim = config["v_head_dim"]
+    return torch.zeros((total_q, num_heads, v_head_dim), dtype=torch.bfloat16, device="cuda")MoE minimal (equivalent zero‑output skeleton)import torch
+from typing import Dict, Tuple
+input_t = Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor,
+                torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor,
+                torch.Tensor, torch.Tensor, Dict]
+output_t = torch.Tensor
+def custom_kernel(data: input_t) -> output_t:
+    hidden_states, *, config = data
+    M, d_hidden = hidden_states.shape
+    return torch.zeros((M, d_hidden), dtype=torch.bfloat16, device=hidden_states.device)
+Could you confirm if the test harness for these two problems includes a heavy data‑generation step or stricter timeout that might be causing this bottleneck before the kernel even launches?  
+Thanks!
+[3/8/2026 6:39 PM] Theo: aiter takes like 5 minutes to compile on the runners
+[] Unknown: the references are currently aiter
+[] Unknown: but they are being converted to pure pytorch to solve this problem
+[3/8/2026 6:47 PM] preetam: THANK YOU!
+[3/8/2026 6:58 PM] Mark Saroufim: are you submitting to benchmark or leaderboard?
+[3/8/2026 7:04 PM] Matrix: I have a question does profile flag in popcorn-cli works for this competition ?Because I tried that and it failed with messageRaw Error: Workflow 22827423342 cancelled - exceeded 12 minute timeout.
+What I am trying to profile it just default impl already present inaiter(I know this might be dumb idea but I just wanted to try understand timing profile to get an idea)(edited)
+[3/8/2026 7:37 PM] Theo: see here
+[3/8/2026 7:37 PM] Theo: ^ if you're curious how the baseline benchmarks
+[3/8/2026 8:13 PM] Matrix: I feel that's  wrong because if you just submit the default problem statement code you 15 micro seconds(edited)
+[] Unknown: That's what I got without doing anything
+[] Unknown: @Theo
+[3/8/2026 8:22 PM] Theo: Definitely a bug in ur code
+[] Unknown: Or which problem are you doing
+[] Unknown: I got 200 micros for mixed mla
+[3/8/2026 8:27 PM] Matrix: I am doing MXFP4 GEMM
+[3/8/2026 8:31 PM] AlphaNord: Hello guys, where could we find more about the version / libs / things installed in the server we do benchmark becasue even if i can run benchmark and get results, i get warning/errors from aiter and hipmodule
+[3/8/2026 9:06 PM] Theo: ye then 15 micros seems right
+[] Unknown: not a bug in ur code
+[3/8/2026 9:19 PM] Mark Saroufim: https://github.com/gpu-mode/kernelbot/blob/main/docker/amd-docker.Dockerfile
+[3/8/2026 9:19 PM] AlphaNord: thank you very much
+[3/8/2026 9:32 PM] synced: @Mark Saroufimhow come no mi355 on amd devcloudhttps://devcloud.amd.com/?where do ppl find on demand mi355, or do we just optimize the kernels blindly(edited)
+[3/9/2026 12:52 AM] Blake (bledden): Fam, what am I missing? If I go to popcorn-cli I only see the following competitions:
+1. pmpp_v2 Practice Problems
+2. NVIDIA Blackwell NVFP4 Kernel Hackathon
+3. AMD Developer Challenge 2025
+4. AMD Developer Challenge 2025 - Distributed Edition
+5. BioML Kernels (no cash prizes)(edited)
+[3/9/2026 12:55 AM] ritwikdas: What is the meaning of this error:
+
+Submission error: Server returned status 500 Internal Server Error: Your code contains work on another stream. This is not allowed and may result in your disqualification. If you think this is a mistake, please contact us.
+[3/9/2026 12:56 AM] gau.nernst: u can add this to the top of your submission file#!POPCORN leaderboard amd-mxfp4-mm
+#!POPCORN gpu MI355X
+[3/9/2026 2:04 AM] daniel huang: https://github.com/gpu-mode/reference-kernels/tree/main/problems/amd_202602
+[3/9/2026 4:54 AM] Harsh Gupta: And probably cap/rate limit the number of submissions per user.
+[3/9/2026 4:59 AM] preetam: I was submitting to benchmark mode. I checked the logs and the timeout is actually secondary to a GPU crash. The stderr shows rocdevice.cpp :3580: Callback: Queue 0x... aborting. My kernel is causing a queue abort (likely a memory violation/segfault) which hangs the host until the 420s timeout. I'll review my memory masks and strides!
+[3/9/2026 5:39 AM] ritwikdas: Is HIP python available on the test machines? I triedfrom hip import hip, hiprtcand I got:
+
+No module named 'hip'
+[3/9/2026 5:52 AM] daniel huang: I am not sure what happened, but other submissions about mla and moe work...
+[3/9/2026 5:52 AM] daniel huang: not yet
+[3/9/2026 7:05 AM] preetam: Thanks,@daniel huang..looks like it was me. 
+What I was doing wrong:
+Inside my custom_kernel, I was calling .contiguous() and .view(torch.uint8) on the input tensors to prep them for Triton. Because Python passes tensors by reference, this mutated the underlying memory strides and C++ metadata.
+When the eval.py harness subsequently passed those same mutated tensors into the aiter reference kernel to check for mathematical correctness, Aiter couldn't handle the new strides/dtypes and triggered a fatal ROCm hardware fault (rocdevice.cpp :3580: Callback: Queue aborting). Because the GPU queue died, the host eval.py just hung on synchronization until the hard 420s CI timeout killed the job.
+[3/9/2026 7:23 AM] daniel huang: make sense!
+[3/9/2026 9:18 AM] cata: does anyone have the ref for moe and mla formated in pyre pytorch to use ? i cant get one working :pp
+[3/9/2026 9:23 AM] daniel huang: https://github.com/gpu-mode/reference-kernels/pull/114gemmhttps://github.com/gpu-mode/reference-kernels/pull/113mla
+there are folks(thanks to them) in this channel implemented gemm and mla by torch, just for your reference, we haven't decided merge though
+[3/9/2026 10:04 AM] cata: coool ! :D
+[3/9/2026 4:32 PM] Matrix: Hey@daniel huang, is the first ranked in the leaderboard correct? or will that be manually removed in GEMM leaderboard(edited)
+[3/9/2026 5:37 PM] siro: I'll test this out today and hopefully merge to get the startups faster
+[3/9/2026 6:31 PM] siro: I have cleaned up the leaderboard of cheating entries (atleast I hope most of them). I will keep doing this periodically so don't worry if some appear. Also please take a look at your agents, a lot of people I warned about their entries kept submitting them even after that, which is frankly quite annoying
+[3/9/2026 7:42 PM] MMMMcDonald: Hi guys, using LLMs allowed or considered cheating?(edited)
+[3/9/2026 7:50 PM] AlphaNord: allowed
+[3/9/2026 7:55 PM] siro: There has been a bunch of issues with popcorn-cli surfacing, please make sure you updated to the latest version as there has been some breaking changes
+[3/9/2026 7:58 PM] AlphaNord: make sure when prompting that your llm isnt "cheating", u can provide this ressource telling him to provide legit code :https://deep-reinforce.com/defense_kernel_hack.html
+[3/9/2026 8:00 PM] MMMMcDonald: thx
+[3/9/2026 9:21 PM] blaspheme: another refusal
+[3/10/2026 5:26 AM] Daniel10015: Is there a way to re-register from individual to a team?
+[3/10/2026 5:42 AM] gau.nernst: is there a way to find out the compiler intrinsic of an instruction inCNDA4 ISA doc?
+[3/10/2026 10:48 AM] cata: the files from the profiler are not downloaded lol?:) also is there rocprof comptue for it ?
+[3/10/2026 12:07 PM] DarkAsura: ok, just had a question? How to register as a team?
+[] Unknown: so I registered mine, and the form was asking a team name, so I filled that, so if my friend wants to team up with me, does he also have to register, and if so, he needs to put the same team name to get registered with me?
+[] Unknown: How do I confirm that we aer registered as a team, if so?
+[3/10/2026 1:28 PM] vyom: hey could you tell us what was the loophole that got unstable perf, will include that in our pipeline so that our agents won't commit those
+[3/10/2026 3:52 PM] Stark: we have to add billing to our amd.digitalocean to create a gpu droplet even though we have 100$ credits?
+[3/10/2026 4:58 PM] Ritvik: i got the same doubt, cuz me and my team registered under the same team name on luma. but the GPU Mode Leaderboard window doesn't show any option for teams specifically. How do i ensure we are making submissions as a team there?
+[3/10/2026 5:12 PM] Mark Saroufim: as long as a a team member of that team is submitting it should be fine, it's what we did last time
+[3/10/2026 8:19 PM] gripingberry: Are we not allowed to have the string "stream" anywhere in the submission?
+[3/10/2026 8:21 PM] Mark Saroufim: nope, unfortunately it's a favorite trick of AI models(edited)
+[3/10/2026 9:07 PM] Guruprasad-mp: Yes, please have your team mates register and use the same team name.
+[3/10/2026 9:08 PM] gripingberry: Is there any way to see stdout/logs when we get a timeout?
+[3/11/2026 4:49 AM] gau.nernst: found out that u can compile AMD kernel code on godbolt. haven't figured out how to compile a full HIP source file though (device + host code). hope others find it useful
+it's probably also possible to use the AMD Docker image to compile code w/o an AMD GPU, so at least u can check for compile errors before submission
+[3/11/2026 12:07 PM] Hatem: is there anybody here doesn't have a team, and commitment to the competition, we can gather altogether  ?!
+[3/11/2026 12:42 PM] gau.nernst: compile HIP kernels on CPU-only machine, with Dockerhttps://gist.github.com/gau-nernst/5f81dbb753a0afba7f69144e3af386ebcc@Fluudgate
+[3/11/2026 2:51 PM] gau.nernst: released yesterdayhttps://rocm.blogs.amd.com/software-tools-optimization/cdna4-gemm-kernels/README.html
+[3/11/2026 8:30 PM] Josu: Is the John Hahn submission legit?
+[3/11/2026 8:59 PM] champagnepapi: was wondering the same thing, yo(edited)
+[3/11/2026 8:59 PM] steve: drizzy (?)(edited)
+[3/11/2026 11:57 PM] jiab: the reference mentions b_shuffle is in '16x16 tile coalesced form' idk if this means its stored in 16 x 128 k major or 16 x 32
+[3/12/2026 2:18 AM] Ipnon: Aren't the top 3 above roofline?
+[3/12/2026 2:20 AM] Josu: Yeah, top 3 are using an exploit. I was able to replicate it. But I'm asking about the 4th. There is a new 34.921μs result, so yeah, they may be legit.
+[3/12/2026 2:22 AM] daniel huang: we will manually check the submissions today, leaderboard is changing anytime, we don't know who is legit or not until the final moment, so pls stay focused on the kernels, everyone has opportunity
+[3/12/2026 4:30 AM] jdbartlett96: Just to confirm, will all the final submissions be manually reviewed to be "honest" completions of the tasks, timings of the actual computations? I've found a couple different trivial reward hacks, just want to make sure good implementations will get their fair shot without having to worry about addressing those hacks in my submission...(edited)
+[3/12/2026 6:15 AM] daniel huang: Thanks for raising this important question—it’s something we take extremely seriously. Any reward hacking, function tampering, or fake performance will be strictly invalidated and disqualified.
+Our goal is to ensure that genuine, high-quality engineering work gets fairly recognized and rewarded. You can focus fully on building clean, correct, and performant implementations without needing to defend against hacks in your own code.
+[3/12/2026 6:52 AM] Ipnon: Reward hacking is cool but isn't it cooler to just write kernels that actually run fast? I'm confused by the motivations! I suppose when there is lots of money to be made people will inevitably cheat. But I don't think AMD is going to write you a $600,000 check without verifying your code first.
+[3/12/2026 6:53 AM] daniel huang: Hi I am checking, and below method is definitely not allowed, which contradicts the purpose of our competition. hope you all know
+[3/12/2026 6:54 AM] Ipnon: Thanks for clarifying. 🫡
+[3/12/2026 7:07 AM] melvin: Let’s keep this space constructive and respectful. Personal remarks like this aren’t appropriate or welcome here.
+[3/12/2026 7:42 AM] mbwilly: is the leaderboard down rn?
+[3/12/2026 12:04 PM] Stas Polonsky: I'm getting "exit_code_info": "The run did not crash, but tests failed." for amd-mxfp4-mm on the code that ran fine the other day. Any issue with you MI355X execution environment?
+[3/12/2026 12:17 PM] gau.nernst: The reference implementation was updated. You might want to check that
+[3/12/2026 2:07 PM] gwokhou: Hi, I am setting up my repository and am having some trouble: The dependency file is missing from the repository (like requirements.txt or pyproject.toml,), making it difficult for me to run the code on my local machine. Could you please provide a dependency file?https://github.com/gpu-mode/reference-kernels/tree/main/problems/amd_202602
+[3/12/2026 2:15 PM] daniel huang: there are some numeric issues with previous aiter api, and we corrected it , sorry for the inconvenience
+[] Unknown: @gwokhouis this you needhttps://github.com/gpu-mode/kernelbot/blob/main/docker/amd-docker.Dockerfile?
+[3/12/2026 2:21 PM] gwokhou: Thanks for replying. It will be helpful to ensure that local code runs as expected in the cloud.
+[3/12/2026 3:31 PM] Augment: How does this work with already submitted solutions? Will you re-evaluate and invalidate all broken ones? For the solutions that followed the mxfp4 aiter transforms bitwise the new bankers rounding breaks things
+[3/12/2026 3:40 PM] daniel huang: original submissions are still valid. We won’t invalidate or re-evaluate any existing solutions — the bankers rounding change only applies to the corrected API for new submissions going forward.
+Since we know the new rounding breaks solutions that matched the original mxfp4 aiter transforms bitwise, we’ve kept all historical entries valid with the original rounding logic to protect the work you’ve already done.
+[3/12/2026 5:35 PM] pradeep: Is there anyway we can get some credits for this hackathon - looks like I had an old account and the credits have expired.
+[3/12/2026 11:51 PM] jdbartlett96: Can anyone recommend an affordable pay-as-you-go MI355X server to use for testing?
+[3/12/2026 11:56 PM] mcortazar: MI355x is very new. I’m using runpod for testing with the 300x. I know it doesn’t support the new set of instruction but it helps
+[3/13/2026 1:50 AM] N8: Hey btw I'm in position #2 and idk how. My best submission besides this was in the 70s. Just want to say its not intentional whatever it is.
+[3/13/2026 1:54 AM] Theo: make sure you integrate validation whether hard or by llm in the spirit of this articlehttps://deep-reinforce.com/defense_kernel_hack.html
+[3/13/2026 3:17 AM] Mark Saroufim: Hi folks we got a bunch of feedback on the rules for the E2E Model speedrun competition most notably from the team at Semianalysis, so we made some important updates and you should check them out carefully herehttps://luma.com/cqq4mojzNo changes to phase 1 problemsAt the end of phase 1 we will pay $10K to the top 10 teamsFor phase 2 we've removed GPT-OSS and replaced it with Kimi 2.5 1T FP4Grand prizes have been adjusted to $650K for Kimi and $350K for Deepseek
+[3/13/2026 3:20 AM] Josu: Off-topic, but that's a beautiful design.
+[3/13/2026 3:27 AM] houdinied: Out of curiosity Mark, why the change form GPTOSS to kimi 2.5?
+[3/13/2026 3:57 AM] daniel huang: of course to make it easier for all of you to win the big prize
+[3/13/2026 4:06 AM] jiab: the lobsters need feeding
+[3/13/2026 4:38 AM] Mark Saroufim: Bluntly, not many people seem to be using GPT-OSS
+[3/13/2026 4:49 AM] gau.nernst: maybe the organizer will switch to DeepSeekV4 when it's released in the coming days
+[3/13/2026 5:02 AM] houdinied: Haha true
+[3/13/2026 5:14 AM] Mark Saroufim: Maybe
+[] Unknown: If it’s too late it’ll randomize folks but we’ll keep an eye on this
+[3/13/2026 6:23 AM] Tomas R.: Kimi requires tp > 1, while gpt-oss-120b fits in tp=1
+[3/13/2026 9:22 AM] Stas Polonsky: Subject: Aiter's fused MXFP4 path blocked by Triton dtype support in evaluator
+
+I’m testing fused FP4 quantization + GEMM in the AMD challenge environment and found an evaluator-side compatibility issue.
+
+What I observe?When I run fused Triton path (gemm_a16wfp4_preshuffle), it fails with:KeyError('float4_e2m1fn_x2')fromtriton/_utils.py→canonicalize_dtype.The failure appears to come from Triton dtype canonicalization for FP4 (float4_e2m1fn_x2) in evaluator runtime.
+
+Request:
+
+Could you please verify and, if possible, align evaluator runtime to support fused FP4 path foraiter 0.1.11?
+
+Thanks!
+[3/13/2026 9:31 AM] vyom: is this legit caching or banned?(edited)
+[3/13/2026 12:12 PM] cata: Does anyone have MOE ref using torch ?
+[3/13/2026 1:49 PM] Josu: For the MLA challenge, I got to the 20us range, and the solutions is definitely exploity, but it's not a clear exploit like the 20us, or the 4us.
+
+For this task, should leaderboard solutions be interpreted as exact MLA decode implementations, or is it acceptable to use internal approximations such as pruning/selective KV evaluation if the output remains within the evaluator tolerances?(edited)
+[3/13/2026 5:32 PM] Sinatras: Send the kernel i can run over new harness
+[3/13/2026 6:54 PM] AlphaNord: Guys for amd-mxfp4-mm, should we provide a kernels which is fast for any shape or only very optimized for the benchmark only because i want to sqeeze out optimization but idk if it should be useful for real deployment or tuned for benchmark data (i speak abt legit code no "cheating")@Mark Saroufim? Thank you in advance everyone. And to bé eligible for 1M$ should we rank in top 5 of all mla / moe / mm or its you enough in one. Thank you very much
+[3/13/2026 7:11 PM] Mark Saroufim: hyperoptimizing for the benchmark shapes is totally valid, you'll need every advantage you can get for phase 1, keep in mind tho that phase 2 is inherently more ambiguous and the tradeoffs you mention here will be more relevant then
+[3/13/2026 8:26 PM] Adityaljo: Original baseline was 15 us . Now it’s 23.9 us for mxfp4-mm. I think you will have to remove prior submissions
+[3/13/2026 8:27 PM] bobmarleybiceps: i'm trying to submit the reference code insubmission.pyfor mxfp4 mm, and it's not passing the tests. is this expected?
+[3/13/2026 9:01 PM] Mark Saroufim: we'll study the impact of this, for now please keep continuing to make your submissions, worst case we just delete all submissions before a certain date - cc@siro@daniel huang
+[3/13/2026 9:02 PM] Adityaljo: Git fetch git pull and submit
+[3/14/2026 1:09 AM] vyom: tqvm sent you a dm..(edited)
+[3/14/2026 1:14 AM] Valix: Sorry, this is my first time participating. Is it only possible to submit to the leaderboard via popcorn-cli?
+
+When I submit test and benchmark directly on the webpage, they pass successfully, but the leaderboard submission does not pass, and there is no error message indicating the reason. Or could it be that some shapes are failing?
+
+Thank you.
+[3/14/2026 1:24 AM] vyom: if you submit thru popcorn-cli or dc bot you'll have an stdout or any response of it(edited)
+[3/14/2026 1:24 AM] Sinatras: verdict: clean
+confidence: 0.93
+exploit_family: NONE
+[3/14/2026 1:24 AM] vyom: niceee
+[3/14/2026 1:28 AM] Sinatras: Also if anyone finds any new hacking/patching method over harness you can directly let me know, i am building up multi layer detection for ensuring validity of the results already using 200k+ data
+[3/14/2026 1:30 AM] vyom: prime doesn't have mi355x or amd's yet isn't it?
+[] Unknown: jus asked in support haha
+[3/14/2026 1:32 AM] Valix: Thx! I will try it
+[3/14/2026 1:33 AM] Sinatras: sadly no, but you can use sandboxes for compiling only tasks
+[3/14/2026 1:34 AM] vyom: wanna use rocgdb
+[] Unknown: for mem issues
+[] Unknown: but how do we even tackle illegal mem issues without a gpu tho? don't wanna let the agent keep guessing(edited)
+[3/14/2026 1:36 AM] Sinatras: than you need gpu node yes
+[3/14/2026 3:02 AM] Mark Saroufim: This is reminding me of soccer referees calling offsides(edited)
+[3/14/2026 4:46 AM] Harsh Gupta: I pass the submissions through following anti-cheat prompthttps://gist.github.com/hargup/4897f33df0d2425ac4c8c99dc8f6ec00as an automatic lint step, has been helpful(edited)
+[3/14/2026 4:56 AM] Mark Saroufim: for anyone getting 4us results, consider checking this out
+[3/14/2026 5:06 AM] Jack Wang: I am a participant from China. Will I be affected by the physical list? And why am I unable to join the AMD Developer Program?
+[3/14/2026 5:32 AM] gwokhou: You are welcomed
+[3/14/2026 5:46 AM] Jack Wang: Terms and Conditions are described in a very intimidating way, which made me feel compelled to ask about them.
+[3/14/2026 5:51 AM] daniel huang: exact MLA impls are definitely what we really expected. As for internal approximations, it depends on what the specific method you use, some are valid some not, it's hard for me to say right or wrong until I have seen your code.(edited)
+[3/14/2026 5:52 AM] daniel huang: that's unreasonable, pls email to ai_dev_contests@amd.com to describle
+[3/14/2026 6:15 AM] Jack Wang: thank you.
+[3/14/2026 7:21 AM] gwokhou: Is anyone upgrading kernelbot backend?I got a 500 internal server error:Internal server error while validating leaderboard/GPU: column "visibility" does not existwhen I tried to submit.(edited)
+[3/14/2026 7:24 AM] jiab: yea me 2
+[3/14/2026 7:24 AM] siro: yeah it's me
+[] Unknown: working on it
+[] Unknown: sorry
+[3/14/2026 7:32 AM] siro: ok should work now, sorry folks
+[3/14/2026 9:00 AM] gwokhou: Can we usetorch.utils.load_inlinein this competition? Or only pure Python?(edited)
+[3/14/2026 9:16 AM] gau.nernst: Load inline should be fine
+[3/14/2026 1:04 PM] AlphaNord: Hello guys, for the matrix multiplication, did you write ur own kernel to get to top 5 or kept  aiter.gemm_a4w4 ?
+[3/14/2026 2:35 PM] Blake (bledden): Happened to me and FYI you can delete your entry via popcorn cli
+[3/14/2026 2:53 PM] ooousay: Good morning, does my luma account need to be linked to  my discord?
+[3/14/2026 3:06 PM] Guruprasad-mp: Yes, you are welcome!! Please DM me the problem you are facing.
+[3/14/2026 3:28 PM] AlphaNord: yes, enable discord developper mode in desktop client or mobile (discord) then click on your profile and copy the id (its a number)
+[3/14/2026 4:19 PM] Samuel Xu: Hey, I registered with Github at first and after reading discord, have re-registered with my discord username. I just have some submissions up with my github username - should I use the cli to delete all of them and re-submit the best ones with the new auth in popcorn? Don't want to add noise with two redundant sets of submissions, but was thinking maybe popcorn already accounts for this and switches them over.(edited)
+[3/14/2026 4:27 PM] AlphaNord: i guess (im not of evaluation team) if you do it with discord, then discord username will be prompted, honestly in luma they asked for both id discord and github so changing may not be a problem, so you can continue with discord without deleting but if you want something clear / clean maybe stich to one
+[] Unknown: honestly i use github account cuz i wasnt aware that there is a bot here which allow to check your rakning (cuz it refuse to see my score as it say its not me)
+[3/14/2026 4:39 PM] Sinatras: Please send the problematic kernels@N8and@Blake (bledden)so i can run it over classifier
+[3/14/2026 5:44 PM] ooousay: im talking about this luma:
+[3/14/2026 6:40 PM] AlphaNord: i meant the form you used to register, if you didnt add cancel and reregister the form
+[] Unknown: you find it in event (normally) / or calender (maybe)
+[3/15/2026 3:52 AM] SSS: When I signed up for Luma, I mistakenly entered my Discord username instead of my user ID. I didn’t realize this until I tried to authenticate using the Popcorn CLI. What should I do now to get back on track?
+[3/15/2026 4:03 AM] SSS: I can't fill out the form again.
+[3/15/2026 4:35 AM] AlphaNord: Its valide using github id but anyways if i want discord go herehttps://luma.com/cqq4mojznormally u registered there, it would ask you to cancel do it then re register in the Link
+[3/15/2026 4:35 AM] AlphaNord: Sorry what u mean by cant
+[3/15/2026 5:32 AM] SSS: When I click on the event page, there’s no option to re-register, no option to fill out the registration form again, and no option to re-enter my Discord ID.
+[] Unknown: Should I cancel my registration and sign up again?
+[3/15/2026 5:33 AM] AlphaNord: Yes cancel to redo
+[3/15/2026 8:06 AM] gwokhou: What's the meaning of"Your code contains work on another stream."Can anyone help? I am just iterating the same kernel as usual.
+[3/15/2026 8:10 AM] divc13: Remove the word "stream" from your code.
+[3/15/2026 8:12 AM] gwokhou: Thank you! It works
+[3/15/2026 12:49 PM] GnSight: Hi! My MoE kernel passes in both test and benchmark modes, but in leaderboard mode, around 1% of values on one test case show a mismatch. Is leaderboard mode expected to have stricter precision requirements? Would it be possible to make the precision thresholds consistent across all modes? Thanks!
+[3/15/2026 12:52 PM] gau.nernst: probably due to difference RNG seed. iirc, the tolerance is the same
+[3/15/2026 12:53 PM] GnSight: Thanks for the quick clarification:)
+[3/15/2026 2:23 PM] asalykov: Some comments on the compiler intrinsics/builtins and where to find docs/examples:
+
+1. In most cases builtin translates into intrinsic. In most cases translation is 1:1. But not always. Many intrinsics directly or nearly directrly map to the ISA manual / shader programming guide insts
+2. LLVM user guidehttps://llvm.org/docs/AMDGPUUsage.html3. ISAhttps://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-cdna4-instruction-set-architecture.pdf4. Builtins:https://github.com/llvm/llvm-project/blob/main/clang/include/clang/Basic/BuiltinsAMDGPU.td5. Intrinsics descriptionshttps://github.com/llvm/llvm-project/blob/main/llvm/include/llvm/IR/IntrinsicsAMDGPU.td6. Code examples:https://github.com/carlushuang/gcnasm/tree/master7.https://github.com/llvm/llvm-project/tree/main/llvm/test/CodeGen/AMDGPU8.https://github.com/llvm/llvm-project/tree/main/clang/test/CodeGenOpenCLandhttps://github.com/llvm/llvm-project/tree/main/clang/test/SemaOpenCL9. grep llvm repo
+10. experiments(edited)
+[3/15/2026 3:18 PM] gwokhou: That is a real hardcore competition
+[3/15/2026 3:20 PM] ritwikdas: Can someone explain how the score is calculated?
+
+For theamd-mixed-mlaproblem, I have all the benchmark measurements under 20us, however when I look at my submissions, the score is > 6000us and in the rankings page it shows 1661us. It is confusing, is there some documentation about how to interpret the different numbers?
+[3/15/2026 3:24 PM] Samuel Xu: @SinatrasCould I send you a kernel I have for mixed-mla? I'm worried it's classified as illegitimate
+[3/15/2026 3:34 PM] Samuel Xu: What are your scores across the various batch sizes? Might be incredibly slow for a few particular configs in the test set
+[3/15/2026 3:38 PM] ritwikdas: All the batches are under 20us, Are we running other batches than what is present in the benchmarks?
+[3/15/2026 3:51 PM] divc13: these are ms, not us
+[3/15/2026 3:54 PM] ritwikdas: I have been blind this whole time. Never mind, thanks for pointing out. The numbers remained single digit and the units changed
+[3/15/2026 4:46 PM] DIVIJ: how to see leaderboard position guys ?
+[3/15/2026 5:21 PM] ritwikdas: https://www.gpumode.com/leaderboard/765?tab=rankings
+[3/15/2026 5:25 PM] Sinatras: Sure you can send me via pm
+[3/16/2026 12:21 AM] Mark Saroufim: https://www.gpumode.com/live?ids=765%2C764%2C763
+[3/16/2026 12:24 AM] Blake (bledden): This is so much better than switching between each competition's page
+[3/16/2026 12:28 AM] Mark Saroufim: we had this idea at the recent helion hackathon but seems generally useful(edited)
+[3/16/2026 12:29 AM] Nick Nuon: Now that its side by sideI notice that MoE have much less submissions than the other two(edited)
+[3/16/2026 12:45 AM] Mark Saroufim: the runtimes are significantly longer so that's expected, faster turnaround means more submissions, means more competitive results
+[3/16/2026 1:53 AM] daniel huang: @Mark SaroufimHello Mark Could we pin this msg?
+[3/16/2026 2:24 AM] Mark Saroufim: Done@asalykovcome give a talk too if you like! A crash course would be invaluable before phase 1 concludes. Feel free to prerecord as well in case GTC causes scheduling issues and I’ll post it everywhere for you p
+[3/16/2026 3:59 AM] nobitut: hi where do I get what installed on the benmark/leaderboard runner cluster ?
+[3/16/2026 5:31 AM] Mark Saroufim: https://github.com/gpu-mode/kernelbot/blob/main/docker/amd-docker.Dockerfile
+[3/16/2026 6:00 AM] mumu: /get-api-url
+[3/16/2026 6:02 AM] Mark Saroufim: you dont need to do this anymore - just do popcorn register github and you should be good to go(edited)
+[3/16/2026 6:05 AM] mumu: /get-api-url
+[3/16/2026 8:33 AM] siro: become ungovernable
+[3/16/2026 1:17 PM] FrostMnh: Subject: Seeking clarity on mxfp4-mm task boundaries
+
+Hi everyone! I'm a newcomer using AI to help bridge the gap between my current logic and the ROCm/Triton implementation.
+
+I first heard about this competition on r/LocalLLaMA and decided to give it a shot. I'm not sure if I’ll succeed, but I figured if I don’t try, I'll never know. I've done some preliminary searching and noticed discussions about "defense_kernel_hack" and warnings against cheating. To stay within the "fair play" zone, I'd like to clarify the intended boundaries for the mxfp4-mm task:
+
+Core Objective: Is the goal purely to minimize the latency of the GEMM execution, or is it a "full pipeline" challenge including quantization and shuffling?
+
+Legality of B_shuffle: The provided data tuple includes B_shuffle. Is it within the spirit of the task to use this pre-processed data directly? I noticed a significant jump (~18µs vs ~34µs) when I handle the weight transformation manually.
+
+Scope of Customization: Are we allowed to replace the aiter defaults with our own custom Triton kernels or even inline ASM?
+
+Level of Customization: Are we allowed to use things like CUDA/HIP graphs or auxiliary C++ functions to bypass Python overhead?
+
+I want to make sure I'm focusing my optimization efforts on the intended hardware bottlenecks without accidentally "reward hacking." Thanks for any guidance!
+---
+I'm currently developing on an Arch Linux machine with an E3 1230v2, 24G DDR3 RAM, and a Vega 64 (gfx900). Since my local hardware doesn't natively support some of the newer FP4 kernels, I'm relying heavily on the Popcorn CLI / MI355X remote environment to validate my work.
+[3/16/2026 3:41 PM] AlphaNord: From what i understood anything is permissible as long the code compute truly matrix multiplication and did not calculated in advance or cheated like the blog u saw. So hip, c++, as long u achieve to run it the popcorn cli good work
+[3/16/2026 3:50 PM] FrostMnh: Can I directly use C language to implement ISA and then Operator Fusion to precisely read a specific memory segment? This would allow me to perform tasks while loading, effectively reducing memory usage by 0.00001 µs XDD
+
+I will never calculate in advance or cheat! I will only optimize the code so that we can see how far I can go. :D
+[3/16/2026 4:04 PM] AlphaNord: Im not a moderator but from my understanding you can
+[3/16/2026 4:52 PM] vyom: yoo, is this opensource? jus got a massive drop wanna checkout ourselves that we legit! could also include it in the pipeline
+[3/16/2026 4:53 PM] Sinatras: not opensource yet you can still send me the kernel for re-run
+[3/16/2026 4:54 PM] vyom: awesome will dm!
+[3/16/2026 5:18 PM] vyom: sent you dm
+[3/16/2026 5:19 PM] Harsh Gupta: You can try this onehttps://discord.com/channels/1189498204333543425/1359640791525490768/1482238345416413365
+[3/16/2026 5:25 PM] vyom: oh yesss forgot about this super thanks
+[3/16/2026 5:26 PM] vyom: but it doesn't go deeper into caches? or multi-streams yet?
+[3/16/2026 5:27 PM] Harsh Gupta: It has stuff about cache, but you can take. this as a base prompt and ask your agent to add more stuff
+[3/16/2026 5:28 PM] vyom: cool
+[3/16/2026 5:48 PM] Sinatras: verdict: clean
+confidence: 0.77
+exploit_family: NONE
+[] Unknown: Only hits are from fallbacks and reference code similarity
+[3/16/2026 5:51 PM] vyom: perfect
+[3/16/2026 5:51 PM] vyom: got it
+[3/16/2026 5:52 PM] Sachin: Hello folks, sorry if I’m asking this question and it’s been answered. Is there a cloud code credits that can be used for this ?
+[3/16/2026 7:10 PM] AlphaNord: for testing ur cloud u use popcorn cli, it allow to pass benchmark ur code, submit your code for leaderboard, and other
+[3/16/2026 7:38 PM] Sinatras: verdict: hacked
+confidence: 0.99
+exploit_family: POINTER_REPLAY
+[] Unknown: It seems illegitimate caching output op
+[3/16/2026 7:59 PM] Samuel Xu: Thanks! Will remove
+[3/16/2026 8:22 PM] siro: do you maybe wanna just host an api haha?
+[3/16/2026 8:33 PM] Mark Saroufim: I was gonna say that’s probably the easiest both for kernelbot integration and users just double checking before submissions
+[3/16/2026 8:37 PM] ooousay: Hi, I am having an issue where all my submissions keep timing out, even with submissions that passed earlier today. I am new to this so I might be making a simple mistake, but I don't see what to do next.
+[3/16/2026 8:39 PM] bill: timing out too. is this a server internal error?(edited)
+[3/16/2026 8:39 PM] ooousay: That's what I thought initially but nobody else was saying anything haha(edited)
+[3/16/2026 8:40 PM] bill: since 3pm i think.
+[3/16/2026 8:42 PM] Samuel Xu: Same here.
+[3/16/2026 8:47 PM] Clamper: Same here
+[3/16/2026 8:48 PM] siro: there seems to be way more runs but all of them are getting scheduled
+[] Unknown: hmmm
+[] Unknown: oh I see, there is a backlog
+[] Unknown: fixing
+[] Unknown: I stopped submissions for a while to clean up the queue
+[] Unknown: okay, should be started now, we seem to be missing some of the nodes from the runners so if you could try to use benchmark primarily (that uses only 1 gpu instead of leaderboard with 2) while we solve this it'd be very nice, Mark is on GTC so it's a bit busy
+[3/16/2026 9:00 PM] Theo: @siroany word onhttps://github.com/gpu-mode/reference-kernels/pull/113? i can close if yall dont need it anymore
+[3/16/2026 9:01 PM] siro: oh nice, don't worry about closing, kinda missed it to be fair
+[] Unknown: i hope to get a look at it soon
+[] Unknown: sorry
+[3/16/2026 9:01 PM] Theo: No worries haha
+[3/16/2026 9:05 PM] siro: well so this was a lie - there is like 50 jobs queued againshould hopefully churn through them
+[3/16/2026 9:10 PM] Sinatras: shipping the kguard + kernelbot integration soon(edited)
+[] Unknown: 100+ rule iterations within 3 weeks, slowly becoming really confident
+[3/16/2026 9:11 PM] Sinatras: Yes pre-leaderboard layer for guarding against possible known hacks coming
+[] Unknown: + manually triggerable deeper online inspection via evaluator if needed
+[3/16/2026 9:14 PM] Theo: @Sinatrasare you going to purge the leaderboards of all the stuff that doesnt follow this layer(edited)
+[3/16/2026 9:15 PM] Sinatras: we will discuss with the team what to do moving forward but after initial silent release and couple checks it could be used to cleanup yes
+[3/16/2026 9:17 PM] Theo: Great to hear! hope its speedy so theres still enough time for the fair comp to mature
+[] Unknown: before the month ends that is
+[3/16/2026 9:17 PM] Sinatras: yeap at latest friday eveything should be ready, no one should be demoralized by hacked entries if there any (couple of them got deleted by s1ro already)
+[3/16/2026 9:18 PM] Mark Saroufim: The top entries will be manually audited regardless
+[3/16/2026 9:18 PM] Sinatras: lets all try to optimize till the last hours keep it going
+[3/16/2026 9:19 PM] Mark Saroufim: It’s just that we’re not going to spend time finding reward hacks if they’re in the bottom submissions
+[3/16/2026 9:20 PM] Theo: Perf
+[3/16/2026 9:20 PM] Theo: ye makes sense
+[3/16/2026 9:52 PM] J: Having the same issue.
+[3/16/2026 9:56 PM] Clamper: Same here
+[3/16/2026 10:12 PM] FrostMnh: I also timed out!
+
+amd_202602 git:(main) ✗ popcorn submit --gpu MI355X --leaderboard amd-mxfp4-mm --mode benchmark ./mxfp4-mm/submission.py
+wait...
+Submission error: Server processing error: An unexpected error occurred: TimeoutError | Raw Error: Workflow 23167859414 cancelled - exceeded 12 minute timeout(edited)
+[3/16/2026 10:29 PM] siro: Yes, this is because of queue, we're missing some nodes,@Mark Saroufimis looking at it
+[3/16/2026 11:36 PM] Mark Saroufim: should be fixed now, issue was some zombie jobs clogging up the queue, not sure why yet but mitigation was easy so will monitor(edited)
+[3/16/2026 11:54 PM] Mark Saroufim: Jobs looking green
+[3/17/2026 12:01 AM] FrostMnh: Hi, I have a question: what is the current status of 571837?
+
+As far as I know, any optimization method is acceptable (as long as it doesn't directly read or modify cheat codes), so I'm testing other methods. I saw you mentioned running the test channel first. I don't know how to run the test channel using popcorn-ctl, so I uploaded it directly to the test channel via the submission function at gpumode.com/leaderboard/763?tab=submission. But it's stuck?
+
+571837    submission.py    3/17/2026, 6:49:32 AM    running N/A
+---
+➜  amd_202602 git:(main) ✗ popcorn submissions show 571837  
+Submission #571837
+============================================================
+Leaderboard:    amd-mxfp4-mm (id: 763)
+File:           submission.py
+User ID:        xxx
+Submitted:      2026-03-16T22:49:32.114417Z
+Status:         pending
+
+Code:
+------------------------------------------------------------(edited)
+[3/17/2026 12:45 AM] Samuel Xu: Thanks so much for the bugfixes@Sinatras@Mark Saroufim!
+[3/17/2026 2:17 AM] bill: I met a performance gap between 'benchmark' and 'leaderboard' at gemm kernel, the time used at 'leaderboard' is almost using the max timeat 'benchmark' mode. did anyone also meet this issue?
+[3/17/2026 2:23 AM] gripingberry: Is the profiler supposed to download files or give a rocm compute output? I don't get either when running it
+[3/17/2026 2:25 AM] bill: a previous chat mentioned leaderboard will run in 2 gpus, which may lead to some overhead at communication. is it designed to be working like this all the time?
+[3/17/2026 2:29 AM] daniel huang: pls note again this cache mechanism is obviously illegal, which only add our workloads
+[3/17/2026 2:33 AM] bill: the extra time is almost 4us
+[3/17/2026 3:04 AM] daniel huang: given that this kind of case is hard to eliminate, so I suggest you guys forget leaderboard temporarily, just focus and submit, we'll definitely check one-by-one to give a fair result
+[3/17/2026 3:15 AM] gripingberry: Okay I was able to find the profiler output... Has anyone had success getting it to show in rocm compute viewer? Seems to be missing some files
+[3/17/2026 3:16 AM] Artemis: This bad boy got an exotic exploit score of ~13μs on amd-mixed-mla
+[3/17/2026 4:08 AM] Artemis: If anyone didn't know - you can delete your exploit submissions with CLI. Let's keep leaderboard tidy with community effort!
+[3/17/2026 4:31 AM] anandasai_a: is there a way to get access to MI355X via amd-cloud? digitalocean seem to only give access to MI300X
+[3/17/2026 4:47 AM] gwokhou: no, but you can use popcorn-cli with flag “—mode test” for quick checking
+[3/17/2026 5:21 AM] gwokhou: hi mark, the problem still happens, now spending more time for submitting (after 30s then timeout)@Mark Saroufim
+[] Unknown: same for both submit API and list API
+[3/17/2026 6:17 AM] Mark Saroufim: There’s just a huge surge of jobs. Not the same issue as before
+[3/17/2026 6:26 AM] daniel huang: hi everyone who is John Hahn on the leaderboard? pls DM me, thanks
+[3/17/2026 6:50 AM] Mark Saroufim: hi folks we are extending the submission window for phase 1: April 6, 2026, 11:59PM PST
+[3/17/2026 7:34 AM] SSS: Submission error: error sending request for url (https://site--bot--dxfjds728w5v.code.run/amd-mixed-mla/MI355X/test)Is there a problem with the test machine?
+[3/17/2026 7:43 AM] FrostMnh: Here's what I can currently use:
+ ➜  amd_202602 git:(main) ✗popcorn submit --gpu MI355X --leaderboard amd-mxfp4-mm --mode test ./mxfp4-mm/submission.py 
+Try it a few more times.
+But I just had the same problem (maybe 20 minutes ago?), but only once.(edited)
+[3/17/2026 7:46 AM] SSS: The command is the same as yours
+[] Unknown: Haha, things are back to normal now.
+[] Unknown: And is there a way to close the view on the left?（popcorn cli）
+[3/17/2026 7:49 AM] FrostMnh: I don't know right now; I might need to find some time to look at the code and see what it does.
+[3/17/2026 7:52 AM] Leandro Timberini: use --no-tui
+[3/17/2026 7:53 AM] FrostMnh: I'm not sure how this will turn out, since it hasn't been fully run yet.:
+submit --no-tui 
+
+(venv) ➜  amd_202602 git:(main) ✗ popcorn submit --no-tui --gpu MI355X --leaderboard amd-mxfp4-mm --mode test ./mxfp4-mm/submission.py
+Submitting to leaderboard: amd-mxfp4-mm
+GPU: MI355X
+Mode: test
+File: ./mxfp4-mm/submission.py
+
+Waiting for results...
+{"status": "processing", "elapsed_time": 0.0}
+...(edited)
+[3/17/2026 7:55 AM] SSS: thank you
+[3/17/2026 9:11 AM] gwokhou: off topic, the designers of popcron-cli must have considered how to make the agent easy to integrate, which is why they provided the --no-tui option.
+[3/17/2026 11:06 AM] vyom: hey so use of cross-call B-side caches keyed by tensor identity, including data_ptr() is also considered as illegal?cache key explicitly includes int(tensor.data_ptr())like reuse prior computed intermediates across calls based on pointer/shape/stride identity ??(edited)
+[3/17/2026 11:06 AM] vyom: cuz in this we useint(tensor.data_ptr())
+[3/17/2026 12:17 PM] J: Good look
+[3/17/2026 12:43 PM] J: I never thought about that, good point.
+[3/17/2026 2:27 PM] divc13: Something wrong with the submission queue?
+[3/17/2026 2:33 PM] Josu: It seems that the server is down. popcorn-cli doesn't work and the front end submission returns this:[ERROR] Server error: <html> <head> <title>Internal Server Error</title> </head> <body> <h1><p>Internal Server Error</p></h1> </body> </html>
+[3/17/2026 2:54 PM] Mark Saroufim: Jobs still queuing but the load is crazy
+[3/17/2026 3:09 PM] gwokhou: Hello folks, we could add alocal pre-compile check script for HIP codebefore submission (if you are using a coding agent to submit), which would help improve service stability.
+[3/17/2026 3:11 PM] vyom: its coming
+[3/17/2026 3:11 PM] Rikikoo: Could something like rate limiting be implemented? It's getting really frustrating to work on this as a human
+[] Unknown: Even in the best conditions it takes 1+min to test anything, and now you can't even run jobs because agents are spamming(edited)
+[3/17/2026 3:18 PM] Josu: It's annoying for non-humans too.
+[] Unknown: Also, as a human, spamming seems rational:
+1. It makes sense to micro-tune around basins.
+2. Variance is too large, so the current leaderboard rewards resubmitting the code.
+[3/17/2026 3:22 PM] Rikikoo: When you "spam" as a human you might submit 10 requests at once, maybe 20. Hardly enough to bring the queue down to its knees
+[] Unknown: The organizers were complaining about the quality of the submissions and how they expected better results. I hope they realize the current strategy of letting agent swarms spam the runners is actively deterring actual kernel hackers.
+[] Unknown: Also, the second phase is supposed to be you working with AMD engineers -- do they realize they signed up to work with claude?
+[3/17/2026 3:25 PM] Josu: >do they realize they signed up to work with claude?
+
+This is the new paradigm. If AMD engineers are not already working with LLMs, they are cooked.
+[] Unknown: There is a reason why Jensen says these thingshttps://x.com/josusanmartin/status/2033919950235070742
+[3/17/2026 3:30 PM] Josu: Of course I haven't. That's my point, the whole world is upside down.
+[] Unknown: I don't even know what the kernel does, and here I am. This is absurd.
+[] Unknown: I'm having a lot of fun though, and learning a lot.
+[3/17/2026 3:32 PM] vyom: wait how's the UI 100x better?
+[3/17/2026 3:32 PM] Josu: Here is another fun challenge. The top positions, at least James and Corsix are top-notch kernel engineers.https://vliw-challenge.fly.dev/But my score is quite decent.
+[3/17/2026 3:33 PM] Josu: Credit to@ooousayhttps://leaderboard.ooousay.com/
+[3/17/2026 3:34 PM] Josu: Challenges based onhttps://github.com/anthropics/original_performance_takehome
+[3/17/2026 3:35 PM] vyom: thanking@ooousayfor it
+[3/17/2026 3:36 PM] ooousay: Why are you being rude? The organizers specifically implemented popcorn-cli with agents in mind.
+[3/17/2026 3:37 PM] gwokhou: I think the fundamental problem is that there aren't enough MI355X machines available for each participant. Thismakes it difficult for participants to debug locally, and simple bugs are only discovered during cloud execution, leading tounnecessary cloud queue backlogsand consequently service instability.
+[3/17/2026 4:13 PM] vyom: is the cluster/API submission in hang? cuz I don't see my submissons on the dashboard but see them locally
+[3/17/2026 4:16 PM] Rikikoo: I removed that comment, it was unnecessarily rude
+[] Unknown: I'm just frustrated because the dev exp is already uncomfortable enough as is, with not having direct access to the machines(edited)
+[] Unknown: And this is a zero sum game -- if one person is spamming workloads, everyone else is at a disadvantage
+[3/17/2026 4:56 PM] FrostMnh: I feel you. Local testing is impossible due to Vega 64 / ROCm issues — it’s basically a black box > I’m stuck guessing how the MI355X works by bouncing logic off Gemini and pushing to the cloud.
+
+Most of the time I just get 500s or random errors. Not trying to spam, just doing trial and error to learn the syntax and stay within the "no cheating" rules.
+
+PS:I usually only run tests; if it runs successfully, I'll test the benchmark to see the speed.
+[3/17/2026 5:15 PM] bill: I met a performance gap between 'benchmark' and 'leaderboard' at gemm kernel. the time cost at 'leaderboard' almost cost the max timeat 'benchmark' mode. did anyone also meet this issue?
+[] Unknown: or do they match very well in your cases?
+[3/17/2026 6:32 PM] Augment: I have the same, about 0.4-0.7us difference between benchmark and leaderboard kernels. It could be skill issue from host code but would be interesting to know if anyone does not have this
+[3/17/2026 6:33 PM] Zephyr Zhao: Greetings! Is it possible if I want to use Composable Kernels (CK) in my submission? Are CK header files available in the test env? If not, could I download it in the python script and using it for compilation?
+[3/17/2026 6:35 PM] Mark Saroufim: yup should be ok to download headers in test env yes, if you run into timeout issues just lmk
+[3/17/2026 6:38 PM] siro: yep on it right now
+[3/17/2026 7:11 PM] Harsh Gupta: The compilation doesn't require the MI355X machine, maybe it is possible to run the compilation on cheap cloud CPU instances to reduce the load off the GPU machines?(edited)
+[3/17/2026 7:28 PM] siro: The bot is gonna be down for a few minutes while I test/integrate rate-limitssorry about that
+[3/17/2026 8:20 PM] siro: So rate limits are implemented, currently set to 1/h for leaderboard, 6/h for benchmark/test, I do think we will increase based on the queue times
+[] Unknown: we will also add support for per-user overrides so we can give people that we know are legit and not spamming with ai more up-time
+[3/17/2026 8:32 PM] Zephyr Zhao: Does anyone know what the meaning of this error with popcorn cli:Application error: Server returned status 500 Internal Server Error: Your code contains work on another stream. This is not allowed and may result in your disqualification. If you think this is a mistake, please contact us.Resolved! Thx!(edited)
+[3/17/2026 8:36 PM] brian: Are we only going to be tested specifically on the benchmarks? I guess if I was wondering if I could hard code the sizes as a template parameter or something or should the code be more flexible
+[3/17/2026 8:38 PM] Augment: @brian
+[3/17/2026 8:44 PM] siro: let me know how this works for all of u btw
+[] Unknown: the goal is to limit AI not humans
+[3/17/2026 8:45 PM] J: Works.
+[3/17/2026 8:45 PM] siro: also if its too limiting, just give feedback in general if any issues
+[3/17/2026 8:48 PM] Rikikoo: Thank you for this, 6/h might be overdoing it since there is basically no other way to test your code but I believe this is a great step forward
+[] Unknown: It's very annoying that basically no one is doing cloud offering for the MI355X, because my kernel relies on a bunch specific instructions that aren't present on the more common MI300X
+[3/17/2026 8:49 PM] Mark Saroufim: What do you suggest rikikoo? Rate limits are almost always unpopular but not having them means long queue times from AI submissions
+[] Unknown: I think fully iterating here on AMD hardware would indeed be hard but if you’re writing competitive code perhaps@Guruprasad-mpcan hook you up with ssh hardware
+[3/17/2026 8:50 PM] gau.nernst: haven't tried it out but some thoughtsmaybetestdoesn't need rate limit?maybe it makes more sense to have daily limit, instead of hourly limit? (or maybe both). since humans will only spend possibly a few hours per day at a time on a problem
+[3/17/2026 8:50 PM] Rikikoo: I would suggest having a sliding ceiling, the more you submit, the more limited you become. Normal humans won't be working on this 24/7.
+[] Unknown: I also agree that daily limit makes more sense
+[3/17/2026 8:55 PM] siro: ye can increase prolly
+[3/17/2026 9:07 PM] ooousay: are these limits overall? or does each problem have its own queue
+[3/17/2026 9:13 PM] siro: it's per problem
+[] Unknown: let me increase test to 10, the queue seems fine
+[3/17/2026 9:41 PM] jdbartlett96: Thank you!! The queue was absolutely killing me, infinitely more viable to test now
+[3/17/2026 10:10 PM] J: Yes.
+[3/17/2026 10:14 PM] Kpyy: Does anyone know if the submissions that are not valid as perhttps://gist.github.com/hargup/4897f33df0d2425ac4c8c99dc8f6ec00will still show up in the leaderboard?
+[3/17/2026 10:52 PM] Samuel Xu: I'm looking in the AMD developer cloud digitalocean for the MI355X access, but I don't see it. Are we supposed to have access to it?
+[3/17/2026 10:55 PM] J: I'm not sure if this answers your question, but you do have access to it.(edited)
+[3/17/2026 10:58 PM] Samuel Xu: That's not quite what I mean - I want access to do some precompilation because some of my submissions kept timing out (even before the bugs)
+[3/17/2026 10:59 PM] J: Oh nvm, please ignore the above.
+[3/17/2026 11:05 PM] gau.nernst: U can compile the code on CPU using the official Docker image
+[3/17/2026 11:07 PM] gau.nernst: @Samuel Xuhere
+[3/17/2026 11:08 PM] Zephyr Zhao: Is that possible to also support AMD's profiling tools as NVIDIA's one? It's pretty hard to get access to a profilable MI355X on the market
+[3/17/2026 11:11 PM] Samuel Xu: Thank you!!
+[3/18/2026 12:42 AM] vyom: yes we would love to have this, especially@Elliot Arledgewould love it and I’ve sent a request but it still hasn’t been accepted(edited)
+[3/18/2026 1:28 AM] Josu: Would it be possible to allow one submission per hour per exercise? Rather than sharing the same rate limit between the 3?
+[3/18/2026 1:30 AM] siro: it already should be per exercise
+[3/18/2026 2:30 AM] Elliot Arledge: we would love some!
+[3/18/2026 3:13 AM] Mark Saroufim: hi folks, we've been noticing way too many reward hacks on the MLA problemhttps://www.gpumode.com/leaderboard/765?tab=rankings- so@daniel huangand I discussed it and we're upgrading the eval and clearing all submissions to that leaderboard shortly, we apologize for the inconvenience, please make sure to check whether your new kernels are "reward hacky" and resubmit
+[3/18/2026 3:36 AM] vyom: could you please accept our fren request
+[3/18/2026 3:39 AM] ooousay: Thanks for the update, is this a one hour downtime or an overnight downtime?
+[3/18/2026 3:49 AM] Mark Saroufim: no downtime, it's done!
+[3/18/2026 3:59 AM] Josu: I've re-submitted my previous legit code, and it errored out. I feel like there is something wrong.
+[3/18/2026 4:01 AM] Mark Saroufim: hmm lemme see 1s
+[3/18/2026 4:07 AM] Josu: Ranking is empty, so I assume that I'm not alone.
+[3/18/2026 5:35 AM] Dhruv Saini: You aren't - struggling with this too
+[3/18/2026 5:38 AM] Mark Saroufim: Daniel is looking into this, we'll give an update soon
+[3/18/2026 5:38 AM] Dhruv Saini: Thanks!
+[3/18/2026 8:28 AM] SSS: So, does each operator advance individually in the end?
+[3/18/2026 8:39 AM] luyuzhang: I've come across the same issue too. May I ask if it's not permitted to use load_inline for HIP-level optimization?
+[3/18/2026 12:04 PM] Mark Saroufim: We’ve had many many people successfully use load_inline both for these problems and the older AMD problems
+[3/18/2026 2:36 PM] cata: [amd mxfp4 gemm ]
+i am testing some submissions again and i noticed that they have missmatches ,  something changed? or
+[3/18/2026 2:41 PM] Augment: There was a change to use bankers rounding in the mxfp4 quantization about a week ago, you should pull down new reference(edited)
+[3/18/2026 2:42 PM] cata: ah so its new reference , its the one on the website updated?:)
+[3/18/2026 2:43 PM] Augment: dont know i only use cli
+[3/18/2026 2:43 PM] cata: thanks :D
+[] Unknown: i look into this
+[3/18/2026 2:45 PM] StarAtNyte: has this been solved? still getting errors
+[3/18/2026 2:47 PM] J: I've been able to test/benchmark successfully.
+[3/18/2026 3:33 PM] Mark Saroufim: should be mitigated, let@daniel huangand me know if you run into any more issues
+[3/18/2026 3:37 PM] daniel huang: Hi folks, the mla is pretty precision sensitive based on our internal test, be careful to implement it. And let's keep touch, thanks
+[3/18/2026 3:59 PM] Josu: How should we interpret it when the result is Finished but there is no Run Report?
+
+I'm resubmitting my previous best result to mla.
+[3/18/2026 5:23 PM] danishlynx: chineseman" has 4.3μs on all 3 leaderboards, looks like the correctness check is being bypassed. Can organizers review?
+[3/18/2026 5:26 PM] Mark Saroufim: We’ve tried reaching out to them and they’re not responsive. We’ll likely need to ban. Please ignore their submissions
+[3/18/2026 5:27 PM] danishlynx: thanks a lot !!
+[3/18/2026 6:13 PM] edward: lmao what did he do? :))))
+[3/18/2026 6:13 PM] Sinatras: getting their entries to run it over the guard harness
+[] Unknown: probably already covered
+[3/18/2026 6:17 PM] Samuel Xu: I am a chinese man but I swear I'm not chineseman
+[3/18/2026 6:17 PM] Mark Saroufim: They’re just caching all results and going crazy with the inspect module
+[3/18/2026 6:56 PM] Tensorscope: After the MLA refresh, the aiter ASM kernel binaries on the server do NOT support page_size > 1. Was this intentional?
+[3/18/2026 7:29 PM] J: Good cover up, we're onto you Sam.(edited)
+[3/18/2026 10:55 PM] chineseman: Hey... So what're people using to ensure their AI doesn't use banned techniques in submission? Plz help
+[3/18/2026 10:57 PM] Clamper: https://deep-reinforce.com/defense_kernel_hack.html
+[3/18/2026 10:58 PM] chineseman: Do I feed that into agents.md as what not to do?@Mark Saroufimsuggested having a second agent review before submitting but I dunno how to do that
+[3/18/2026 11:03 PM] Clamper: You can. I would also suggest the second review agent. You can use claude code or whatever you use to help you build out your agent harness.
+[3/18/2026 11:48 PM] J: The legend, this better not be Ling Long from Cluely.(edited)
+[3/18/2026 11:49 PM] chineseman: No. That is my brother. We have different glasses
+[3/18/2026 11:54 PM] J: We are same same but different(edited)
+[3/19/2026 12:30 AM] Josu: What is the evaluation doing differently from a "benchmark" submission to a "leaderboard" submission? I'm try to understand why some submissions pass one but fail the other.
+[3/19/2026 12:32 AM] daniel huang: we use magic to beat magic
+[3/19/2026 12:33 AM] daniel huang: it will use completely different input by adding a seed value in leaderboard mode, but test and benchmark won't
+[3/19/2026 12:34 AM] Josu: Makes sense. Thank you.
+[3/19/2026 12:37 AM] daniel huang: and dear friends, don't forget the real big prize is in phase 2, which need more standard and professional codes, if you have a good preparation for that in phase 1, big prize of phase 2 will be much easier to be inside your home
+[3/19/2026 1:10 AM] anandasai_a: for phase2, could there be a way to get dedicated GPUs and credits for them?
+[3/19/2026 1:19 AM] daniel huang: sure
+[3/19/2026 4:07 AM] mumu: Can I test three operators at the same time with one account?
+[3/19/2026 10:05 AM] gwokhou: just to confirm,  the current rate limit rule is:  10/h for test, 6/h for benchmark, 1/h for leaderboard, individual limiter for each problem. right?
+[3/19/2026 10:12 AM] vyom: I dont think we got any on tests
+[3/19/2026 10:13 AM] vyom: @sirocould we reduce the benchmark to 2-3hrs maybe
+[3/19/2026 12:29 PM] Josu: Why?
+[3/19/2026 12:30 PM] vyom: like we wanna test again on benchmark, after we used leaderboard once we gotta wait for 6hr?
+[3/19/2026 1:09 PM] gwokhou: 6 times per hour
+[3/19/2026 1:41 PM] vyom: oh(edited)
+[3/19/2026 6:51 PM] edward: eh i have a question, what qualifies as a top 10?
+
+ like if i am ranked in 11 in mm then 9 in mla and 12 in mxfp4 then what happpens?
+[3/19/2026 6:54 PM] vyom: https://leaderboard.ooousay.com/
+[] Unknown: we only need this ig
+[3/19/2026 7:04 PM] AlphaNord: Its a point system, point allowance is specified in the terms in luma but this leaderboard works too
+[3/19/2026 7:07 PM] vyom: Yee it’s cal init for ~3750ig in total(edited)
+[3/19/2026 7:53 PM] ykaitao: Hi All, a quick question, why the leaderboard only show my github id, not my team's name? I have a team of two people.
+[3/19/2026 7:55 PM] Mark Saroufim: We never implemented changing team names in the leaderboard is all. We could but in the meantime we’ll just ask you which team you’re in if you’re in the top submitters
+[3/19/2026 7:56 PM] ykaitao: Gocha, thanks@Mark Saroufim!
+[3/19/2026 11:17 PM] edward: is this updated daily@ooousay?
+[3/20/2026 2:14 AM] daniel huang: oh that's cool, was this maintained by you?@vyom
+[] Unknown: how often will it automatically sync with gpu mode leaderboard?
+[3/20/2026 2:16 AM] vyom: no@ooousaywas the one who built it
+[3/20/2026 2:16 AM] vyom: prolly like 30min
+[] Unknown: I guess
+[] Unknown: my bad its statesData revalidates every 60 seconds from the GPU Mode API(edited)
+[] Unknown: 60 secs
+[3/20/2026 2:17 AM] daniel huang: great
+[3/20/2026 2:17 AM] vyom: https://github.com/dgavriloff/amd-leaderboard
+[3/20/2026 3:27 AM] SSS: How do I use rocprofiler-compute?I want to analyze why the current kernel is running slowly—it’s ten times slower than yours.
+[3/20/2026 5:14 AM] Sinatras: On web submission view soon you will be able to see status "hacked" on hacking submissions with known methods
+[] Unknown: If you believe your kernel submission is falsely flagged or want to report a case that hacked kernel is not covered feel free to reach out to me
+[3/20/2026 5:22 AM] neo.juan: hi,all..newbie here.
+[] Unknown: do we have a baseline of competition?
+[3/20/2026 6:59 AM] SSS: I discovered that popcorn-cli offers a profile mode, which is really great.
+[3/20/2026 7:00 AM] Stas Polonsky: Hi guys, is there a way to run rocprofv3 profiler from our submissions? Any ideas?
+[3/20/2026 7:00 AM] SSS: It's just that the waiting process is long
+[3/20/2026 7:02 AM] Stas Polonsky: does it profile kernels?
+[3/20/2026 7:12 AM] SSS: no，A summary of API response times on the server side
+[] Unknown: I'd also like to know how to use rocprofiler
+[3/20/2026 10:05 AM] Rikikoo: @Mark SaroufimCould you consider upgrading the docker image to use rocm 7.2? I'm trying to make use of some MI355X hardware features that LLVM doesn't properly support in older versions. 7.2 works fine for what I want to do.
+[] Unknown: This should be all that's neededdiff --git a/Dockerfile b/Dockerfile
+index cc15e9c..0f481be 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -35,8 +35,8 @@ RUN sudo groupadd -g 109 render
+
+ RUN sudo apt update -y \
+     && sudo usermod -a -G render,video runner \
+-    && wget https://repo.radeon.com/amdgpu-install/7.1/ubuntu/noble/amdgpu-install_7.1.70100-1_all.deb \
+-    && sudo apt install -y ./amdgpu-install_7.1.70100-1_all.deb \
++    && wget https://repo.radeon.com/amdgpu-install/7.2/ubuntu/jammy/amdgpu-install_7.2.70200-1_all.deb \
++    && sudo apt install -y ./amdgpu-install_7.2.70200-1_all.deb \
+     && sudo apt update -y \
+     && sudo apt install -y rocm
+[3/20/2026 3:35 PM] ooousay: Good morning, was this error a backend thing or a problem with my submission flow: 15:07:24 UTC:
+
+  Waiting for results...
+  {"status": "processing", "elapsed_time": 0.0}
+  {
+    "status": "processing",
+    "elapsed_time": 22.03
+  }
+  Application error: Server processing error: An unexpected error occurred:
+  RuntimeError | Raw Error: Failed to trigger GitHub Action. Please check the
+  configuration.
+[] Unknown: It counted for my hourly rate limit without giving me any result so preferably I’d like to prevent this in the future(edited)
+[3/20/2026 4:07 PM] Mark Saroufim: @daniel huangwdyt
+[3/20/2026 4:07 PM] Mark Saroufim: @siroin case he wants to make rate limits a bit more generous
+[3/20/2026 4:38 PM] Blake (bledden): plz
+[3/20/2026 5:00 PM] siro: yeah we can stilll increase a bit and fix this eventually
+[3/20/2026 5:38 PM] Zephyr Zhao: Upvote, 7.2 would be nice
+[3/20/2026 5:45 PM] Andre S: how did you get a diff with colors to show in a textbox?(edited)
+[3/20/2026 5:46 PM] Rikikoo: The usual markdown syntax for code blocks, with patch as the language
+[] Unknown: `patch
+text here`
+[3/20/2026 6:10 PM] houdinied: I would prefer 7.2 as well
+[3/20/2026 7:22 PM] Andre S: cool, thanks
+[3/20/2026 9:16 PM] rt11: https://x.com/amanrsanger/status/2035079293257359663Composer 2 is strong validation for Kimi 2.5
+[3/20/2026 9:17 PM] Mark Saroufim: more generally we want the results from this competition to be commercially useful, phase 1 is basically an interview for phase 2 which is when the real challenge starts
+[] Unknown: on 7.2 I think we should just pick what's the default in popular vendor libraries,@daniel huang
+[3/20/2026 10:26 PM] It's a me: Hello everyone, I want to participate in the AMD hardware optimization contest.
+
+I’m currently using MI300X (gfx942)
+
+Is there an MI350X / MI355X (gfx950) environment available for participants to run and benchmark kernels? Or are we just supposed to submit our work, and only then it is run on MI355X?
+[3/20/2026 10:32 PM] ykaitao: Hi Team, do you know what does this error mean?Waiting for results...
+Application error: Server returned status 500 Internal Server Error: Your code contains work on another stream. This is not allowed and may result in your disqualification. If you think this is a mistake, please contact us.
+[3/20/2026 10:37 PM] ykaitao: As@divc13suggested, the fix to this error is:Remove the word "stream" from your code.
+[3/21/2026 2:01 AM] neo.juan: for the submission normally how long it take to have a evaluation result?
+[3/21/2026 4:28 AM] anandasai_a: where exactly can we see this? is it only if submission is done via the web ui?
+[3/21/2026 4:33 AM] inje: yeah I got the same error too when I was trying to implement concurrent kernels
+[3/21/2026 4:33 AM] Jacky: Hi, qq: I wonder is there any restriction on what lib or dsl i can use?
+[3/21/2026 5:28 AM] jdbartlett96: Just a heads up to anyone getting those ~4us numbers (or anything else below the time it takes the MI355X to even read the full input data), but isn't intending any hacking - there's a good chance you're still tricking the evaluation system into not actually timing your kernel computation times, even mistakenly. For example if you are writing purely hip-compiled kernels & doing no work via python, the system will return a success without including the actual kernel execution time. Not sure how the event planners intend to handle this (since they're still honest submissions, just not showing accurate numbers) but it might be worth double checking with cuda timers or throwing in a device sync to see how long your kernels are actually taking (although these have overheads of their own, so its still an approximation).(edited)
+[3/21/2026 5:29 AM] M*: Hey so on the Luma registration page, were github/discord id's required or were usernames fine? I think my team signed up with the second but shouldve used the first. Is that a thing I should worry about and go change, or what?
+[3/21/2026 5:36 AM] anandasai_a: is there a way to remove a submission?
+[3/21/2026 5:53 AM] Blake (bledden): @anandasai_apopcorn submissions delete <ID> (can add the --force flag if you have issues with that)
+[3/21/2026 6:21 AM] Mark Saroufim: Do you have an example you could share? We’ve spoken of reward hacking at length. If you’re unsure email the mods and we’ll tell you if something is legit. If it’s not we’ll delete it, however in this particular competition with tons of AI we’re getting overwhelmed without automation to scrub
+[3/21/2026 6:22 AM] Mark Saroufim: We need a way to figure out who to reach out to. You can always cancel your registration and reregister. Ideally just mention the discord username we can reach out to for the team lead(edited)
+[3/21/2026 6:41 AM] anandasai_a: the 4µs values particularly could warrant a second look considering how close those values are for the top 3. In my case, the reward hacking that passed without issue was: it replaced the evaluation harness's input generation function so that the full GEMM result is pre-computed outside the timing window and stashed  separately. Then during the timed benchmark, a custom kernel just does a dictionary lookup and returns the cached answer — it did not actually compute anything.
+[3/21/2026 6:47 AM] jdbartlett96: Sure, I'll send an example. This issue though isn't really deliberate rewards hacking (unlike the caching) - I still have real kernels which do the real computation on the inputs, when custom_kernel is called. There's really no reason it shouldn't be considered a legitimate submission - it's just that the timing system is such that the reported times should not be considered the actual times. I've got test infrastructure in place to protect me from that, better timing systems that give me my real kernel runtimes, and that is what I'm optimizing. I just wanted to give a warning to anyone else who might unknowningly submit something they made in earnest thinking it was actually running that fast, only to get dq'd. Or, more generally, I'm wondering what will happen with those submissions, will they be DQ'd, or will they be given a corrected time based on the actual kernel times.
+[3/21/2026 6:50 AM] Mark Saroufim: I mean it’s against the spirit of the competition. We would obviously disqualify those submissions.
+[3/21/2026 6:51 AM] jdbartlett96: I'll take it to DM with you; running a quick test on example to make sure it shows what I'm talking about
+[3/21/2026 8:12 AM] divc13: Just asking, are the ~4us submissions legal?
+[3/21/2026 8:18 AM] Phibi: Hey, does anyone know if AMD is providing MI355X access for hackathon participants? I don't have access to gfx950 hardware to test my kernels. Also, has anyone gotten tl.dot_scaled working with the correct scale layout for the mxfp4-mm challenge?
+[3/21/2026 9:14 AM] luyuzhang: Recently, I've been running in --mode profile. Why can't I view the zipped files anymore? Previously, I could view the zipped summary files, but now they're gone. Also, in profile mode, the command line won't exit; it keeps getting stuck
+[3/21/2026 9:18 AM] Phibi: bro you using a mi355x server ?
+[] Unknown: i mean  that seems to be your 200th submission so you tested kernel on a server and then uploading the final just askin
+[3/21/2026 9:26 AM] luyuzhang: 200 is just a name. I just want to run on prfile mode
+[3/21/2026 9:30 AM] Phibi: oh i see
+[3/21/2026 10:19 AM] Tomas R.: Does modal have AMD support on the roadmap?
+[3/21/2026 10:31 AM] Phibi: ??
+[] Unknown: Hey, does anyone know if AMD is providing MI355X access for hackathon participants? I don't have access to gfx950 hardware to test my kernels. Also, has anyone gotten tl.dot_scaled working with the correct scale layout for the mxfp4-mm challenge?
+[3/21/2026 11:16 AM] danishlynx: hey@Mark Saroufimfollowing up on@jdbartlett96point — I'm Danishlynx on the GEMM leaderboard. I'm in the same boat: my kernels do real computation with sync after every call, but I suspect the benchmark events aren't capturing the full execution time due to how the kernel is compiled and dispatched. Not intentional, just a side effect of the toolchain I'm using Just want to know how you'd like us to handle this so I can stay on the right side of the rules.(edited)
+[3/21/2026 11:50 AM] danishlynx: Hey@Mark SaroufimFollowing up , I've now measured my actual kernel compute times with explicit device sync and wall-clock timing. The real numbers are slightly higher than what the benchmark reports. I'm working on optimizing my submissions based on honest compute times and will update my leaderboard entries accordingly. Thanks for the transparency on how you'd like this handled.
+[3/21/2026 12:10 PM] danishlynx: Hey all, following up on@jdbartlett96's point about the ~4μs numbers (this is NOT about caching or precomputing results). I spent some time investigating this on my end and here's what I found:
+
+The issue: If your kernel is compiled and launched through a different HIP context than PyTorch's (e.g. via tinygrad's comgr compiler, or any hipModuleLoadData/hipModuleLaunchKernel path), the benchmark's cuda events won't capture your actual kernel execution time. You'll see ~4μs regardless of what your kernel actually computes  that's just the Python dispatch overhead.
+
+How to check if you're affected: Add wait=True to your tinygrad HIPProgram launch, or wrap your kernel call with hipEventRecord on the SAME queue your kernel runs on. If the real time is 100x+ higher than what the benchmark reports, you're hitting this artifact.
+
+Who's NOT affected: If you're using aiter's built-in kernels (like mla_decode_stage1_asm_fwd, fused_moe, gemm_a4w4_asm) or Triton kernels, these all launch on PyTorch's queue and the benchmark events capture them correctly.
+Just wanted to share since I know a few of us were confused by the numbers. Working on honest submissions now on amd-mxfp4-mm(edited)
+[3/21/2026 12:44 PM] vyom: super thanks for these insights
+[3/21/2026 12:45 PM] GnSight: Hi@Mark Saroufim, I constantly encountering the "exceeded 12 minute timeout" error, which adds up to the rate limit. Subsequent submissions will just end up being limited. Are there any plans to resolve this?
+[3/21/2026 12:46 PM] GnSight: The timeout is likely caused by long queueing of GitHub actions
+[3/21/2026 12:51 PM] Leandro Timberini: For leaderboard submissions, only 1 submission per hour is allowed.
+[3/21/2026 12:53 PM] GnSight: yeah I am aware of this, but my submission did not actually run because it queued for too long and has been automatically cancelled. After that I got rate limited and can not submit again
+[3/21/2026 12:56 PM] Leandro Timberini: Sure, but it had exceeded 12 minutes, that's why it timed out. Before creating a leaderboard, use benchmarks.
+[] Unknown: --mode benchmark
+[3/21/2026 12:59 PM] GnSight: thanks! But I have to use leaderboard mode for testing, since input does not rotate in benchmark mode. I can pass some testcases only in benchmark mode, not in leaderboard mode sadly
+[3/21/2026 1:01 PM] Leandro Timberini: It's true that benchmarks don't give the same results as the leaderboard, and it's frustrating to see a positive result in the benchmark and then the complete opposite in the leaderboard, but I haven't seen that they've offered another solution.
+[3/21/2026 1:04 PM] Leandro Timberini: To participate you don't need to rent a mi355x
+[3/21/2026 1:14 PM] Blake (bledden): If you are randomly placing on the leaderboard, it doesn’t hurt to self-regulate a bit and audit your submission for any possible exploits either.
+
+Would suck to spend a week thinking you’re in a top slot only to get DQ’d as soon as somebody takes a look at your submission
+[3/21/2026 1:31 PM] Leandro Timberini: So far my best result on amd-mxfp4-mm was 14.860μs
+[3/21/2026 1:38 PM] vyom: w amd isa?
+[3/21/2026 1:39 PM] Leandro Timberini: No, I'm in 68th place haha
+[3/21/2026 1:58 PM] neo.juan: I am warned in another stream and could be disqulified...
+[] Unknown: Server returned status 500 Internal Server Error: Your code contains work on another stream. This is not allowed and may result in your disqualification. If you think this is a mistake, please contact us.
+[3/21/2026 2:44 PM] Mark Saroufim: You shouldn’t have the word stream in your code. It’s a very common reward hack. We just have a grep filter, which might result in false positives
+[3/21/2026 2:49 PM] Mark Saroufim: If you make a submission that’s reward hacky you can delete it yourself with popcorn-CLI instead of making it mod responsibility. A correct kernel should use a correct stream and hip context. I also feel like there’s some confusion around what DQ means. If you make a reward hack by accident it’s fine we’ll scrub. If you keep reward hacking and ignoring mods then we’ll have to ban you. When we’re choosing the finalists for phase 1 we’ll filter out reward hacks. If you’re unsure whether your code is against the spirit use another ai system. But again aggressively caching, manipulating how timing is done is classic reward hack
+[3/21/2026 2:50 PM] Mark Saroufim: No
+[3/21/2026 2:52 PM] Mark Saroufim: So the reason why we have rate limits if because the volume of submissions is so high. The only way we can resolve this is to get significantly more hardware. Cc@Guruprasad-mpBarring that please use test or benchmark mode
+[3/21/2026 2:53 PM] Simon: I would add that if humans would take <5 min time to look at code written by AI it is very obvious if solution is cheating. 
+It should be clear that without genuine improvements within the kernel there should be no breakthrough result.(edited)
+[] Unknown: Maybe a little bit less obvious trick I observed LLM to do is to remove certain synchronizations. This may result in a kernel that „works“ but will have a race condition which is IMO also not desirable. So I would watch out if AI tries to manipulate stuff with barriers
+[3/21/2026 3:24 PM] Mark Saroufim: So I just went through a round of scrubs again, for context when we do see reward hacks around those 4us timeframes, we don't just see 1 we hundreds/thousands and now i have to manually read every single one and decide whether this is reward hacked. It's quite obvious that the vast majority of those hacks are AI authored it's not fun to read
+
+When phase 1 ends, we'll just pick the fastest submission you made, if it's an egregious reward hack then we'll just skip your name and keep going down the list, if you're not sure whether something you're doing is a reward hack please message the mods or ask@SinatrasAI system
+
+Something important to keep in mind is  that we're looking for people that merge important production kernels in phase 2 so if you aren't interested in reading your own code or learning about what's a reward hack or not then it's worth our time to coach you in phase 2, it'll just be too hard for everyone involved
+
+pocporn-cli has a delete submission feature, please use it, self regulate your submissions and if you notice noise on the leaderboard please ignore it. Folks have been upset at me for allowing reward hacks but also rate limits and also bans. All these side effects are because people are not reading their submissions before submitting it for what are obviously reward hacks. Claude please win me $1M make no mistakes is not a valid strategy here, kernel development is hard, I sympathize with beginners but you can't expect mods to read walls of AI generated code from everyone if you can't even read your own(edited)
+[3/21/2026 3:33 PM] minhdung: I found that the current profile mode is not so useful.  I downloaded the zip file but it does not show any specific information about the kernel besides runtime. Can we have like a rocprofv3 thread trace (att) to view the kernel on rocprof compute viewer.
+[3/21/2026 3:55 PM] ooousay: I’ve been losing my mind over this.
+[] Unknown: I wonder how much extra submission wall time doing two sets of different values for BM would add. Is this possible or am I overlooking complexity?(edited)
+[] Unknown: Especially with 1hr LBs, I think I have an improvement on BM, wait for LB rate limit, turns out it was a regression.(edited)
+[3/21/2026 4:55 PM] divc13: For leaderboard submissions to be restricted to 1 hr, there should be consistency between leaderboard and benchmark results.
+[3/21/2026 4:55 PM] Blake (bledden): I feel seen
+[3/21/2026 5:16 PM] Mark Saroufim: this ask is not specific enough, for instance if people are submitting reward hacks that cache everything then ofc benchmark and leaderboard will not be consistent. feel free to browse the eval.py scripts in this folder and if there's anything you don't like just let us know!https://github.com/gpu-mode/reference-kernels/tree/main/problems/amd_202602(edited)
+[3/21/2026 5:33 PM] DIVIJ: can you guys check my submission "N-45div"
+[] Unknown: want to know any mistakes i have done ?
+[3/21/2026 5:44 PM] Mark Saroufim: you are reusing a preallocated output/scratch buffer for each benchmark shape, fwiw an AI system could have also told you this as well
+[3/21/2026 5:44 PM] DIVIJ: where can i access the AI system ?
+[3/21/2026 5:44 PM] Mark Saroufim: https://chatgpt.com/
+[3/21/2026 5:44 PM] DIVIJ: haha oh this one
+[] Unknown: i thought something gpu knowledge base related
+[3/21/2026 5:56 PM] Mark Saroufim: You can also message@Sinatrashe’s setting up an an API to make detecting reward hacks pre submissions easier
+[3/21/2026 6:05 PM] DIVIJ: okay
+[] Unknown: i am updatng my submission
+[] Unknown: looks like position retained
+[3/21/2026 6:09 PM] DIVIJ: now i have verified with this "AI System" and any human evaluator would be wonderful
+[3/21/2026 6:10 PM] Phibi: well is it only mine or what i am trying in benchmark submitting it is showing timeout
+[] Unknown: ?
+[] Unknown: [ERROR] Job timed out after 15 minutes. Please try again or refresh it manually.
+[] Unknown: like this
+[] Unknown: trying to submit through browser
+[3/21/2026 6:17 PM] Mark Saroufim: You can delete your older submissions using CLI
+[3/21/2026 6:17 PM] Mark Saroufim: Load is very high. Just try again in a bit
+[3/21/2026 6:22 PM] Phibi: okay thanks for the info
+[3/21/2026 8:03 PM] bill: @Mark Saroufimdo we have the chance to access rocm 7.2 in the server? 7.2 solved some performance issue in 7.1, and we may optimize the performance better.(edited)
+[3/21/2026 8:15 PM] Mark Saroufim: It’s@daniel huang’s call. The main tradeoff is does this invalidate all the current submissions and is 7.2 what we’d like to use in phase 2
+[3/21/2026 9:00 PM] Kpyy: Is the profile mode broken? It is rarely working today.
+[3/21/2026 9:08 PM] bill: maybe add a parameter --rocm 7.1(default)/7.2 at popcorn will make all current submission works.
+[3/21/2026 10:48 PM] Sinatras: Sure especially after merge of the PR if someone finds a non-filtered case reach out to me
+[3/22/2026 3:09 AM] luyuzhang: @Mark SaroufimWhen I use --mode profile, there is no detailed profile data package output now, but there was before the 20th. What could be the problem
+[] Unknown: How can I view more detailed profile data? Does anyone know how to do it
+[3/22/2026 4:56 AM] Harsh Gupta: Is using preallocated output buffer disallowed? Should be a valid optimization right?
+[3/22/2026 5:22 AM] luyuzhang: Does anyone know this? very thanks
+[3/22/2026 7:50 AM] rt11: This is my understanding, and@Mark Saroufim/@sirocan correct or add more detail if needed.
+
+Profile mode was available for the NVIDIA NVFP4 competition:https://github.com/gpu-mode/popcorn-cli/blob/main/docs/profiling.mdProfiling is generally slower than a normal submission, and with the current load from regular submissions, profile mode would probably only be feasible if more compute resources were available.
+
+Still, the profile option would be really helpful.
+[3/22/2026 10:25 AM] Leandro Timberini: I used it like this, and it worked: 
+popcorn-cli submit --gpu MI355X --leaderboard amd-mxfp4-mm --mode profile --no-tui submission_mm.py
+[3/22/2026 10:43 AM] rt11: Yeah, it works
+my bad, I was mistaken earlier.
+[3/22/2026 2:26 PM] mokri: I wanted to use third part library hipkittens for c++  but while running it in test mode  it is failing with error hipkittens.cuh is not found. How to add this as a dependency so it can build without any issue ?
+[3/22/2026 5:09 PM] Kpyy: I’m also interested in trying this. Can someone please help with this?
+[3/22/2026 6:33 PM] mokri: @Mark Saroufim@Sinatrasplease let me know if hipkittens is supported or not. If not than I can move on with other options.
+[3/22/2026 7:13 PM] Kpyy: @Mark Saroufim@SinatrasI'm only able to find kernel trace for only one benchmark or one PID. All other PIDs kernel traces are missing. Can you please help if this is a known issue or am I doing something wrong?(edited)
+[3/22/2026 8:13 PM] Epliz: Hi@Mark Saroufim,@daniel huang,
+
+(From a search in this channel, I don't think this was reported, but sorry if it has.)
+I believe there is a similar issue to the one that was fixed athttps://github.com/gpu-mode/reference-kernels/pull/120in the MoE problem.
+But the issue is that the bad quantization conversions are happening insidefused_moefrom AITER. Athttps://github.com/ROCm/aiter/blob/31586c5f4c72e98d569c36aee7dc054ee7155e82/aiter/fused_moe.py#L1049or other places, it seems to use the hip quantization kernels that I suspect are wrong (https://github.com/ROCm/aiter/blob/31586c5f4c72e98d569c36aee7dc054ee7155e82/aiter/fused_moe.py#L14).
+
+It can be seen by running the reference kernel with just a quantization/dequantization done to the hidden state before callingfused_moe: with the "correct" quantization approach fromhttps://github.com/gpu-mode/reference-kernels/pull/120it fails, but with the "wrong" quantization function from before (triton_quant), it passes, which shows that internallyfused_moecalls the wrong quantization methods.
+
+Attached a slightly modified reference with wrong quantization/dequantization that is passing the tests but most likely wrong.
+Attached as well a slightly modified reference with quantization/dequantization that is failing the tests but should be working. 
+
+Why is it a problem:
+1) probably the AMD developer would want to fixfused_moe2) for this competition it means that we have to implement wrong quantization methods and can't use the correct hardware conversion instructions (v_cvt_scalef32_pk_fp4_f32also mentioned inhttps://github.com/ROCm/aiter/issues/974).
+3) and for anyone working on the amd-mxfp4-mm problem as well, it means we can't reuse code as in one place we have to implement the correct quantization, but not in the other
+
+I am also attaching code for what I think could be a replacement reference using the right quantization functions and AITER APIs to do the MoE stage 1 and 2.
+[3/23/2026 2:04 AM] Josu: Are the scores by Ananda Sai A legit? They looked too good, but maybe achievable. But now the mm score definitely looks exploity.
+[3/23/2026 2:16 AM] anandasai_a: that's what i thought. none of the ai systems have flagged it so far though!
+[3/23/2026 2:20 AM] daniel huang: @Rikikoo@Zephyr Zhao@houdiniedhello, did you guys test if it works with this 7.2 patch?
+[3/23/2026 2:23 AM] GnSight: Hi@Mark Saroufim@daniel huang,
+I've also noticed the quantization issues raised by@Kpyyon my end, though I haven't done nearly as thorough an analysis — thanks for the detailed writeup!
+
+I wanted to raise a related concern: since commit a846c7e, the tolerances for this problem were tightened to rtol=2e-2, atol=2e-2. The issue is that the MoE pipeline goes through gemm1 → quant → gemm2, and small differences in computation order during the gemm stages get amplified after quantization. My custom HIP kernel occasionally exceeds the tolerance by a tiny margin on certain seeds (0.02105 vs the 0.02 threshold), purely due to differences in reduction/accumulation order.
+
+With the current tolerance, it seems like custom kernels that doesn't exactly replicate AITER's internal computation order would be somehow hard to pass. Would it be possible to relax the tolerance slightly to allow for legitimate floating-point ordering differences?
+[3/23/2026 2:25 AM] Zephyr Zhao: I don't have access to AMD GPUs, I can't test if that works, unfortunately :{.
+[3/23/2026 3:01 AM] Blake (bledden): So we are doing the 7.2 change?
+[3/23/2026 3:04 AM] daniel huang: we are working on it, if relaxing tolerance limits, will notify
+[3/23/2026 3:05 AM] daniel huang: we prefer not, for the stability, I'd suggest you can offline load 7.2 package, which is allowed. cc@Zephyr Zhao@Blake (bledden)@Rikikoo@houdiniedand others who need it
+[3/23/2026 3:11 AM] Blake (bledden): Wasn’t planning on using it since the competition was around 7.1, so just wanted to confirm.
+[3/23/2026 3:11 AM] daniel huang: @Epliz@GnSightthanks for reporting it. TBH, a great developer in this channel have fixed this issue byhttps://github.com/ROCm/aiter/pull/2249, but it's not adapted into moe in time, so we will relax the tolerance as a workaround
+[3/23/2026 3:13 AM] GnSight: Thanks for the update and really appreciate the effort!
+[3/23/2026 3:13 AM] Jacky: Hi! New joiner here. It looks like the code changes need to be self-contained in submission.py, so we can submit it through popcorn-cli. What if I need to change some kernel code in aiter library (or e.g., I use my own library), how can I include this for submission?
+[3/23/2026 3:17 AM] daniel huang: relaxed, pls retry moe
+[3/23/2026 3:18 AM] siro: merged and updated, should work now
+[3/23/2026 3:19 AM] zhubenzhu: Hi for Hipkittens, it's just header files. So you can clone this repo in your code. Then change the compiler to add the "-I" to Hipkittens's include path. Then you can use.(edited)
+[3/23/2026 3:19 AM] brian: does the leaderboard test different sizes than the benchmark for the matrix multiplication? i'm passing all benchmarks but the leaderboard failed
+[3/23/2026 3:26 AM] zhubenzhu: https://github.com/gpu-mode/reference-kernels/blob/main/problems/amd_202602/eval.py#L227-L233Ya, code here, it will generate different inputs in leaderboard mode, to test if the submission can robustly pass.
+
+Benchmark mode only use one seed.
+[3/23/2026 3:27 AM] brian: thanks! so the seeds are different but the shapes are the same?
+[3/23/2026 3:29 AM] zhubenzhu: Right
+[3/23/2026 3:44 AM] brian: I just checked and it seems to me that's not the case. There's one with k: 1536, m: 64, n: 3072, for example, which is not in the benchmarking list (there's also one with m=8 which never shows up) -- i'm mainly asking since i operated under the assumption that things would match up, and so i've templated a lot of the parameters
+[3/23/2026 3:53 AM] zhubenzhu: https://github.com/gpu-mode/reference-kernels/blob/main/problems/amd_202602/mxfp4-mm/task.yml#L54-L66@brianIt's the tests cases, not contribute to the final score. But you need this to pass the correntness check.(edited)
+[3/23/2026 3:54 AM] brian: appreciate it, thanks so much
+[3/23/2026 5:02 AM] danishlynx: Hey@anandasai_ajust a heads up, your GEMM score of 4.327μs looks like it might be a cross-queue timing artifact. I had the exact same issue earlier (4.33μs) where kernels launched on a separate HIP context don't get captured by PyTorch's CUDA events. If you're using tinygrad, ctypes hipModuleLoad, or any non-PyTorch kernel launch path, the timing won't be honest. You can verify by adding hipEvent with wait=True around your kernel if real compute is 100x+ slower than reported, it's the artifact. Just wanted to give you a heads up before the organizers flag it.(edited)
+[3/23/2026 5:26 AM] anandasai_a: Thanks for looking out! I've verified my timing. The kernel does complete synchronously before the function returns, so the events capture it correctly.
+[] Unknown: actually would be helpful if someone from the team could verify the submission for me
+[3/23/2026 5:53 AM] anandasai_a: My bad, my diagnosis script was wrong. Have reverted to the last valid!
+[3/23/2026 8:42 AM] Rikikoo: Yes, I tested if my code built with this patch, and it did. I wasn't able to verify if the results were correct, but the assembly looked fine and I would be surprised if they weren't.
+[3/23/2026 3:29 PM] vyom: is the bot down again? the submissions staying locally aren't showing up on the dashboard
+[3/23/2026 3:32 PM] Mark Saroufim: jobs are quueing! just a lot of them lol
+[3/23/2026 3:40 PM] vyom: is there a possibility to take first principles from projects like uv or zerobrew to resolve this, I've kinda worked on race cancellations before on zb getiing cold start to 3.6x from baseline would it be something similar to it..
+[3/23/2026 7:42 PM] edward: anyone has No HIP GPUs are available problem?
+[3/23/2026 8:17 PM] ykaitao: All my recent submissions has this issueFile \"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py\", line 1094, in current_device
+    _lazy_init()
+  File \"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py\", line 424, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No HIP GPUs are available
+[3/23/2026 8:21 PM] Mark Saroufim: lemme see
+[3/23/2026 8:22 PM] bhagawan: No HIP GPUs are available
+[3/23/2026 8:26 PM] Mark Saroufim: theres one unhealthy node, im gonna take it down
+[3/23/2026 11:13 PM] Josu: Question: Can we assume that the CK modules are pre-cached? The issue is that when they aren't the whole compilation+benchmark+run doesn't fit within the 12 minutes.
+[3/24/2026 1:34 AM] divyanshk: You might be able to include all the relevant code in your submission file. But if you using a completely new library not included while benchmarking then I'm not sure...
+[3/24/2026 2:28 AM] vyom: yes why does this have to be human in the loop? isn’t race cancelation or similar would solve this?
+[] Unknown: if we can figure out unhealthy nodes early and maybe kill the PID  then relaunch the node again ? if that makes sense
+[3/24/2026 10:25 PM] Jinn: Hi everyone. Wondering where can we check the leaderboard to see how's the current top performance?
+[3/24/2026 10:36 PM] Sinatras: Here :https://www.gpumode.com/home
+[3/24/2026 10:44 PM] Jinn: Ty!
+[] Unknown: One more silly question, may I know how to invite a friend to join me to form a team in this competition?
+[3/24/2026 11:25 PM] jdbartlett96: Sorry, to confirm, the shapes listed in as the "benchmark shapes" in the problem description are NOT the shapes that we will actually be judged on, not the leaderboard shapes? Are the leaderboard shapes the ones we will be finally judged on, do we need to have perfect performance for an unknown range? Or, can we examine the shapes used for leaderboard timing and build our work around those...[asked and answered](edited)
+[3/25/2026 3:55 AM] ritwikdas: I am seeing a situation where testing and benchmarking are successful but the leaderboard run fails because of mismatching results. Has anyone else experienced this?Compilation successfulTesting successfulBenchmarking successfulLeaderboard run failed(edited)
+[3/25/2026 4:09 AM] mohamedk.9752: Getting the same issue for the last hour or so.
+[3/25/2026 5:48 AM] daniel huang: it's different input between leaderboard mode and other modes
+[3/25/2026 5:49 AM] daniel huang: pls email to ai_dev_contests@amd.com to have a ask
+[3/25/2026 6:41 AM] ritwikdas: even if the seed is the same?
+[3/25/2026 6:52 AM] daniel huang: seed is not same
+[3/25/2026 8:23 AM] daniel huang: to be noted, the current 1st rank of mxfp4-mm 4.362us is illegal, hope you all know that and won't be affected by this solution(edited)
+[3/25/2026 10:44 AM] nuttt: May I ask for where can I see my submission's time duration? From the website I could check if my submission passed, but the "score" is "N/A".
+[3/25/2026 12:27 PM] jiab: for the mla task just returning 0 is sometimes in margin of error and passes , happens  1 / 4 times ish
+[3/25/2026 3:17 PM] vyom: how much quota do we have for tests per hour? is it 10?
+[3/25/2026 5:33 PM] ritwikdas: When can we expect the leaderboard to have all the illegal solutions removed?
+[3/25/2026 8:13 PM] gripingberry: Is anyone able to get the profiler to show anything other than how long it spends inside each kernel? I can't get any information about time spent inside my actual kernel
+[3/25/2026 11:08 PM] Leandro Timberini: When you run profile mode, a zip file is created with the complete execution timeline, allowing you to see exactly how long each kernel takes, GPU stalls, and CPU/GPU overlap.
+[3/25/2026 11:09 PM] gripingberry: When I pulled that and put the trace into perfetto it was still super coarse the timeline
+[3/26/2026 12:12 AM] Natalia Kokoromyti: btw is it intentional that the leaderboard measures wall-clock-with-sync time? instead of only gpu
+[3/26/2026 1:47 AM] daniel huang: mixed-mla is extremely precision sensitive, we tried best to get the balance of your optimization space and kernel accuracy, so it's inevitable for us to manually check like the case you mentioned
+[3/26/2026 7:12 AM] gwokhou: have you read this paper? it really makes me anxioushttps://arxiv.org/abs/2603.24517v1
+[3/26/2026 11:42 AM] Phibi: well the runners have older flydsl version?(edited)
+[3/26/2026 1:25 PM] vyom: is this server related issue or another GPU mem faultApplication error: Server processing error: An unexpected error occurred: TimeoutError | Raw Error: Workflow 23595070490 cancelled - exceeded 12 minute timeout
+[3/26/2026 1:28 PM] Gordon: Is the gpumode working okay since half an hour ago? I could hot get result after I submit since half an hour ago.
+[3/26/2026 1:55 PM] Leandro Timberini: Yes, it doesn't seem to be working.
+[3/26/2026 2:10 PM] vyom: I think@Mark Saroufimwould already be looking into it maybe(edited)
+[3/26/2026 2:55 PM] . Jońs: any estimated time on fixing this?
+[3/26/2026 3:50 PM] Mark Saroufim: no eta yet but looking into it
+[3/26/2026 4:28 PM] Mark Saroufim: ok should be resolved the issue was there was a data center wide software update that tanked all of our k8 runners - just rebooted everything and it looks healthy now, lmk if you run into any more issues
+[3/26/2026 4:28 PM] vyom: many thanks
+[3/26/2026 4:35 PM] Brt-less: ok so its not just me?
+[] Unknown: mines not working still
+[] Unknown: ok nvm working again
+[] Unknown: thank you
+[3/26/2026 4:40 PM] ooousay: getting No HIP GPUs are available across multiple runners. runner-6gfj8, runner-n4497 both gave me that error when submitting a test with popcorn cli on mxfp4 GEMM(edited)
+[3/26/2026 4:43 PM] Mark Saroufim: ack
+[3/26/2026 4:57 PM] ooousay: Working now, thanks team
+[3/26/2026 5:52 PM] ritwikdas: Is it possible to get the ranked leaderboard test harness? Is the assumption that every iteration of a particular problem shape can potentially have different data?
+
+I am trying to use graph capture and that seems to cause some correctness issues.(edited)
+[3/26/2026 7:31 PM] Josu: Is the platform having problems again? I had a few benchmarks fail silently, and others are stuck.
+[3/26/2026 7:53 PM] Mark Saroufim: im not seeing any issues, i suspect its just unqueued jobs all getting queued at once now
+[3/26/2026 8:22 PM] Josu: Thanks for checking. Submission 641336 got stuck pending. The rest are clear now.
+[] Unknown: UTC-6 time
+[3/26/2026 8:29 PM] ritwikdas: what is the reason for banning the word "stream" in the submission file?
+[3/26/2026 8:52 PM] Mark Saroufim: its just a super common reward hack, we've talked about it a lot if you search through chats here
+[3/26/2026 9:04 PM] AlphaNord: Good Evening@Mark Saroufim, is it possible to have pocorn-cli submit benchmark mode unilimited or a larger number of trials with benchmark before the delay ?
+[3/26/2026 9:06 PM] Mark Saroufim: might be tricky without more compute unfortunately
+[3/26/2026 9:06 PM] AlphaNord: thank you for your answer
+[3/26/2026 11:33 PM] Lun🔷: Is anyone able to confirm the exact format for the two ID fields in the event registration/does it matter for the submission?
+
+Github ID:
+name part ofgithub.com/USERNAMEvs
+ID number fromgh api user --jq '.id'Discord ID:
+username egLunvs
+ID from developer mode eg132326409589882880
+[3/27/2026 12:15 AM] jdbartlett96: How do you get the .zip file from profile mode?
+[3/27/2026 12:58 AM] Leandro Timberini: It is downloaded to the same folder where you have your submission.py file.
+[3/27/2026 12:59 AM] jdbartlett96: Thanks, it doesn't come through for me, but good to know it's supposed to be... Do you have to run in --no-tui mode?
+[3/27/2026 1:00 AM] Leandro Timberini: popcorn-cli submit --gpu MI355X --leaderboard amd-mxfp4-mm --mode profile --no-tui submission.py
+[3/27/2026 1:26 AM] pradeep: Folks - I am running into this error Application error: Server returned status 500 Internal Server Error: Your code contains work on another stream. This is not allowed and may result in your disqualification. Pretty sure I am running the correct code. This is for mixed-mla . I tried to reregister - but still running into the same issue. Can someone please help.
+[3/27/2026 1:37 AM] vyom: are the submissions still going thru, I don't see them on the dashboard just staying locally
+[3/27/2026 1:44 AM] Leandro Timberini: You probably have the word stream in your file.
+[3/27/2026 3:47 AM] edward: what is that 1.000μs submission, world record?
+[3/27/2026 3:54 AM] Mark Saroufim: reward hack
+[3/27/2026 4:19 AM] Blake (bledden): https://youtu.be/8LiVGDq01FU?si=p80c3k7S4IkCjAuw
+[3/27/2026 8:14 AM] zhubenzhu: Hi, we have a FlyDSL sharing from Felix Li(one author of FlyDSL).
+Welcome to try FlyDSL in this competition.
+It ships with faster build speed and eazy to use compared to hip, and gives you more control compared to triton.
+refs:
+1.https://github.com/ROCm/FlyDSL2.https://rocm.blogs.amd.com/software-tools-optimization/flydsl-python-native/README.html
+[3/27/2026 8:52 AM] neo.juan: Hi, since I am new in the GPU area, I am quite curious if it's necessary to write customized HIP kernel to get a better score?
+[3/27/2026 10:24 AM] John: A fix for the profile modehttps://github.com/gpu-mode/popcorn-cli/pull/53
+[3/27/2026 11:05 AM] cip: in prev competitions, did competitors hold out their most competitive submissions until the very end or was leaderboard in the last days usually reflective of the final rankings?
+[3/27/2026 2:01 PM] Gordon: Is the benchmark working okay now?
+[3/27/2026 2:12 PM] Augment: There has been some successful snipes at the end in some of the competitions
+
+In theory, it sadly does not make sense to submit early because you reveal information of what is possible to other contestants instead of them feeling secure in their solution and being "done" optimizing
+[3/27/2026 3:02 PM] AlphaNord: guys ppl who rent mi300 for the competition did they use the free gpu credit of amd developper ? and how much hours /  day lasted ? thx
+[3/27/2026 3:03 PM] jdbartlett96: Is the mxfp4-mm server down? Or just me... Getting "Submission error: Server processing error: An unexpected error occurred: RuntimeError | Raw Error: Failed to trigger GitHub Action. Please check the configuration."(edited)
+[3/27/2026 3:21 PM] cip: makes sense, will be fun to see. the MM challenge especially is so close rn
+[3/27/2026 3:24 PM] vyom: Yess I think we got that timeout from yesday
+[] Unknown: again
+[3/27/2026 3:40 PM] siro: cc@Mark Saroufimcould be the runners again
+[3/27/2026 4:16 PM] ooousay: Hi, I had an LB time out on MLA even though BM passed. Since it timed out I didn't get any info on why. Is there a way for me to see the runner's logs to diagnose what went wrong?
+[3/27/2026 4:18 PM] vyom: its the cluster runners I presume
+[3/27/2026 5:19 PM] vyom: are the runners on BM back up for everyone?
+[3/27/2026 5:19 PM] ooousay: This is happening in MM now for me:      Application error: Server processing error: An unexpected error occurred: RuntimeError | Raw Error: Failed to trigger GitHub Action. Please check the configuration.
+[3/27/2026 5:19 PM] vyom: same last checked
+[3/27/2026 5:19 PM] ooousay: When submitting in test
+[3/27/2026 6:46 PM] rwtarpit: what framework/dsl is being used for this competition? i see all submissions for this being py files. just landed here, can somebody explain??!
+[3/27/2026 7:33 PM] AlphaNord: From what i understand its python but i can embed hip/c++ code. Some do triton and even assembly ? Anyway pytorch works too . Im not in the domain i do only small neural network training
+[3/27/2026 8:27 PM] brian: Does anyone know where can we find the specs for the M1355X? I can’t seem to figure out some basic info (number of threads per CU, VPGRs per CU, and so on). I was able to find some info on shared memory, but that’s it
+[3/27/2026 9:41 PM] ritwikdas: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-cdna4-instruction-set-architecture.pdf
+[3/27/2026 9:45 PM] brian: I’ve looked in here and still couldn’t seem to find this info
+[3/27/2026 9:48 PM] averne: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-4-architecture-whitepaper.pdf
+[] Unknown: page 18
+[3/28/2026 3:49 AM] Gordon: Does tilelang be supported in the remote env?
+[3/28/2026 5:44 AM] Tensorscope: The website is down.
+[3/28/2026 5:56 AM] edward: i think the cli still works, but yea website is down
+[] Unknown: lol who to @mention?
+[3/28/2026 5:58 AM] Xerous Wazler: The website is down so I wasn't going crazy lol
+[3/28/2026 6:08 AM] Mark Saroufim: you can install whatever you want inlinehttps://github.com/gpu-mode/popcorn-cli#installing-extra-dependencies
+[3/28/2026 6:08 AM] Mark Saroufim: huh this has never happened
+[] Unknown: lemme see - edit: im crashing, ill check in tmrw morning(edited)
+[3/28/2026 6:15 AM] mbwilly: did cli rate limit go down to 6 per hr from 10?(edited)
+[3/28/2026 6:20 AM] Mark Saroufim: i dont think we made any rate limit changes
+[3/28/2026 6:20 AM] Tensorscope: Yeah
+[3/28/2026 6:25 AM] Mark Saroufim: ok site is back up, load was too big so just spun up an extra machine
+[] Unknown: so on the runners side i no longer have ssh access to the machines so hopefully they're healthy still, will debug a bit more with@siroin the morning
+[3/28/2026 6:34 AM] siro: yes I have temporarily because we lost some runners yesterday and there was a long queue, sorry about that
+[3/28/2026 6:44 AM] edward: i think the site is still down, I was able to see it briefly then it is down again right now
+[3/28/2026 6:48 AM] Mark Saroufim: yeah im seeing the same thing, honestly im falling asleep while debugging now, ill take a look when im more alert
+[3/28/2026 6:50 AM] vyom: jus assign it to codex
+[3/28/2026 6:51 AM] Mark Saroufim: i think whats happening is the sql queries are so slow on the main amd problems
+[] Unknown: i disabled the live feature temporarily as well
+[3/28/2026 10:24 AM] Gordon: Is the remote runner working okay now?
+[3/28/2026 11:19 AM] Gordon: amd-moe-mxfp4 on MI355X keeps finishing with Run Reports: N/A, including test submissions.
+ │ This reproduces across both experimental and baseline-like files.
+ │ Could you check whether the runner/reporting pipeline is currently broken?
+[3/28/2026 12:41 PM] Sifer: Hi there! I' m currently working with the mm kernel. I'm wondering  is benchmark-Case-Specific Optimization legal?  Thx !
+[3/28/2026 1:18 PM] Phibi: How are people scoring so high in moe leaderboard like I tried all combinations even different kernels merging from aiter flydsl etc kernels even making mine own still can't make leaderboard score reach below 147 like??(edited)
+[3/28/2026 1:22 PM] rwtarpit: can somebody explain 🫥
+[3/28/2026 3:00 PM] . Jońs: :x
+[3/28/2026 3:17 PM] divc13: Absolutely
+[3/28/2026 3:32 PM] Sifer: @Mark Saroufim
+[3/28/2026 3:38 PM] Mark Saroufim: Could you be more specific? If you’re optimizing for specific shapes that’s indeed totally fine and encouraged(edited)
+[3/28/2026 3:39 PM] Sifer: Yes that's exactly what i mean. Thx a lot !
+[3/28/2026 4:27 PM] Josu: All my submissions to MoE for the last couple of hours are timing out. Is anyone else having the same issue?
+[3/28/2026 4:29 PM] lgc: Same issue here, MoE and MM both timing out.
+[3/28/2026 4:48 PM] M*: Can someone look into solutions/ can something be done about this? Ex: stricter rate limiting on submissions, potentially with some sort of whitelist.  
+
+Allowing the infrastructure to effectively be DDOS'd in the last week or so just kind of ruins the experience for all involved. I assume that getting more infra on short notice is off the table, so can another solution be implemented so weeks of work dont go to waste? Pinging@Mark Saroufim@daniel huang
+[3/28/2026 4:54 PM] Phibi: ?
+[3/28/2026 5:01 PM] danishlynx: megic
+[3/28/2026 5:01 PM] Phibi: Lol
+[3/28/2026 5:02 PM] Mark Saroufim: there are lots of reward hacks, we do delete them but people keep resubmitting them lol, so just ignore
+[3/28/2026 5:02 PM] Mark Saroufim: it's not clear what the solution is outside of getting more compute, we've made the ask of AMD but I'm not sure we have a good solution otherwise(edited)
+[3/28/2026 5:03 PM] Phibi: Oh I see but it's like how do we know our rankings well when they are in the leaderboard
+[3/28/2026 5:34 PM] AlphaNord: guys are we limited even for the test mode of popcorn cli ?(edited)
+[] Unknown: are you getting too │                                                           │↑Submission error: Server returned status 500 Internal Server Error: Inte│
+[3/28/2026 5:44 PM] AlphaNord: ok i found out why ai writed #!POPCORN leaderboard 763
+instead we must use original name not id (i guess normally) had to #!POPCORN leaderboard amd-mxfp4-mm
+to work
+[3/29/2026 4:55 AM] Josu: I'm getting timeouts everywhere again. I tried resubmitting a file that had already landed earlier and it timed out. MoE seems especially prone to this.
+[3/29/2026 6:06 AM] SSS: It's true—the wait time for the MLA benchmark has definitely gotten longer.
+[] Unknown: Currently, it takes fifteen minutes to get the results of a single benchmark.
+[3/29/2026 6:56 AM] . Jońs: i think its not working at all now.
+[3/29/2026 7:56 AM] edward: Will the runner's aiter be updated?
+[3/29/2026 8:37 AM] . Jońs: @Mark Saroufim, both MoE and mm are timing out
+[3/29/2026 9:28 AM] siro: yeah we can't do anything with this, we don't have enough nodes to support this load as said above:it's not clear what the solution is outside of getting more compute, we've made the ask of AMD but I'm not sure we have a good solution otherwise
+[3/29/2026 10:35 AM] Sifer: @Mark SaroufimHi there! I got stuck analyzing the kernel without profiling. Could you please tell me how can I do profile? Like how to get stall information?
+[3/29/2026 12:03 PM] Phibi: iterating through popcorn cli is way more difficult i mean it takes way too much time to test out a kernel to see and optimize and reiterate. How are you all doing like did you rent mi355x or hwat just running it or like running it on a server to make it do auto or what?
+[3/29/2026 1:49 PM] AlphaNord: honestly i iterate through the benchmark tool but im strugglingg to get in top 5
+[3/29/2026 2:05 PM] satishiai19: I am a staff MLE, any team needs me?
+[3/29/2026 2:51 PM] danishlynx: Unmatched perspicacity coupled with sheer indefatigability will make you best kernal developer in any realm of human endeavour
+[3/29/2026 3:01 PM] daniel huang: hey friends, to clarify the submission issue you met, there are some inevitable maintenance work on the machines, once finished, will notify you, thanks for understanding
+[3/29/2026 3:31 PM] Phibi: Which tool popcorn cli?
+[3/29/2026 3:31 PM] Phibi: Yeah for sure🫠
+[3/29/2026 4:24 PM] AlphaNord: Benchmark as if u use leaderboard u spam the leaderboard with unwanted rabkibg
+[3/29/2026 11:37 PM] champagnepapi: @Mark Saroufimhey, is there any reason for the submission.py file size limit, i have a custom hip kernel for each shape but unfort i can't fit it within the submission file size
+[3/29/2026 11:53 PM] Jacky: Hi, I want to see my submission history and the scores. But when I try to list the past submissions from popcorn-cli. The score is empty. I wonder if that is expected.
+[3/30/2026 12:27 AM] Mark Saroufim: Ah there was a trick where you can compress the file that@Snektronhad. You can find it in search
+[3/30/2026 3:34 AM] wangxun1010: Please do not hack the inherent Python functions and APIs in reference.py, and do not perform obviously non-compliant caching. 
+ 
+All participants are encouraged to continue optimizing the kernel and not be affected by invalid commits. Removing invalid commits may allow you to advance to the leaderboard.
+[3/30/2026 6:17 AM] Somers_xmnkx: I couldn't find the amd-moe-mxfp4 in the leaderboard of popcorn cli, but only found mixed-mla and amd-mxfp4-mm, does anyone know what happen???
+[3/30/2026 7:10 AM] Valix: Hi, I’m working on the MLA task and noticed a potential issue with the correctness validation: when the KV cache length is set to 8192, the check does not seem to function properly—returning all zeros can still pass the validation. I’m the participant (Borui Xu), and using this trick  makes it easy to achieve the top rank, and I’d appreciate it if someone could take a look. Thanks.(edited)
+[] Unknown: As shown in the figure, when the KV cache length is set to 8192, returning all zeros still passes the validation check.
+[3/30/2026 7:14 AM] brian: https://github.com/ROCm/aiter/issues/2424#signed-out-banner-sign-upis this still an issue? (MoE quantization)(edited)
+[3/30/2026 7:24 AM] daniel huang: mixed-mla is extremely precision sensitive, we tried best to get the balance of your optimization space and kernel accuracy, so it's inevitable for us to manually check like the case you mentioned
+[3/30/2026 7:27 AM] Valix: Thx,  but this makes me concerned that under the 8192-length setting, omitting certain operations at the algorithm level might not be easily detectable through manual inspection. Also, could you please help remove my current result that used this trick? Thank you
+[3/30/2026 7:32 AM] zhubenzhu: Yeah if you found your answer right and fast enough. Please send it to Daniel or me, we can check how to change the correctness check a little bit like mixed-mla.  Or we can let two answers all pass by adding another reference too.
+[3/30/2026 7:35 AM] brian: So I should just keep going for now even if I fail all the benchmarks? Or should I implement the “wrong” quantization?
+[3/30/2026 7:38 AM] Sifer: @Mark Saroufim
+[3/30/2026 7:57 AM] zhubenzhu: @brianhttps://github.com/ROCm/aiter/blob/f3be04a12a0cfd6b5e2c7a94edc774f1bc24460d/aiter/fused_moe.py#L1054-L1055You can try patch the quant_func first to use the  pytorch function and check the correctness if you think it's wrong.  Also change thetoken_num_quant_moe_sort_switch=-1the line 1055 to not select the triton kernel.
+[3/30/2026 8:14 AM] zhubenzhu: It's python envrionment, so you can use aiter torch profiler or ROC-profiler or ATT-viewer.
+[] Unknown: I remember it have a profiler-data directory. You can save your profiler to it and download from the github.
+[] Unknown: Remember to zip it with a password. Or others can see your profiler result.(edited)
+[3/30/2026 9:58 AM] AlphaNord: hello guys, did someone succesfully get ai write full working code with hip for the amd-mxfp4-mm task ?
+[3/30/2026 1:14 PM] SSS: Is the test machine down? It keeps showing a GitHub Actions error.
+[3/30/2026 2:23 PM] nap: I have to say I find it very difficult to compete given the server circumstances. You never know when things are online again. Or even when it seems to be online again, you might waste a leaderboard submission that times out due to server and then you have to wait again. Totally understand this is beyond the control of the organizers. 
+
+And I don't think delaying the competition again until more machines are available is the right solution either. But might be worth considering widening the selection for phase 2 to top 20 or top 25 in light of recent developments. Just my 2 cents though.
+[3/30/2026 2:43 PM] M*: If you folks end up tweaking things can you toss out an announcement in this channel and/or pin a message here or something like that?
+[] Unknown: (Also FWIW I very much appreciate the work invested to run this. I imagine its been a migraine and a half.)
+[3/30/2026 9:56 PM] A Coder: Is the server ready to use? I had submit some benchmarkings, they passed. But they are not recorded in my submission history(edited)
+[3/31/2026 2:38 AM] daniel huang: no, today is in maintenance
+[3/31/2026 2:44 AM] A Coder: Thanks for letting us know. Any ETA we could know, thanks again.
+[3/31/2026 2:45 AM] daniel huang: I guess it's not that long.Once finished, we will notify, thanks for your patience
+[3/31/2026 3:12 AM] wangxun1010: Just tried Popcorn Submit with test and leaderboard modes—both work fine.
+[3/31/2026 3:26 AM] backtoon: how to submit a kernel
+[3/31/2026 3:40 AM] wangxun1010: You can use Popcorn CLI:
+install: curl -fsSLhttps://raw.githubusercontent.com/gpu-mode/popcorn-cli/main/install.sh| bash​
+register and auth: popcorn register discord
+submit: popcorn submit --mode leaderboard --gpu MI355X --leaderboard amd-mixed-mla submission.py
+[3/31/2026 4:02 AM] NKV: if you use UI for submission for leaderboard, it does not seem to reflect into leaderboard so popcorn is the only way it works it seems
+[3/31/2026 5:45 AM] daniel huang: so pls use popcorn
+[3/31/2026 5:56 AM] daniel huang: Hi friends, currently we have part of nodes working now and some folks tried it and it works. Popcorn cli would be the better choice for you to submit
+[3/31/2026 6:53 AM] vyom: popcorn cli isn't working maybe
+[3/31/2026 7:53 AM] zhubenzhu: @M*@brian@Eplizhttps://github.com/ROCm/aiter/blob/v0.1.12/csrc/kernels/quant_kernels.cu#L94So, I think the main difference is that. When the scale hit the range of ∈ [1.5, 1.75)×2^E,  the python code will let it round down to1, while aiter will round up to2.
+[] Unknown: If you are implementing your hip code, please follow the aiter's implementation during the competition.
+[3/31/2026 9:06 AM] mbwilly: popcorn still seems to be down?
+[3/31/2026 11:50 AM] SSS: When I submit a profile via the CLI and the process gets stuck, no ZIP file is generated locally, but I can see that the profile was successful online. How can I locate the ZIP file I need?
+[3/31/2026 11:57 AM] daniel huang: lets see if@siroand@zhubenzhuknow that
+[3/31/2026 11:57 AM] daniel huang: no, it works well
+[3/31/2026 11:58 AM] siro: if the CLI process gets stuck there is no way to get the zip, unless you download the result of the github action manually and parse what you need
+[] Unknown: the CLI process works by just polling the github action until an artifact is produced, after which it downloads it
+[3/31/2026 1:00 PM] NKV: Anyone getting time_outs in benchmark mode?
+[3/31/2026 1:01 PM] divc13: All submissions are getting timed out.
+[3/31/2026 1:01 PM] NKV: ok may be i should wait in that case.. i have fairly stale leaderboard submission and not able to get my latest one in!
+[3/31/2026 1:02 PM] divc13: @siro@Mark SaroufimCan you look inot this pls?
+[3/31/2026 1:15 PM] vyom: yess we getting time_outs
+[3/31/2026 1:41 PM] Sifer: Hi, can my teammate submitting to the leaderboard using there own accounts? Or one team can only submit using one account?@Mark SaroufimThx!
+[3/31/2026 1:53 PM] daniel huang: better submit by same, if you have to , pls tell us which ids showed on leaderboard are same team
+[3/31/2026 1:58 PM] Sifer: OK! Thanks!
+[3/31/2026 2:36 PM] vyom: @daniel huangthe remote runners aren't wokring?Application error: Server processing error: An unexpected error occurred: TimeoutError | Raw Error: Workflow 23802262301 cancelled - exceeded 12 minute timeout(edited)
+[3/31/2026 2:42 PM] NKV: I got the same for last four
+[3/31/2026 2:54 PM] . Jońs: can we get notified once this is back?
+[3/31/2026 3:23 PM] SSS: The journey of kernel optimization is incredibly long. May I ask when the preliminary solution will be open-sourced? I really want to dive in and learn from the optimization paradigms.
+[3/31/2026 3:25 PM] Mark Saroufim: i think we should be good again
+[] Unknown: im not a k8 expert but the issue is when the machine gets rebooted for maintenance (out of our control), it gets updated with new system dependencies, k8 then panicks and crash loops - i just went ahead and restarted everything and we have 40 gpus working now
+[3/31/2026 3:35 PM] vyom: Still failed, but different error this time: the benchmark run hit a runtime_error saying “No HIP GPUs are available”.
+[3/31/2026 3:36 PM] J: Same here. Made me think that the competition is over.
+[3/31/2026 3:36 PM] vyom: nah I think the last day is like apirl 6th
+[3/31/2026 3:38 PM] Mark Saroufim: 1s
+[] Unknown: ok should be fixed
+[3/31/2026 3:45 PM] NKV: sent over my submission, fingers crossed!
+[3/31/2026 3:50 PM] J: It works Mark, thank you.
+[3/31/2026 5:50 PM] ooousay: Hi, are test/BM rate limits now counted together? I got 4 github action server errors trying to submit to test on MM and then got rate limited for both BM and test.
+[3/31/2026 5:56 PM] divc13: Did the limit reduce to 4 benchmark submissions per hour, this is too less?(edited)
+[3/31/2026 6:25 PM] nuttt: Hi, How can I get the ncu report each time I submit my code？
+[3/31/2026 6:46 PM] siro: I can probably increase back, had to do it due to the runner issues we had
+[] Unknown: @divc13@ooousayit's back to 10 now 🫡 will try to monitor the queue times and adjust as needed
+[3/31/2026 6:53 PM] ooousay: Thanks, still am getting this though: 
+  Error: Exit code 1
+     Submitting to leaderboard: amd-mxfp4-mm
+     GPU: MI355X
+     Mode: test
+     File: dist/submission.py
+
+     Waiting for results...
+     {"status": "processing", "elapsed_time": 0.0}
+     Application error: Server processing error: An unexpected error occurred: RuntimeError | Raw Error: Failed to trigger GitHub Action. Please check the configuration.
+
+MoE and MLA are working fine though
+[3/31/2026 6:55 PM] siro: can't reproduce, can trigger an action just fine(edited)
+[3/31/2026 10:23 PM] diegocao: Hello Team, could I ask where is the kernel contest detailed? Thanks a lot.
+
+Would we have credits available at modal? Thanks(edited)
+[3/31/2026 11:00 PM] cip: @zhubenzhusent you a dm(daniel mentioned i can reach out to you for my q)
+[3/31/2026 11:54 PM] iliassxti: The amd-mxfp4-mm reference loads f4gemmbf16_per1x32Fp4_BpreShuffle* kernels (bf16 A × fp4
+   B), but gemm_a4w4_asm rejects bf16 A with get_cfg Unsupported input_type:BFloat16. How does the reference pass bf16
+  A to the assembly kernel?
+[4/1/2026 1:15 AM] wangxun1010: There is a quant kernel before a4w4 gemm
+[4/1/2026 1:19 AM] wangxun1010: https://www.amd.com/en/developer/resources/technical-articles/2026/new-gpumode-virtual-hackathon--e2e-model-speedrun.html
+[4/1/2026 1:35 AM] daniel huang: Hi friends, we just delete some illegal ranks, see the imgs, some were maliciously cheating like ZainHaider and some were using methods that they re not sure if its ok
+[4/1/2026 3:27 AM] SSS: where can we find the github action and download
+[4/1/2026 3:33 AM] daniel huang: https://github.com/gpu-mode/kernelbot/actions@SSS
+[4/1/2026 5:38 AM] iliassxti: If you sign up for AMD AI developer program you get $100 cloud credit to use for the next 10h. But It's not straighforward how youre account get credited?
+[4/1/2026 5:40 AM] vyom: even though we get we don’t have mi355x in it
+[] Unknown: isn’t it?
+[4/1/2026 5:41 AM] Blake (bledden): As of this morning negative
+[4/1/2026 5:41 AM] vyom: Wait so we gottem???
+[4/1/2026 5:41 AM] Blake (bledden): No, negative as in not there sorry hahaha
+[4/1/2026 5:42 AM] vyom: yess what’s the point of signing up even
+[4/1/2026 5:42 AM] Blake (bledden): Hey you can do a lot with $100 and an mi300x js
+[4/1/2026 5:42 AM] vyom: but our current problem targets are around mi355x?(edited)
+[] Unknown: either way it ain't available in india
+[4/1/2026 6:39 AM] Yeqi Huang: Hi@daniel huang, thanks for cleaning up the leaderboard. Could we get more clarity on what is considered "allowed" vs "cheating"? I want to make sure my submission stays within the rules.
+
+  On our side, we guarantee that our submission:
+
+  1. No result caching — every call runs the full computation
+  2. No hardcoded outputs
+  3. No seed-based precomputation
+  4. No timing manipulation
+[4/1/2026 6:40 AM] daniel huang: yes you are understanding right, most of the illegal submissions landed on these items
+[] Unknown: but I cannot really enumerate the cheating, because I am weaker than AI....
+[4/1/2026 6:41 AM] Yeqi Huang: We are all weaker than AI somehow, lol.
+[] Unknown: By the way, may I withdraw one of my submissions from the leaderboard? I just noticed that my submission from the CLI and the web UI show two different names.
+[4/1/2026 6:43 AM] daniel huang: I think its not supported on userface, you can DM to tell me what they are
+[4/1/2026 6:57 AM] zhubenzhu: @Yeqi HuangHi please check this in your fp4 gemm submission, don't use cytpes hipModuleLoad or tinygrad.
+[4/1/2026 7:00 AM] Yeqi Huang: got it

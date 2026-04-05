@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(ls:*)",
+      "WebFetch(domain:rocm.blogs.amd.com)",
+      "WebFetch(domain:triton-lang.org)",
+      "WebFetch(domain:blog.fal.ai)",
+      "WebFetch(domain:github.com)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(gh search:*)",
+      "Bash(python3:*)",
+      "Bash(popcorn-cli submit:*)",
+      "Bash(git checkout:*)",
+      "Bash(echo \"exit: $?\")",
+      "WebFetch(domain:gist.github.com)",
+      "Bash(curl -s https://gist.githubusercontent.com/arseniivanov/9d59d889db19119eb9bfd7f58c886925/raw/)",
+      "WebFetch(domain:arseniivanov.github.io)",
+      "Bash(curl -sL 'https://gist.githubusercontent.com/arseniivanov/9d59d889db19119eb9bfd7f58c886925/raw')"
+    ]
+  }
+}
