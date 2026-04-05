@@ -22,6 +22,33 @@
 - `v3`：在 v1 上加按 batch size 的自适应 contiguous（阈值 128）。
 - `v4`：在 v1 上加“按输入指针和 shape 的输出缓存复用”。
 
+## 直接在 main 开发（不走 PR）
+
+如果你不想每次提 PR，需要仓库管理员在 GitHub 关闭/放宽以下保护策略：
+
+1. Branch protection（`main`）里关闭 **Require a pull request before merging**。
+2. 关闭或放宽 required status checks / required reviews / restrict who can push。
+3. 允许你账号对 `main` 直接 push。
+
+本地建议配置（减少 pull 冲突）：
+
+```bash
+git config pull.rebase true
+git config rebase.autoStash true
+git config fetch.prune true
+```
+
+日常流程：
+
+```bash
+git checkout main
+git pull --rebase origin main
+# 修改代码
+git add -A
+git commit -m "..."
+git push origin main
+```
+
 ## 提交命令（moe）
 
 ```bash
