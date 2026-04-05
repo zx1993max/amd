@@ -2,6 +2,12 @@
 
 你说得对：这里所有工作都只围绕 **moe-mxfp4**。
 
+## 版本冻结规则（重要）
+
+- 历史版本一旦产出（如 `submission_v1.py`、`submission_v2.py`），默认**冻结不改**。
+- 如果发现历史版本有问题，不在原文件上改，新增修复版：`submission_vX_fix.py`。
+- 迭代优化同样走新版本：`submission_v{N+1}.py`。
+
 ## 当前版本命名
 
 - `versions/submission_v1.py`
