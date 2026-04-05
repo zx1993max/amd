@@ -14,13 +14,15 @@
 - `versions/submission_v2.py`
 - `versions/submission_v3.py`
 - `versions/submission_v4.py`
+- `versions/submission_v5.py`
 
 ## 版本说明（仅 moe-mxfp4）
 
 - `v1`：moe 基线，直接调用 `fused_moe`（shuffled weights/scales）。
 - `v2`：在 v1 上加 `torch.inference_mode()` + 全量 contiguous。
 - `v3`：在 v1 上加按 batch size 的自适应 contiguous（阈值 128）。
-- `v4`：在 v1 上加“按输入指针和 shape 的输出缓存复用”。
+- `v4`：输出缓存复用（被 KernelGuard `LAST_CALL_REPLAY` 拒绝，不再用于提交）。
+- `v5`：实验 `expert_mask` 预分配缓存（仅缓存全 1 mask，避免每次创建）。
 
 ## 直接在 main 开发（不走 PR）
 
@@ -52,7 +54,7 @@ git push origin main
 ## 提交命令（moe）
 
 ```bash
-popcorn-cli submit --mode benchmark --gpu MI355X --leaderboard amd-moe-mxfp4 moe-mxfp4/versions/submission_v4.py --no-tui
+popcorn-cli submit --mode benchmark --gpu MI355X --leaderboard amd-moe-mxfp4 moe-mxfp4/versions/submission_v5.py --no-tui
 ```
 
 > 注意：不要提交到 `amd-mxfp4-mm`，那是另一个题目。
