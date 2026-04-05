@@ -15,6 +15,8 @@
 - `versions/submission_v3.py`
 - `versions/submission_v4.py`
 - `versions/submission_v5.py`
+- `versions/submission_v5_fix.py`
+- `versions/submission_v6.py`
 
 ## 版本说明（仅 moe-mxfp4）
 
@@ -22,46 +24,22 @@
 - `v2`：在 v1 上加 `torch.inference_mode()` + 全量 contiguous。
 - `v3`：在 v1 上加按 batch size 的自适应 contiguous（阈值 128）。
 - `v4`：输出缓存复用（被 KernelGuard `LAST_CALL_REPLAY` 拒绝，不再用于提交）。
-- `v5`：实验 `expert_mask` 预分配缓存（仅缓存全 1 mask，避免每次创建）。
+- `v5`：实验 `expert_mask` 缓存（线上出现 memory fault，已废弃）。
+- `v5_fix`：回退到稳定逻辑（等价 v3 路线），用于安全提交。
+- `v6`：实验 `doweight_stage1=True`，尝试触发更优 kernel 路径。
 
-## 直接在 main 开发（不走 PR）
+## 推荐提交顺序（时间紧）
 
-如果你不想每次提 PR，需要仓库管理员在 GitHub 关闭/放宽以下保护策略：
-
-1. Branch protection（`main`）里关闭 **Require a pull request before merging**。
-2. 关闭或放宽 required status checks / required reviews / restrict who can push。
-3. 允许你账号对 `main` 直接 push。
-
-本地建议配置（减少 pull 冲突）：
-
-```bash
-git config pull.rebase true
-git config rebase.autoStash true
-git config fetch.prune true
-```
-
-日常流程：
-
-```bash
-git checkout main
-git pull --rebase origin main
-# 修改代码
-git add -A
-git commit -m "..."
-git push origin main
-```
+1. 先提 `v5_fix`（确保稳定通过）
+2. 再提 `v6`（观察是否有显著提速）
+3. 若 `v6` 精度/稳定异常，立即回退 `v5_fix`
 
 ## 提交命令（moe）
 
 ```bash
-popcorn-cli submit --mode benchmark --gpu MI355X --leaderboard amd-moe-mxfp4 moe-mxfp4/versions/submission_v5.py --no-tui
+popcorn-cli submit --mode benchmark --gpu MI355X --leaderboard amd-moe-mxfp4 moe-mxfp4/versions/submission_v5_fix.py --no-tui
+popcorn-cli submit --mode benchmark --gpu MI355X --leaderboard amd-moe-mxfp4 moe-mxfp4/versions/submission_v6.py --no-tui
 ```
 
 > 注意：不要提交到 `amd-mxfp4-mm`，那是另一个题目。
-
-## 借鉴 mxfp4-mm 的方法
-
-- 强调版本化迭代与快速 AB 测试。
-- 先基线稳定，再做“减少重复开销/减少额外操作”的策略。
-- 保持最小化改动，快速提交、快速回传、快速迭代。
 
