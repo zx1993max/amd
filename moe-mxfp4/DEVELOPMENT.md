@@ -20,6 +20,7 @@
 - `versions/submission_v6_fix.py`
 - `versions/submission_v7.py`
 - `versions/submission_v7_fix.py`
+- `versions/submission_v8.py`
 
 ## 版本说明（仅 moe-mxfp4）
 
@@ -33,6 +34,7 @@
 - `v6_fix`：修复 v6 错误，恢复 `doweight_stage1=False`。
 - `v7`：激进实验 `topk_weights` bf16（失败，moe_sorting 强制要求 FP32）。
 - `v7_fix`：修复 v7 错误，强制 `topk_weights.float32` 后再调用。
+- `v8`：激进实验，若 aiter 支持 `out` 参数则复用预分配输出 buffer。
 
 ## 本轮错误结论（简要）
 
@@ -42,13 +44,15 @@
 ## 推荐提交顺序（时间紧）
 
 1. 先提 `v6_fix` 或 `v7_fix`（确保稳定通过）
-2. 如果都稳定，再继续开 `v8` 做新的激进实验
+2. 提 `v8`（若支持 out-buffer 复用，观察是否有收益）
+3. 如果都不提升，再继续开 `v9`
 
 ## 提交命令（moe）
 
 ```bash
 popcorn-cli submit --mode benchmark --gpu MI355X --leaderboard amd-moe-mxfp4 moe-mxfp4/versions/submission_v6_fix.py --no-tui
 popcorn-cli submit --mode benchmark --gpu MI355X --leaderboard amd-moe-mxfp4 moe-mxfp4/versions/submission_v7_fix.py --no-tui
+popcorn-cli submit --mode benchmark --gpu MI355X --leaderboard amd-moe-mxfp4 moe-mxfp4/versions/submission_v8.py --no-tui
 ```
 
 > 注意：不要提交到 `amd-mxfp4-mm`，那是另一个题目。
