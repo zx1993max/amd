@@ -1,9 +1,9 @@
 from task import input_t, output_t
 
 
+# v7 fix:
+# fused_moe/moe_sorting requires topk_weights to be float32.
 def custom_kernel(data: input_t) -> output_t:
-    """MoE MXFP4 baseline: call AITER fused_moe with pre-shuffled weights/scales."""
-    import aiter  # noqa: F401
     from aiter import ActivationType, QuantType
     from aiter.fused_moe import fused_moe
 
@@ -22,10 +22,13 @@ def custom_kernel(data: input_t) -> output_t:
         config,
     ) = data
 
+    if str(topk_weights.dtype) != 'torch.float32':
+        topk_weights = topk_weights.float()
+
     hidden_pad = config["d_hidden_pad"] - config["d_hidden"]
     intermediate_pad = config["d_expert_pad"] - config["d_expert"]
 
-    output = fused_moe(
+    return fused_moe(
         hidden_states,
         gate_up_weight_shuffled,
         down_weight_shuffled,
@@ -42,4 +45,3 @@ def custom_kernel(data: input_t) -> output_t:
         hidden_pad=hidden_pad,
         intermediate_pad=intermediate_pad,
     )
-    return output
