@@ -1,9 +1,10 @@
 from task import input_t, output_t
 
 
+# Aggressive experiment:
+# reduce routed-weight precision path to bf16 to cut topk weight bandwidth.
 def custom_kernel(data: input_t) -> output_t:
-    """MoE MXFP4 baseline: call AITER fused_moe with pre-shuffled weights/scales."""
-    import aiter  # noqa: F401
+    import torch
     from aiter import ActivationType, QuantType
     from aiter.fused_moe import fused_moe
 
@@ -25,7 +26,11 @@ def custom_kernel(data: input_t) -> output_t:
     hidden_pad = config["d_hidden_pad"] - config["d_hidden"]
     intermediate_pad = config["d_expert_pad"] - config["d_expert"]
 
-    output = fused_moe(
+    # keep ids int32, but use bf16 routed weights for lower traffic
+    if topk_weights.dtype != torch.bfloat16:
+        topk_weights = topk_weights.to(torch.bfloat16)
+
+    return fused_moe(
         hidden_states,
         gate_up_weight_shuffled,
         down_weight_shuffled,
@@ -42,4 +47,3 @@ def custom_kernel(data: input_t) -> output_t:
         hidden_pad=hidden_pad,
         intermediate_pad=intermediate_pad,
     )
-    return output
